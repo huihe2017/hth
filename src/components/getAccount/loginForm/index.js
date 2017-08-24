@@ -16,24 +16,7 @@ class LoginForm extends Component {
             vaild: true,
             error: ''
         }
-
-        // rule.map((value)=>{alert(1);
-        //     if(typeof value.pattern  === 'function')
-        //     {
-        //         if(!value.pattern(v)){
-        //             state.vaild = false
-        //             state.error = value.error
-        //             return false
-        //         }
-        //     }else{
-        //         if(!value.pattern.test(v)){
-        //             state.vaild = false
-        //             state.error = value.error
-        //             return false
-        //         }
-        //     }
-        // })
-
+        
         for (let i = 0; i < rule.length; i++) {
             if (typeof rule[i].pattern === 'function') {
                 if (!rule[i].pattern(v)) {
@@ -63,18 +46,16 @@ class LoginForm extends Component {
     render() {
         return (
             <div className={style.wrap}>
-                <div className={style.telephone}>
+                <div className={style.baseStyle + ' ' + style.telephone}>
                     <div onTouchEnd={() => {
                         this.setState({showQh: !this.state.showQh})
                     }} className={style.telephoneLeft}>
-                        +86<i className="fa fa-angle-down"></i>
+                        <span>+86</span><i className="fa fa-angle-down"></i>
+                        <div></div>
                         <div
                             className={this.state.showQh ? style.telephoneLeftIn : style.telephoneLeftIn + ' ' + style.none}>
-                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>weghwh</div>
-                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>dgnjtgfjrtf</div>
-                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>wgrewyh</div>
-                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>rjrtjr</div>
-                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>ejrtj</div>
+                            <div className={style.checked} onTouchEnd={this.qhTouch.bind(this, 'qh')}>中国台湾</div>
+                            <div onTouchEnd={this.qhTouch.bind(this, 'qh')}>中国澳门</div>
                         </div>
                     </div>
                     <div className={style.telephoneRight}>
@@ -91,14 +72,23 @@ class LoginForm extends Component {
                             ]
                         )} placeholder="请输入手机号码" className={style.telephoneInput}/>
                     </div>
-                    <div>
-                        <input onChange={this.onChange.bind(this, 'picCode')} placeholder="请输入图形验证码"/>
-                    </div>
-                    <div>
-                        <input onChange={this.onChange.bind(this, 'pwa')} placeholder="请输入密码"/>
-                    </div>
+                </div>
+                <div className={style.baseStyle + ' ' + style.picCode}>
+                    <input onChange={this.onChange.bind(this, 'picCode', [{
+                            pattern: (value) => {
+                                return value.length === 4
+                            },
+                            error: '请输入4位图形验证码'
+                        }
+                        ]
+                    )} placeholder="请输入图形验证码"/>
+                    <img src={require('../../getAccount/logo.png')}/>
+                </div>
+                <div className={style.baseStyle + ' ' + style.pwa}>
+                    <input onChange={this.onChange.bind(this, 'pwa')} placeholder="请输入密码"/>
                 </div>
             </div>
+
         )
     }
 }

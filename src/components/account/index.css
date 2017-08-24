@@ -1,0 +1,6 @@
+@import "../../common.css";
+@import "./phone.css";
+
+.content{
+    position: relative;
+}

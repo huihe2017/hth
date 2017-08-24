@@ -1,0 +1,30 @@
+.wrap {
+    font-size: 15px;
+}
+
+.baseStyle {
+    border: 1px solid #dfdce4;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.telephoneLeft {
+    float: left;
+    border-right: 1px solid #dfdce4;
+    position: relative;
+}
+.telephoneLeftIn {
+    position: absolute;
+}
+.telephoneLeftIn.none {
+    display: none;
+}
+.telephoneRight {
+    position: absolute;
+    top:0
+}
+.telephoneInput {
+    border: 0;
+    height: 35px;
+    width:250px
+}

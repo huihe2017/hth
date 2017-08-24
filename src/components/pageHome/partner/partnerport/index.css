@@ -1,0 +1,21 @@
+
+
+.buddy{
+    height: 60px;
+    width:25%;
+    /*background-image: url("../../../static/images/WEB-02.png");*/
+    float: left;
+    margin-top: 100px;
+}
+.buddy>img{
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+
+}
+@media all and (max-width: 1200px){
+    .buddy{
+        width: 50%;
+    }
+}
+

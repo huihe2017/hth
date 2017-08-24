@@ -1,0 +1,134 @@
+import React, {Component} from 'react'
+import style from './pageTable.css'
+
+class PageTable extends Component {
+
+    render() {
+        return (
+            <div className={style.wrap}>
+                <div className={style.tit}>外汇即时报价</div>
+                <table   className={style.table}>
+                    <tr>
+                        <th>品种</th>
+                        <th>点差</th>
+                        <th>总量</th>
+                        <th>入金率</th>
+                        <th>出金率</th>
+                    </tr>
+                    <tr>
+                        <td>EUR/USD</td>
+                        <td>0.2</td>
+                        <td>1.5m</td>
+                        <td>1.17594</td>
+                        <td>1.17594</td>
+                    </tr>
+                    <tr>
+                        <td>EUR/USD</td>
+                        <td>0.2</td>
+                        <td>1.5m</td>
+                        <td>1.17594</td>
+                        <td>1.17594</td>
+                    </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr><tr>
+                    <td>EUR/USD</td>
+                    <td>0.2</td>
+                    <td>1.5m</td>
+                    <td>1.17594</td>
+                    <td>1.17594</td>
+                </tr>
+                </table>
+            </div>
+        )
+    }
+}
+
+export default PageTable

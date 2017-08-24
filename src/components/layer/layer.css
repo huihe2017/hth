@@ -1,0 +1,5 @@
+.layer {
+    background: #fff;
+    position: absolute;
+    z-index: 6;
+}

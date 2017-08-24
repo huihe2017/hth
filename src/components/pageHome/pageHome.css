@@ -1,0 +1,23 @@
+.bannerImg {
+    width: 100%;
+    display: block;
+}
+
+.bannerWrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.PageTableDiv {
+    position: absolute;
+    right: 0;
+    top:80px
+}
+
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 120px;
+    text-align: center;
+}

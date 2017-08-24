@@ -1,0 +1,30 @@
+
+
+.partner{
+    width: 100%;
+    height: 540px;
+    background-color: #fff;
+}
+.partnercon{
+    width:1200px;
+    margin: 0 auto;
+    padding-top: 83px;
+}
+.pctitle{
+    height: 38px;
+    line-height: 38px;
+    font-size:38px;
+    color: #93acd4;
+    padding-left: 60px;
+}
+.pccontent{
+    width: 100%;
+    vertical-align: middle;
+    clear: both;
+}
+
+@media all and (max-width: 1200px){
+    .partnercon{
+        width: 100%;
+    }
+}

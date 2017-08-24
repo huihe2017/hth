@@ -1,0 +1,48 @@
+
+
+.mt4{
+    width: 100%;
+    height: 600px;
+    padding-top: 74px;
+    background-image: url("../partner/partnerport/images/mt4-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mt4download{
+    width: 690px;
+    margin: 0 auto;
+    margin-top: 114px;
+}
+.mt4bg{
+    display: block;
+    width: 240px;
+    height: 240px;
+    float: left;
+    background-image: url("../partner/partnerport/images/mt4.png");
+
+}
+.mt4bg>img{
+    width: 100%;
+    height: 100%;
+}
+.mt4title{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+    text-align: center;
+}
+.downloadlist{
+    float: right;
+    width: 220px;
+    height: 240px;
+}
+.downloadlist:last-child{
+    margin-bottom: 0;
+}
+
+@media all and (max-width: 690px){
+    .mt4download{
+        width: 100%;
+    }
+}

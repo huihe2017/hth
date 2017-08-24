@@ -1,0 +1,39 @@
+.wrap {
+    padding: 10px;
+    color:#3b3d40;
+}
+.logoWrap{
+    text-align: center;
+}
+.logo {
+    padding-top: 5px;
+    width: 72px;
+}
+.toggWrap {
+    justify-content:space-around;
+    display:flex;
+    margin-bottom: 15px;
+}
+
+.toggWrap div {
+    width: 23%;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid #dfdce4;
+    padding-bottom: 12px;
+}
+.toggWrap div.checked {
+     color: #5262ff;
+    border-bottom: 1px solid #5262ff;
+ }
+.submitBtn {
+    height: 40px;
+    background: linear-gradient(to right,#3ca3fd, #5262ff);
+    line-height: 40px;
+    text-align: center;
+    border-radius:5px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+
+}

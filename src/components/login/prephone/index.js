@@ -4,7 +4,7 @@ import React from 'react';
 class Prephone extends React.Component{
     render(){
         return(
-            <li onClick={this.selected.bind(this,this.props.data.num)} >
+            <li className={style.li} onClick={this.selected.bind(this,this.props.data.num)} >
                 {this.props.data.area} <span>{this.props.data.num}</span>
             </li>
         )

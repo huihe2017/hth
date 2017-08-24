@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "SET DEBUG=true && webpack-dev-server --history-api-fallback --progress --profile --inline --colors --hot --port 8111 --open --host 192.168.100.102",
+    "start": "SET DEBUG=true && webpack-dev-server --history-api-fallback --progress --profile --inline --colors --hot --port 8111 --open --host 0.0.0.0",
     "build": "SET DEBUG=false && webpack --progress --profile --colors",
     "Mac-build": "DEBUG=false && webpack --progress --profile --colors"
   },

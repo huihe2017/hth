@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./index.css";
-import Putcard from "./putcard/index"
+import Putcard from "../putcard/index"
 
 class Account extends React.Component{
     constructor(props){

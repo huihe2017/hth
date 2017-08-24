@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import SideBar from './sideBar'
 import RenderLayer from '../renderLayer'
 import Layer from '../layer'
-
+import Login from '../login'
+import Register from '../register'
 
 import style from './header.css'
 
@@ -12,10 +13,13 @@ export default class Header extends Component {
         this.state = {
             isShowSideBar: false,
             isShowLogin: false,
+            isShowReg:false,
             isFixed:false
         }
         this.showLogin = this.showLogin.bind(this)
         this.hideLogin = this.hideLogin.bind(this)
+        this.hideReg = this.hideReg.bind(this)
+        this.showReg = this.showReg.bind(this)
     }
 
     componentDidMount() {
@@ -45,8 +49,22 @@ export default class Header extends Component {
 
     }
 
+    showReg() {
+        this.setState({isShowReg: true}, () => {
+
+        })
+
+    }
+
     hideLogin() {
         this.setState({isShowLogin: false}, () => {
+
+        })
+
+    }
+
+    hideReg() {
+        this.setState({isShowReg: false}, () => {
 
         })
 
@@ -63,7 +81,7 @@ export default class Header extends Component {
                         <a className={style.checked}>中文</a>
                         <a className="english">EN</a>
                         <a onClick={this.showLogin} className={style.login}>&nbsp;&nbsp;&nbsp;&nbsp;登录</a>
-                        <a>注册</a>
+                        <a onClick={this.showReg} className={style.login}>注册</a>
                         <a onMouseLeave={() => {
                             this.setState({isShowSideBar: false})
                         }} onMouseOver={() => {
@@ -74,7 +92,8 @@ export default class Header extends Component {
                         </a>
                     </div>
                 </div>
-                {this.state.isShowLogin ? <RenderLayer><Layer callback={this.hideLogin} width="600" height="500" /></RenderLayer> : ''}
+                {this.state.isShowLogin ? <RenderLayer><Layer content={<Login/>} callback={this.hideLogin} width="520" height="520" /></RenderLayer> : ''}
+                {this.state.isShowReg ? <RenderLayer><Layer content={<Register/>} callback={this.hideReg} width="520" height="520" /></RenderLayer> : ''}
 
             </div>
         )

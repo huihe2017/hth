@@ -16,7 +16,7 @@ class LoginForm extends Component {
             vaild: true,
             error: ''
         }
-        
+
         for (let i = 0; i < rule.length; i++) {
             if (typeof rule[i].pattern === 'function') {
                 if (!rule[i].pattern(v)) {

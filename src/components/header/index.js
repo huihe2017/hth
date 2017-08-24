@@ -3,6 +3,7 @@ import SideBar from './sideBar'
 import RenderLayer from '../renderLayer'
 import Layer from '../layer'
 
+
 import style from './header.css'
 
 export default class Header extends Component {

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import RegForm from './regForm'
 import LoginForm from './loginForm'
 import RenderLayer from '../../components/renderLayer'
-import Layer from '../../components/layer'
+import Layer from '../layerR'
 
 import style from './getAccount.css'
 

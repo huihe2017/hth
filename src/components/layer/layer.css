@@ -3,3 +3,13 @@
     position: absolute;
     z-index: 6;
 }
+
+.close{
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}

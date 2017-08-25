@@ -4,7 +4,6 @@ import Partner from './partner'
 import Superiority from './superiority'
 import PageTable from './pageTable'
 import Button from '../button'
-import RenderLayer from '../renderLayer'
 import Layer from '../layer'
 import QRcode from '../QRcode'
 
@@ -28,14 +27,9 @@ class PageHome extends Component {
                     </div>
                     <div className={style.bottom}>
                         <Button onClick={() => {
+                            Layer({content:<QRcode />,close:false})
                             this.setState({showTwoDimension: true})
                         }} itcon={<i className="fa fa-windows"></i>} value="立即开户" large/>
-                        {
-                            this.state.showTwoDimension ? <RenderLayer><Layer content={<QRcode/>} callback={() => {
-                                this.setState({showTwoDimension: false})
-                            }} width="320" height="320"/></RenderLayer> : ''
-                        }
-
                     </div>
                 </div>
                 <Superiority/>

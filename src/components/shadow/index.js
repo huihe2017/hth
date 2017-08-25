@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import ReactDom from 'react-dom';
 import style from './shadow.css'
 
 class Shadow extends Component {
@@ -9,9 +10,7 @@ class Shadow extends Component {
 
     render() {
         return (
-            <div onClick={this.props.callback} ref={'shadow'} className={style.shadow}>
-
-
+            <div onClick={this.props.closeHandle} ref={'shadow'} className={style.shadow}>
             </div>
         )
     }

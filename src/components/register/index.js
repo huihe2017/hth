@@ -108,7 +108,7 @@ class Register extends React.Component{
                     </div>
                     <div className={style.gologin}>
                         <span>
-                            已有账户、<a href="javascript:void (0);">直接登陆</a>
+                            已有账户、<a onClick={()=>{this.props.toLogin(true)}} href="javascript:void (0);">直接登陆</a>
                         </span>
                     </div>
                 </div>

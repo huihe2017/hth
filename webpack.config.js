@@ -80,7 +80,10 @@ module.exports = {
         }),*/
         //定义全局变量
         new webpack.DefinePlugin({
-            __DEV__: isDebug
+            __DEV__: isDebug,
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
         })
     ],
     devServer: {

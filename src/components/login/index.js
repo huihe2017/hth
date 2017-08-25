@@ -94,7 +94,7 @@ class Login extends React.Component{
                     </div>
                     <div className={style.gollogin}>
                         <span>
-                            没有账户、<a href="javascript:void (0);">注册账号</a>
+                            没有账户、<a href="javascript:void (0);" onClick={()=>{this.props.toReg(false)}} >注册账号</a>
                         </span>
                     </div>
                 </div>

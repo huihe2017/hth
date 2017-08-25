@@ -15,10 +15,8 @@ export default class Header extends Component {
             isShowReg: false,
             isFixed: false
         }
-        this.showLogin = this.showLogin.bind(this)
         this.hideLogin = this.hideLogin.bind(this)
         this.hideReg = this.hideReg.bind(this)
-        this.showReg = this.showReg.bind(this)
     }
 
     componentDidMount() {
@@ -41,31 +39,29 @@ export default class Header extends Component {
         }
     }
 
-    showLogin() {
-        Layer({content:<Login/>})
-
-    }
-
-    showReg() {
-        Layer({content:<Register/>})
-
-    }
-
     hideLogin() {
         this.setState({isShowLogin: false}, () => {
-
         })
-
     }
 
     hideReg() {
         this.setState({isShowReg: false}, () => {
-
         })
-
     }
+    toggle(flag){
 
+        let state = this.state
+        state.isShowLogin = flag
+        state.isShowReg = !flag
+        this.setState({state:state});
+    }
     render() {
+        if(this.state.isShowLogin){
+            Layer({content:<Login toReg={this.toggle.bind(this)} />})
+        }
+        if(this.state.isShowReg){
+            Layer({content:<Register  toLogin={this.toggle.bind(this)} />})
+        }
         return (
             <div>
                 <div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>
@@ -75,8 +71,8 @@ export default class Header extends Component {
                     <div className={style.headerRight}>
                         <a className={style.checked}>中文</a>
                         <a className="english">EN</a>
-                        <a onClick={this.showLogin} className={style.login}>&nbsp;&nbsp;&nbsp;&nbsp;登录</a>
-                        <a onClick={this.showReg} className={style.login}>注册</a>
+                        <a onClick={()=>{this.toggle(true)}} className={style.login}>&nbsp;&nbsp;&nbsp;&nbsp;登录</a>
+                        <a onClick={()=>{this.toggle(false)}} className={style.login}>注册</a>
                         <a onMouseLeave={() => {
                             this.setState({isShowSideBar: false})
                         }} onMouseOver={() => {

@@ -1,24 +1,26 @@
-import React from 'react';
-import style from  "./index.css";
+import React from 'react'
+import style from "./index.css"
+import PersonalMsg from './personalMsg'
 
 
-
-class xxxxx extends React.Component{
-    constructor(props){
+class PartnerReg extends React.Component {
+    constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = {}
     }
 
-    render(){
+    render() {
 
-        return(
-            <div className={style.wrap} ></div>
+        return (
+            <div>
+                <br/><br/>
+                <PersonalMsg/>
+                <br/><br/>
+            </div>
         )
 
     }
 
 }
 
-export default xxxxx;
+export default PartnerReg

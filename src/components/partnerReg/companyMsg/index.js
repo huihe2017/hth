@@ -1,21 +1,21 @@
-import React from 'react';
+import React from 'react'
 import style from  "./index.css"
 
 
-class xxxxx extends React.Component{
+class PartnerReg extends React.Component{
     constructor(props){
-        super(props);
+        super(props)
         this.state = {
 
         }
     render(){
 
         return(
-            <div className={style.wrap} ></div>
+            <div className={style.wrap} >253</div>
         )
 
     }
 
 }
 
-export default xxxxx;
+export default PartnerReg;

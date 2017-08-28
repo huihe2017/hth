@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./index.css";
-import Input from "./input/index";
+import Input from "../input/index";
 import Tipdown from "../tipDown/index";
 
 class Selphone extends React.Component{

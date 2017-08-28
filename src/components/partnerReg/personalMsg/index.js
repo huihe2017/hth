@@ -36,7 +36,10 @@ class Personal extends React.Component{
                     <Selphone/>
                     <Input st={'100%'} pla={"身份证号"} tip={"请填写15位一代身份证号或18位二代身份证号，同一个身份证号只能绑定一个海豚汇账号"}/>
                 </div>
-                <Webfile title={"上传身份证照片"} putword={putword1} tipword={tipword1}/>
+                <div className={style.upfile}>
+                    <Webfile title={"上传身份证照片"} putword={putword1} tipword={tipword1}/>
+                </div>
+
 
             </div>
         )

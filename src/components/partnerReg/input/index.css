@@ -15,13 +15,11 @@
 }
 .inp>span{
     display: block;
-    height: 12px;
     width: 100%;
-    line-height: 12px;
+    line-height: 40px;
     font-size: 12px;
     color: #aaa;
     text-align: left;
-    margin-bottom: 14px;
 
 }
 .inp input{

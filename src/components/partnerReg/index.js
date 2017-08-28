@@ -1,5 +1,6 @@
 import React from 'react';
-import style from  "./index.css"
+import style from  "./index.css";
+
 
 
 class xxxxx extends React.Component{
@@ -8,6 +9,8 @@ class xxxxx extends React.Component{
         this.state = {
 
         }
+    }
+
     render(){
 
         return(

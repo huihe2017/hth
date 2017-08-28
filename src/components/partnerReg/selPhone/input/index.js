@@ -5,15 +5,12 @@ class FormItem extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            cla:"default"
+            cla:this.props.cla
         }
     }
     render(){
         return(
-            <div className={style.inp} >
-                <span className={style[this.state.cla]}>
-                    {this.props.tip}
-                </span>
+            <div className={style.inp} style={this.props.st}>
                 <input type="text" placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla]}/>
             </div>
         )
@@ -24,10 +21,10 @@ class FormItem extends React.Component{
             cla:"error"
         },()=>{
             if(this.state.cla=="error"){
-
+                this.props.jug('error');
 
             }else {
-
+                this.props.jug('default');
                 this.setState({
                     cla:"default"
                 })
@@ -38,8 +35,9 @@ class FormItem extends React.Component{
 
     //获取焦点
     onfocus(){
+        this.props.jug('focus');
         this.setState({
-            cla:"isfocus"
+            cla:"focus"
         })
     }
 

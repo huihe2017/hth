@@ -1,6 +1,18 @@
 .inp{
 
 }
+.inp .isfocus{
+    color:#5262ff;
+    border-color:#5262ff
+}
+.inp .error{
+    color:#f59294;
+    border-color:#f59294
+}
+.inp .default{
+    color:#dfdce4;
+    border-color:#dfdce4
+}
 .inp>span{
     display: block;
     height: 12px;

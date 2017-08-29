@@ -2,24 +2,27 @@ import React, {Component} from 'react'
 import SideBar from './sideBar'
 import Login from '../login'
 import Register from '../register'
-import Layer from '../layer'
+import Layer from '../renderLayer'
 
 import style from './header.css'
 
 export default class Header extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             isShowSideBar: false,
             isShowLogin: false,
             isShowReg: false,
-            isFixed: false
+            isFixed: false,
+            isFixedAbled:false
         }
         this.hideLogin = this.hideLogin.bind(this)
         this.hideReg = this.hideReg.bind(this)
     }
 
     componentDidMount() {
+        console.log(this.props.params)
         let dance = document.body.clientWidth * 0.46
         let danceCopy = dance
 
@@ -56,12 +59,12 @@ export default class Header extends Component {
         this.setState({state:state});
     }
     render() {
-        if(this.state.isShowLogin){
-            Layer({content:<Login toReg={this.toggle.bind(this)} />})
-        }
-        if(this.state.isShowReg){
-            Layer({content:<Register  toLogin={this.toggle.bind(this)} />})
-        }
+        // if(this.state.isShowLogin){
+        //     Layer({content:<Login toReg={this.toggle.bind(this)} />})
+        // }
+        // if(this.state.isShowReg){
+        //     Layer({content:<Register  toLogin={this.toggle.bind(this)} />})
+        // }
         return (
             <div>
                 <div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>
@@ -83,7 +86,8 @@ export default class Header extends Component {
                         </a>
                     </div>
                 </div>
-
+                {this.state.isShowLogin?<Layer closeFn={this.hideLogin}><Login toReg={this.toggle.bind(this)} /></Layer>:''}
+                {this.state.isShowReg?<Layer closeFn={this.hideReg}><Register toLogin={this.toggle.bind(this)} /></Layer>:''}
             </div>
         )
     }

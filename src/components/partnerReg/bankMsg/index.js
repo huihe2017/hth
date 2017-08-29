@@ -31,7 +31,7 @@ class Bankmsg extends React.Component{
         ];
         return(
             <div className={style.personal} >
-                <Title content={"/银行信息【必填】"} cc={"#5262ff"}/>
+                <Title content={"/银行信息【必填】"} color={"#5262ff"}/>
                 <div className={style.perimport}>
                     <Input st={'100%'} pla={"结算户名"} tip={"文案待定"}/>
                     <Input st={'100%'} pla={"结算卡号"} tip={"文案待定"}/>

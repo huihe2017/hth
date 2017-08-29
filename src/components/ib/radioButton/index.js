@@ -10,11 +10,22 @@ class RadioButton extends React.Component{
         }
 	}
 	render(){
+		return(
+			<div className={style.buttongrounp}>
+				{
+					this.props.data.map((v,i)=>{
+						if(v.checked){
+                            return <span className={style.checked}>{v.value}</span>
+						}else {
+                            return <span>{v.value}</span>
+						}
+					})
+				}
+			</div>
+		)
+	}
 
-			return(
-				<div className={style.wrap} ></div>
-			)
 
-		}
+
 }
 export default RadioButton;

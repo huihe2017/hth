@@ -1,0 +1,25 @@
+
+.buttongrounp{
+    width: 240px;
+    height: 40px;
+    border: 1px solid #5262ff;
+    border-radius: 5px;
+}
+.buttongrounp>span{
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 38px;
+    font-size: 14px;
+    color: #5262ff;
+}
+.buttongrounp>span:first-child{
+    border-radius: 3px 0 0 3px;
+}
+.buttongrounp>span:last-child{
+    border-radius: 0 3px 3px 0;
+}
+.buttongrounp>.checked{
+    background-color: #5262ff;
+    color: #fff;
+}

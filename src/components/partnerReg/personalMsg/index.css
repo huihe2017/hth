@@ -2,6 +2,8 @@
 .personal{
     width: 1010px;
     margin: 0 auto;
+    clear: both;
+    height: 424px;
 }
 .perimport{
     width: 520px;

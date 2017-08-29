@@ -15,7 +15,8 @@ export default class Header extends Component {
             isShowLogin: false,
             isShowReg: false,
             isFixed: false,
-            isFixedAbled:false
+            isFixedAbled:false,
+            otherStyle:false
         }
         this.hideLogin = this.hideLogin.bind(this)
         this.hideReg = this.hideReg.bind(this)

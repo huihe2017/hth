@@ -13,7 +13,9 @@
     position: fixed;
     background: #fff;
 }
-
+.header.otherStyle {
+    color: #656b6f;
+}
 .logo {
     float: left;
     padding-top: 15px;

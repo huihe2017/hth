@@ -5,12 +5,21 @@
     color:#5262ff;
     border-color:#5262ff
 }
+.inp .isfocus1{
+    border-color:#5262ff
+}
 .inp .error{
     color:#f59294;
     border-color:#f59294
 }
+.inp .error1{
+    border-color:#f59294
+}
 .inp .default{
     color:#dfdce4;
+    border-color:#dfdce4
+}
+.inp .default1{
     border-color:#dfdce4
 }
 .inp>span{

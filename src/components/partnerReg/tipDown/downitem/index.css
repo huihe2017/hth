@@ -18,6 +18,9 @@
 .li span:last-child{
     float: right;
     margin-right: 10px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 .li span:first-child{
     float: left;

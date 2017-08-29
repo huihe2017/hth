@@ -1,12 +1,16 @@
 .prephone{
-    position: relative;
+
 }
 .prephone>span{
     color:#dfdce4;
     font-size: 12px;
-    line-height: 12px;
+    line-height: 40px;
     text-align: left;
     margin-bottom: 14px;
+}
+.select{
+    position: relative;
+    height: 40px;
 }
 .sedphone{
     height: 40px;
@@ -18,8 +22,15 @@
 }
 .sedphone>span{
     float: left;
+    width: 85%;
+    height: 40px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 .sedphone>i{
+    text-align: right;
+    width: 15%;
     font-size: 20px;
     float: right;
     line-height: 40px;

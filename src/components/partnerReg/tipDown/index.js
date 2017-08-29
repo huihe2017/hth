@@ -2,6 +2,7 @@ import React from "react";
 import style from "./index.css";
 import Prephone from "./downitem/index";
 
+
 class Tipdown extends React.Component{
     constructor(props){
         super(props);
@@ -11,14 +12,27 @@ class Tipdown extends React.Component{
 
             isShow:false,
             prephone:this.props.data,
+            isringht:true,
             border:{
                 width:this.props.ww,
                 border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
+                boxShadow:"0 0 5px 5px transparent",
+                borderRadius:5
             }
         }
     }
     render(){
+        let rig={
+            color:"#dfdce4",
+        };
+        let error={
+            color:"#f59294",
+        };
+        let err={
+
+            width:this.props.ww,
+            border:"1px solid #f59294",
+        };
         let sss={
             display:"none"
         };
@@ -33,22 +47,26 @@ class Tipdown extends React.Component{
         };
         return(
             <div className={style.prephone} >
-                <span>
-                    文案
+
+                <span style={this.state.isringht?rig:error}>
+                    {this.props.tip}
                 </span>
-                <div className={style.sedphone} onClick={this.prePhone.bind(this)} style={this.state.border}>
-                    <span style={this.state.issshow?sc:ssc}>
-                        {this.state.show}
-                    </span>
-                    <i className="fa fa-angle-down"></i>
+                <div className={style.select}>
+                    <div className={style.sedphone} onClick={this.prePhone.bind(this)} style={this.state.isringht?this.state.border:err}>
+                        <span title={this.state.show} style={this.state.issshow?sc:ssc}>
+                            {this.state.show}
+                        </span>
+                        <i className="fa fa-angle-down"></i>
+                    </div>
+                    <ul className={style.selphone} style={this.state.isShow?ss:sss}>
+                        {
+                            this.state.prephone.map((v,i)=>{
+                                return <Prephone key={i} data={v} get={this.getNum.bind(this)} />
+                            })
+                        }
+                    </ul>
                 </div>
-                <ul className={style.selphone}  style={this.state.isShow?ss:sss}>
-                    {
-                        this.state.prephone.map((v,i)=>{
-                            return <Prephone key={i} data={v} get={this.getNum.bind(this)} />
-                        })
-                    }
-                </ul>
+
             </div>
         )
     }
@@ -64,7 +82,8 @@ class Tipdown extends React.Component{
                     border:{
                         width:this.props.ww,
                         border:"1px solid #5262ff",
-                        boxShadow:"0 0 5px 5px rgba(82,98,255,0.1)"
+                        boxShadow:"0 0 5px 5px rgba(82,98,255,0.1)",
+                        borderRadius:"5px 5px 0 0"
                     }
                 });
             } else {
@@ -73,7 +92,8 @@ class Tipdown extends React.Component{
                     border:{
                         width:this.props.ww,
                         border:"1px solid #dfdce4",
-                        boxShadow:"0 0 5px 5px transparent"
+                        boxShadow:"0 0 5px 5px transparent",
+                        borderRadius:5
                     }
                 });
             }
@@ -89,7 +109,8 @@ class Tipdown extends React.Component{
             border:{
                 width:this.props.ww,
                 border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
+                boxShadow:"0 0 5px 5px transparent",
+                borderRadius:5
             }
         });
         this.flag=false;
@@ -109,3 +130,6 @@ class Tipdown extends React.Component{
 }
 
 export default Tipdown;
+
+
+//40  120  60

@@ -14,7 +14,7 @@ class FormItem extends React.Component{
                 <span className={style[this.state.cla]}>
                     {this.props.tip}
                 </span>
-                <input type="text" placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla]}/>
+                <input type="text" placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]}/>
             </div>
         )
     }

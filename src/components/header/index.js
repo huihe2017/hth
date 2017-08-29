@@ -68,7 +68,7 @@ export default class Header extends Component {
         return (
             <div>
                 <div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>
-                    <div className={style.logo+' fff'}>
+                    <div className={style.logo}>
                         <img src={require("./logo.png")}/>
                     </div>
                     <div className={style.headerRight}>

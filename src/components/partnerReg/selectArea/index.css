@@ -1,7 +1,6 @@
 
 .selarea{
     width: 100%;
-    height: 80px;
 }
 .selarea>span{
     color:#dfdce4;
@@ -10,25 +9,34 @@
     text-align: left;
     margin-bottom: 14px;
 }
+
+.martop{
+    margin-top: 10px;
+}
 .perimport{
     width: 100%;
     clear: both;
-    position: relative;
 }
 .perimport>.sheng{
     float: left;
     margin-right: 20px;
 }
 .perimport>.shi{
-    position: absolute;
+    float: left;
     margin-right: 20px;
-    top: 0;
-    left: 180px;
 }
 .perimport>.hang{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 160px;
+    float: left;
+}
 
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+.clearfloat {
+    zoom: 1
 }

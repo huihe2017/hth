@@ -4,12 +4,6 @@ import Input from "../input/index";
 import Tipdown from "../tipDown/index"
 
 class Selectarea extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-           tip:"文案待定"
-        }
-    }
     render(){
         let bank1=[
             {
@@ -33,19 +27,22 @@ class Selectarea extends React.Component{
                 value:"中国农业银行啊啊"
         }
         ];
+        let w={
+            width:this.props.width3
+        }
         return(
             <div className={style.selarea} >
                 <span>
-                    {this.state.tip}
+                    {this.props.tip}
                 </span>
-                <div className={style.perimport}>
+                <div className={style.perimport+' '+style.clearfloat}>
                     <div className={style.sheng}>
-                        <Tipdown show={"请选择省份"} data={bank1} ww={160}/>
+                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.width1}/>
                     </div>
                     <div className={style.shi}>
-                        <Tipdown show={"请选择市区"} data={bank1} ww={160}/>
+                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.width2}/>
                     </div>
-                    <div className={style.hang}>
+                    <div className={style.hang} style={w}>
                         <Input pla={"开户行"} />
                     </div>
 

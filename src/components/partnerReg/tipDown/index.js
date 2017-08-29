@@ -43,7 +43,7 @@ class Tipdown extends React.Component{
             color:"#3b3d40",
         };
         let ssc={
-            color:"#eef0ff",
+            color:"#dfdce4",
         };
         return(
             <div className={style.prephone} >

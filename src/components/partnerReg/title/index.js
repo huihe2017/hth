@@ -4,7 +4,7 @@ import style from "./index.css";
 class Ptitle extends React.Component{
     render(){
         let styles={
-            color:this.props.cc
+            color:this.props.color
         }
         return(
             <div className={style.ptitle} style={styles}>

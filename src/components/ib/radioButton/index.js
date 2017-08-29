@@ -26,6 +26,5 @@ class RadioButton extends React.Component{
 	}
 
 
-
 }
 export default RadioButton;

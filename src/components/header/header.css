@@ -9,12 +9,21 @@
 }
 
 .header.fixed {
-    color: #656b6f;
+    /*color: #656b6f;*/
+    /*background: #fff;*/
     position: fixed;
-    background: #fff;
+
+}
+
+.header.absolute {
+    position: absolute;
+}
+.header.relative {
+    position: relative;
 }
 .header.otherStyle {
     color: #656b6f;
+    background: #fff;
 }
 .logo {
     float: left;

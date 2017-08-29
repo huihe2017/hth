@@ -3,7 +3,7 @@ import SideBar from './sideBar'
 import Login from '../login'
 import Register from '../register'
 import Layer from '../renderLayer'
-
+import { browserHistory } from 'react-router';
 import style from './header.css'
 
 export default class Header extends Component {
@@ -14,8 +14,9 @@ export default class Header extends Component {
             isShowSideBar: false,
             isShowLogin: false,
             isShowReg: false,
-            isFixed: false,
+            // isFixed: false,
             isFixedAbled:false,
+            position:'relative',
             otherStyle:false
         }
         this.hideLogin = this.hideLogin.bind(this)
@@ -23,24 +24,34 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.params)
-        let dance = document.body.clientWidth * 0.46
-        let danceCopy = dance
-
-        window.onscroll = (e) => {
-            //console.log(e)
-            //console.log(document.body.scrollTop)
-            if (document.body.scrollTop < danceCopy) {
-                this.setState({isFixed: false})
-                return false
-            }
-            if (document.body.scrollTop - dance < 0) {
-                this.setState({isFixed: true})
-            } else {
-                this.setState({isFixed: false})
-            }
-            dance = document.body.scrollTop
+        if(browserHistory.getCurrentLocation().pathname === '/'){
+            this.setState({position: 'absolute'})
+            this.setState({isFixedAbled: true})
         }
+        if(this.state.isFixedAbled){
+            let dance = document.body.clientWidth * 0.46
+            let danceCopy = dance
+
+            window.onscroll = (e) => {
+                //console.log(e)
+                //console.log(document.body.scrollTop)
+                if (document.body.scrollTop < danceCopy) {
+                    this.setState({position: 'absolute'})
+                    this.setState({otherStyle: false})
+                    return false
+                }
+                if (document.body.scrollTop - dance < 0) {
+                    this.setState({position: 'fixed'})
+                    this.setState({otherStyle: true})
+                } else {
+                    this.setState({position: 'absolute'})
+                    this.setState({otherStyle: false})
+                }
+                dance = document.body.scrollTop
+            }
+        }
+
+
     }
 
     hideLogin() {
@@ -68,9 +79,13 @@ export default class Header extends Component {
         // }
         return (
             <div>
-                <div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>
+                {/*<div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>*/}
+                <div className= {this.state.otherStyle?( style.header + ' ' + style[this.state.position]+ ' ' + style.otherStyle):( style.header + ' ' + style[this.state.position])}>
                     <div className={style.logo}>
-                        <img src={require("./logo.png")}/>
+                        {
+                            this.state.otherStyle?<img src={require("./logoO.png")}/>:<img src={require("./logo.png")}/>
+                        }
+
                     </div>
                     <div className={style.headerRight}>
                         <a className={style.checked}>中文</a>

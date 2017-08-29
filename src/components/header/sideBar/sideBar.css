@@ -6,6 +6,10 @@
     background-color:rgba(51,51,51,0.3);
 
 }
+.sideBar a{
+   color: #fff;
+
+}
 .sideBar.hide {
     right: -355px;
 }

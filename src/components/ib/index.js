@@ -20,6 +20,7 @@ class Ib extends React.Component {
                 </TitValueBox>
                 <Input pla="输入美元" unit={true}/>
                 <Input pla="输入MT4ID查询" search={true}/>
+                <Input pwa={true} />
                 <Title color="#000" content="abeswgew"/>
                 <RadioButton data={[{key: 1, value: '人民币', checked: true}, {key: 2, value: '美国'}]}/>
                 <br/><br/>

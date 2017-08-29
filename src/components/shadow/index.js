@@ -6,6 +6,7 @@ class Shadow extends Component {
     componentDidMount() {
         this.refs['shadow'].style.width = document.body.offsetWidth + 'px'
         this.refs['shadow'].style.height = document.body.scrollHeight + 'px'
+        alert(document.body.scrollHeight + 'px')
     }
 
     render() {

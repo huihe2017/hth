@@ -52,10 +52,7 @@ class Register extends React.Component{
         return(
             <div className={style.login} style={this.state.styless}>
                 <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow?ss:sss}></div>
-                <div className={style.off} onClick={this.off.bind(this)}>
-                    <span></span>
-                    <span></span>
-                </div>
+
                 <div className={style.logincontent}>
                     <div className={style.lctitle}>
                         注册海豚汇账号

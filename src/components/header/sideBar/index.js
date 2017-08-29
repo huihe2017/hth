@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RenderLayer from '../../renderLayer'
+import Layer from '../../renderLayer'
 
 import Shadow from '../../shadow'
 
@@ -23,7 +23,7 @@ class SideBar extends Component {
                     <div>个人中心</div>
 
                 </div>
-                {this.props.show?<RenderLayer><Shadow/></RenderLayer>:''}
+                {this.props.show?<Layer></Layer>:''}
 
             </div>
         )

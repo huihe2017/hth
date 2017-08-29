@@ -33,11 +33,12 @@ export default class RenderLayer extends Component {
 class Dom extends Component {
     componentDidMount() {
         this.refs['wrap'].style.position = 'absolute'
+        this.refs['wrap'].style.top = '0px'
         let layerStyle = {
-            position: 'absolute',
             width: this.refs['wrap'].offsetWidth,
             height: this.refs['wrap'].offsetHeight,
             top: '50%',
+            display:'block',
             left: '50%',
             marginLeft: -this.refs['wrap'].offsetWidth / 2,
             marginTop: -this.refs['wrap'].offsetHeight / 2 + document.body.scrollTop,
@@ -56,9 +57,9 @@ class Dom extends Component {
     render() {
         return (
             <div>
-                <div ref="wrap" style={this.state && this.state.layerStyle}>
+                <div ref="wrap" className={style.none} style={this.state && this.state.layerStyle}>
                     {this.props.children}
-                    {!this.props.close ?
+                    {!this.props.close && this.props.children ?
                         <span onClick={this.closeHandle.bind(this)} className={style.close}>+</span> : ''}
                 </div>
                 <Shadow closeHandle={this.closeHandle.bind(this)}/>

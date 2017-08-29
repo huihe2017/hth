@@ -18,9 +18,7 @@ class TitValueBox extends React.Component {
                 </span>
                 <div className={style.titval}>
                     {
-                        React.Children.map(this.props.children, function (child) {
-                            return <li>{child}</li>;
-                        })
+                        this.props.children
                     }
                 </div>
             </div>

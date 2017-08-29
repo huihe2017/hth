@@ -3,24 +3,25 @@ import style from "./index.css"
 import TitValueBox from './titValueBox'
 import Input from '../partnerReg/input'
 import Title from '../partnerReg/title'
-
+import RadioButton from './radioButton'
 
 class Ib extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
-    render()
-    {
+
+    render() {
         return (
             <div className={style.wrap}>
                 <br/><br/>
-                <TitValueBox tit="交易类型" >
+                <TitValueBox tit="交易类型">
                     <div>中国银行</div>
                 </TitValueBox>
-                <Input pla="输入美元" unit={true} />
-                <Input pla="输入MT4ID查询" search={true} />
-                <Title color="#000" content="abeswgew" />
+                <Input pla="输入美元" unit={true}/>
+                <Input pla="输入MT4ID查询" search={true}/>
+                <Title color="#000" content="abeswgew"/>
+                <RadioButton data={[{key: 1, value: '人民币', checked: true}, {key: 2, value: '美国'}]}/>
                 <br/><br/>
             </div>
         )

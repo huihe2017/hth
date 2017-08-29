@@ -1,0 +1,65 @@
+
+.accover{
+    position: relative;
+    padding: 0 20px;
+    padding-top: 48px;
+}
+.acheader{
+    height: 40px;
+    position: relative;
+    margin-bottom: 48px;
+}
+.acheader>.title{
+    width:200px;
+    float: left;
+}
+.acheader>.himport{
+    width: 600px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.himport{
+    clear: both;
+}
+.hileft{
+    width: 120px;
+    float: left;
+    font-size: 16px;
+}
+.hiright{
+    width: 460px;
+    float: right;
+}
+.accontent{
+    border-bottom: 1px solid #dfdce4;
+}
+.appcontent{
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #dfdce4;
+}
+.appcontent>span{
+    color: #5262ff;
+}
+.accfooter{
+    height: 40px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    position: relative;
+    clear: both;
+}
+.accfooter>button{
+    width: 160px;
+    height: 40px;
+    border: 1px solid #5262ff;
+    color: #5262ff;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+}

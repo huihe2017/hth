@@ -103,11 +103,11 @@ class ApplyCommission extends React.Component{
                             此外，客户同意遵守所有适用防止洗钱及反恐融资法例，包括但不限于要求取得或提供充分语气，以了解可能有客户所代表与海豚汇订立任何交易的任何人士身份
                         </span>
                     </div>
-
+                    <div className={style.accfooter}>
                         <button className={style.submit}>
                             提交
                         </button>
-
+                    </div>
 
 				</div>
 			)
@@ -123,5 +123,3 @@ class ApplyCommission extends React.Component{
 
 }
 export default ApplyCommission;
-
-//20   48  48  60  40

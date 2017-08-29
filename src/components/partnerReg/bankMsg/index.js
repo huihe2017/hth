@@ -36,7 +36,7 @@ class Bankmsg extends React.Component{
                     <Input st={'100%'} pla={"结算户名"} tip={"文案待定"}/>
                     <Input st={'100%'} pla={"结算卡号"} tip={"文案待定"}/>
                     <Tipdown show={"请选择银行"} data={bank1} ww={'100%'} tip={"文案待定"}/>
-                    <Selectarea  width1={160} width2={160} width3={160} tip={"文案待定"}/>
+                    <Selectarea widthProv={160} widthCity={160} widthKhh={160} tip={"文案待定"}/>
                 </div>
                 <Webfile title={"上传银行卡照片"} putword={putword1} tipword={tipword1}/>
             </div>

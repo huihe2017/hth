@@ -28,7 +28,7 @@ class Selectarea extends React.Component{
         }
         ];
         let w={
-            width:this.props.width3
+            width:this.props.widthKhh
         }
         return(
             <div className={style.selarea} >
@@ -37,10 +37,10 @@ class Selectarea extends React.Component{
                 </span>
                 <div className={style.perimport+' '+style.clearfloat}>
                     <div className={style.sheng}>
-                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.width1}/>
+                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.widthProv}/>
                     </div>
                     <div className={style.shi}>
-                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.width2}/>
+                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.widthCity}/>
                     </div>
                     <div className={style.hang} style={w}>
                         <Input pla={"开户行"} />

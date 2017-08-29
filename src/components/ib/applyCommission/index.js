@@ -70,12 +70,14 @@ class ApplyCommission extends React.Component{
                         </TitValueBox>
                         <TitValueBox tit={"开户行网点"}>
                             <div className={style.martop}>
-                                <Selectarea width1={240} width2={240} width3={120} />
+                                <Selectarea widthProv={240} widthCity={240} widthKhh={120} />
                             </div>
                         </TitValueBox>
                         <TitValueBox tit={"银行账号"}>
 						<span className={style.appcontent}>
-							2395**********1883
+                            {
+                                this.show('2363216574979614')
+                            }
 						</span>
                         </TitValueBox>
                         <TitValueBox tit={"收款人姓名"}>
@@ -115,6 +117,10 @@ class ApplyCommission extends React.Component{
                 checked:!this.state.checked
             })
         }
+        show(e){
+            return e.replace(/(.{5}).*(.{5})/,"$1******$2")
+        }
+
 }
 export default ApplyCommission;
 

@@ -130,6 +130,3 @@ class Tipdown extends React.Component{
 }
 
 export default Tipdown;
-
-
-//40  120  60

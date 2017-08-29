@@ -28,7 +28,7 @@ class Personal extends React.Component{
         ];
         return(
             <div className={style.personal} >
-                <Title content={"/联络人信息"}/>
+                <Title content={"/联络人信息"} cc={"#5262ff"}/>
                 <div className={style.perimport}>
                     <Input st={'100%'} pla={"邮箱"} tip={"联络人姓名需与身份证姓名一致"}/>
                     <Input st={'100%'} pla={"账号名"} tip={"文案待定"}/>

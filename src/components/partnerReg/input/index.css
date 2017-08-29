@@ -44,6 +44,31 @@
     border:1px solid #5262ff;
     box-shadow:0 0 5px 5px rgba(82,98,255,0.1)
 }
+.inp>.import{
+    position: relative;
+}
+.import .dollar{
+    font-size: 18px;
+    line-height: 40px;
+    color: #5262ff;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+.import .search{
+    display: block;
+    height: 40px;
+    width: 60px;
+    border-radius: 0 5px 5px 0;
+    background-color: #5262ff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .tip{
     float: left;
     display: block;

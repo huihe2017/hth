@@ -27,7 +27,7 @@ class Company extends React.Component{
         ];
         return(
             <div className={style.personal} >
-                <Title content={"/公司信息"}/>
+                <Title content={"/公司信息【选填】"} cc={"#5262ff"}/>
                 <div className={style.perimport}>
                     <Input st={'100%'} pla={"公司名"} tip={"文案待定"}/>
                     <Input st={'100%'} pla={"公司地址"} tip={"文案待定"}/>

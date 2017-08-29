@@ -5,16 +5,34 @@ class FormItem extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            cla:"default"
+            cla:"default",
+            search:this.props.search,
+            dollar:this.props.unit
         }
     }
     render(){
+        let dib={
+            display:"block"
+        };
+        let din={
+            display:"none"
+        };
+
         return(
             <div className={style.inp} >
                 <span className={style[this.state.cla]}>
                     {this.props.tip}
                 </span>
-                <input type="text" placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]}/>
+                <div className={style.import}>
+                    <input type="text" placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]}/>
+                    <span className={style.dollar} style={this.state.dollar?dib:din}>
+                        $
+                    </span>
+                    <span className={style.search} style={this.state.search?dib:din}>
+                        <i className="fa fa-search fa-lg"></i>
+                    </span>
+                </div>
+
             </div>
         )
     }

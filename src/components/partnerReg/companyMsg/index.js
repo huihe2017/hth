@@ -6,6 +6,9 @@ import Input from "../input/index";
 
 
 class Company extends React.Component{
+    change(vaildMsg, name) {
+        this.props.change(vaildMsg, 'companyMsg', name)
+    }
     render(){
         let data1=[{
             value:["中国大陆","+86"],
@@ -29,12 +32,47 @@ class Company extends React.Component{
             <div className={style.personal} >
                 <Title content={"/公司信息【选填】"} color={"#5262ff"}/>
                 <div className={style.perimport}>
-                    <Input st={'100%'} pla={"公司名"} tip={"文案待定"}/>
-                    <Input st={'100%'} pla={"公司地址"} tip={"文案待定"}/>
-                    <Input st={'100%'} pla={"统一公司信用代码"} tip={"文案待定"}/>
+                    <Input
+                        st={'100%'}
+                        pla={"公司名"}
+                        tip={"文案待定"}
+                        lebal="companyName"
+                        cla={this.props.data.companyName.state}
+                        change={this.change.bind(this)}
+                    />
+                    <Input
+                        st={'100%'}
+                        pla={"公司地址"}
+                        tip={"文案待定"}
+                        lebal="companyAddress"
+                        cla={this.props.data.companyAddress.state}
+                        change={this.change.bind(this)}
+                    />
+                    <Input
+                        st={'100%'}
+                        pla={"统一公司信用代码"}
+                        tip={"文案待定"}
+                        lebal="companyCode"
+                        cla={this.props.data.companyCode.state}
+                        change={this.change.bind(this)}
+                    />
 
-                    <Input st={'100%'} pla={"组织机构代码"} tip={"文案待定"}/>
-                    <Input st={'100%'} pla={"法人"} tip={"文案待定"}/>
+                    <Input
+                        st={'100%'}
+                        pla={"组织机构代码"}
+                        tip={"文案待定"}
+                        lebal="companyGrunp"
+                        cla={this.props.data.companyGrunp.state}
+                        change={this.change.bind(this)}
+                    />
+                    <Input
+                        st={'100%'}
+                        pla={"法人"}
+                        tip={"文案待定"}
+                        lebal="companyBoss"
+                        cla={this.props.data.companyBoss.state}
+                        change={this.change.bind(this)}
+                    />
                 </div>
                 <div className={style.upfile}>
                     <Webfile title={"上传营业执照照片"} putword={putword1} tipword={tipword1}/>

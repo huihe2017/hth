@@ -28,27 +28,10 @@ class Login extends React.Component{
         }
     }
     render(){
-        // var usernmerules: [
-        //     {
-        //         pattern: function (value) {
-        //             return value.length > 0;
-        //         },
-        //         error: '请输入用户名'
-        //     },
-        //     {
-        //         pattern: /^.{1,4}$/,
-        //         error: '用户名最多4个字符'
-        //     }
-        // ]
-        let sss={
-            display:"none"
-        };
-        let ss={
-            display:"block"
-        };
+
         return(
             <div className={style.llogin}  style={this.state.styless}>
-                <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow?ss:sss}></div>
+                <div className={style.mmb}  style={this.state.isShow?ss:sss}></div>
 
 
                 <div className={style.llogincontent}>
@@ -99,62 +82,9 @@ class Login extends React.Component{
         )
     }
 
-    off(){
-        this.setState({
-            styless:{
-                display:"none"
-            }
-        })
-    }
-    //点击切换电话前缀的显示状态
-    prePhone(e){
-        this.setState({
-            isShow:true,
-        },()=>{
-            if(this.state.isShow){
-                this.setState({
-                    isShow:true,
-                    border:{
-                        border:"1px solid #5262ff",
-                        boxShadow:"0 0 5px 5px rgba(82,98,255,0.1)"
-                    }
-                });
-            } else {
-                this.setState({
-                    isShow:false,
-                    border:{
-                        border:"1px solid #dfdce4",
-                        boxShadow:"0 0 5px 5px transparent"
-                    }
-                });
-            }
-        })
 
-    }
 
-    //获取点击所得电话前缀，并恢复默认样式
-    getNum(e){
-        this.setState({
-            sednum: {
-                num: e
-            },
-            isShow:false,
-            border:{
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
-            }
-        });
-        this.flag=false;
-    }
-    isshow(){
-        this.setState({
-            isShow:false,
-            border:{
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
-            }
-        })
-    }
+
 
 
 

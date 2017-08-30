@@ -7,7 +7,7 @@ class Selphone extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            cla:"default"
+            cla:this.props.cla
         }
     }
 
@@ -31,7 +31,7 @@ class Selphone extends React.Component{
                 </span>
                 <div className={style.conimport}>
                     <Tipdown data={data2} ww={100}/>
-                    <Input pla={"联络电话"} ww={400} sta={this.state.cla} jug={this.isfoucs.bind(this)}/>
+                    <Input pla={"联络电话"} ww={400} pattern={this.props.pattern} cla={this.props.cla} sta={this.state.cla} jug={this.isfoucs.bind(this)}/>
                 </div>
 
             </div>

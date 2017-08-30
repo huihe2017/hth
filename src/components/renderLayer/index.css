@@ -8,8 +8,10 @@
     width: 21px;
     height: 21px;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 12px;
+    top: 11px;
     transform: rotate(45deg);
     cursor: pointer;
+    font-size: 41px;
+    color: #dfdce4;
 }

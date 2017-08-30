@@ -6,12 +6,13 @@ import PageHome from './pageHome'
 import PartnerReg from './partnerReg'
 import Ib from './ib'
 import PartnerLogin from './partnerLogin'
-
+import HeadRR from './headRR'
 export default class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                {/*<Header/>*/}
+                <HeadRR/>
                 <Route path="/" exact  component={PageHome}/>
                 <Route path="/partnerReg" component={PartnerReg}/>
                 <Route path="/ib" component={Ib}/>

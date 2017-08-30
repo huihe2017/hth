@@ -7,7 +7,9 @@ class FormItem extends React.Component{
         this.state = {
             cla:"default",
             search:this.props.search,
-            dollar:this.props.unit
+            dollar:this.props.unit,
+            edit:this.props.edit||true,
+            val:this.props.val||""
         }
     }
     render(){
@@ -24,7 +26,7 @@ class FormItem extends React.Component{
                     {this.props.tip}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]} value={this.state.val} disabled={this.state.edit?"":"disabled"}/>
                     <span className={style.dollar} style={this.state.dollar?dib:din}>
                         $
                     </span>
@@ -32,7 +34,6 @@ class FormItem extends React.Component{
                         <i className="fa fa-search fa-lg"></i>
                     </span>
                 </div>
-
             </div>
         )
     }

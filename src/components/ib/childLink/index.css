@@ -1,0 +1,82 @@
+
+.applycom{
+    padding: 0 20px;
+}
+.title{
+    margin: 48px 0;
+}
+.appcc{
+    border-top: 1px solid #dfdce4;
+    overflow: hidden;
+}
+.appcc>.import{
+    height: 70px;
+    width: 100%;
+}
+.importt{
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    color: #3b3d40;
+    width: 200px;
+    text-align: left;
+    float: left;
+}
+.importc{
+    line-height: 40px;
+    float: left;
+    padding: 10px 0;
+}
+.input{
+    width: 620px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+}
+.butt{
+    float: left;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.butt>button{
+    width: 120px;
+    height: 40px;
+    border: 1px solid #5262ff;
+    color: #5262ff;
+    line-height: 36px;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.creat{
+    width: 450px;
+    float: left;
+}
+.total{
+    float: left;
+}
+
+
+
+
+
+.submit{
+    width: 160px;
+    height: 40px;
+    border: 1px solid #5262ff;
+    color: #5262ff;
+    font-size: 18px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+    cursor: pointer;
+}
+

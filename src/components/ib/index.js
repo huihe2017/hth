@@ -6,6 +6,7 @@ import Title from '../partnerReg/title'
 import RadioButton from './radioButton'
 import ApplyCommission from "./applyCommission";
 import AccountOverview from "./accountOverview";
+import GridTable from './gridTable'
 
 class Ib extends React.Component {
     constructor(props) {
@@ -18,6 +19,22 @@ class Ib extends React.Component {
             <div className={style.wrap}>
                 <ApplyCommission/>
                 <AccountOverview/>
+                <GridTable data={{
+                    value: [{
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名'
+                    }, {
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名',
+                        username: '用户名'
+                    }],
+                    tit:['用户名','用户名','用户名','用户名','用户名']
+                }}/>
             </div>
         )
     }

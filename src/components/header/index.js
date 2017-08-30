@@ -28,7 +28,7 @@ export default class Header extends Component {
             this.setState({position: 'absolute'})
             this.setState({isFixedAbled: true})
         }
-        if(this.state.isFixedAbled){
+        if(browserHistory.getCurrentLocation().pathname === '/'){
             let dance = document.body.clientWidth * 0.46
             let danceCopy = dance
 

@@ -11,7 +11,7 @@ class GridTable extends React.Component{
 	}
 	render(){
         let wid={
-            width:960/this.props.tit.length
+            width:1/this.props.tit.length+"%"
         };
 		return(
 			<div className={style.gridtable} >

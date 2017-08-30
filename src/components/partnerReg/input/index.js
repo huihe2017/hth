@@ -5,12 +5,23 @@ class FormItem extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            cla:"default",
+            cla:this.props.cla,
             search:this.props.search,
-            dollar:this.props.unit,
-            edit:this.props.edit||true,
-            val:this.props.val||""
+            dollar:this.props.unit
         }
+        this.onchangeHandle = this.onchangeHandle.bind(this)
+    }
+    onchangeHandle(e){
+        let v = e.target.value
+        let state = 'error';
+        console.log(v)
+        if(this.props.pattern){
+            this.props.pattern.test(v)?(state='default'):''
+        }else {
+            state='isfocus'
+        }
+
+        this.props.change({value:v,state,firstEdit:false},this.props.lebal)
     }
     render(){
         let dib={
@@ -19,14 +30,14 @@ class FormItem extends React.Component{
         let din={
             display:"none"
         };
-
+        this.props.firstEdit?(this.props.cla='default'):''
         return(
             <div className={style.inp} >
-                <span className={style[this.state.cla]}>
+                <span className={style[this.props.cla]}>
                     {this.props.tip}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.state.cla+"1"]} value={this.state.val} disabled={this.state.edit?"":"disabled"}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.props.cla+"1"]}/>
                     <span className={style.dollar} style={this.state.dollar?dib:din}>
                         $
                     </span>
@@ -34,6 +45,7 @@ class FormItem extends React.Component{
                         <i className="fa fa-search fa-lg"></i>
                     </span>
                 </div>
+
             </div>
         )
     }

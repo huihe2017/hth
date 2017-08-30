@@ -1,6 +1,6 @@
 
 .gridtable{
-    width: 960px;
+    width: 100%;
     border: 1px solid #dfdce4;
     border-radius: 5px;
 }
@@ -9,7 +9,7 @@
     border-spacing:0;
 }
 .gridtable tr{
-    height: 34px;
+    height: 40px;
     width: 100%;
     border-bottom: 1px solid #dfdce4;
 }
@@ -20,15 +20,21 @@
     border-bottom: none;
 }
 .gridtable thead>tr>td{
-    height: 35px;
+    height: 40px;
     width: 100%;
     color: #3b3d40;
 }
 .gridtable td{
-    font-size: 12px;
+
     color: #dfdce4;
     text-align: center;
     border-right: 1px solid #dfdce4;
+}
+.gridtable thead{
+    font-size: 16px;
+}
+.gridtable tbody{
+    font-size: 14px;
 }
 .gridtable tr>td:last-child{
     border-right: none;

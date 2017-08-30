@@ -19,21 +19,34 @@ class Ib extends React.Component {
             <div className={style.wrap}>
                 <ApplyCommission/>
                 <AccountOverview/>
-                <GridTable tit={['用户名', '用户名', '用户名', '用户名', '用户名']} data={{
-                    value: [{
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名'
-                    }, {
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名',
-                        username: '用户名'
-                    }]
-                }}/>
+                <GridTable tit={['账户名', '用户名', '激活时间', '激活结果']} data={
+                    [
+                        {
+                            account:'Young',
+                            username: '用户名',
+                            time:'2016-10-31 09:19:31',
+                            result:'成功'
+                        },
+                        {
+                            account:'Young',
+                            username: '用户名',
+                            time:'2016-10-32 09:19:31',
+                            result:'成功'
+                        },
+                        {
+                            account:'Young',
+                            username: '用户名',
+                            time:'2016-10-33 09:19:31',
+                            result:'成功'
+                        },
+                        {
+                            account:'Young',
+                            username: '用户名',
+                            time:'2016-10-34 09:19:31',
+                            result:'成功'
+                        }
+                    ]
+                }/>
             </div>
         )
     }

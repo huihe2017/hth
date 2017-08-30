@@ -10,11 +10,40 @@ class GridTable extends React.Component{
         }
 	}
 	render(){
+        let wid={
+            width:960/this.props.tit.length
+        };
+		return(
+			<div className={style.gridtable} >
+                <table >
+                    <thead>
+                        <tr>
+                            {
+                                this.props.tit.map((v)=>{
+                                    return <td style={wid}>{v}</td>
+                                })
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {
+                                this.props.data.map((v,i)=>{
+                                    return this.foreach(v)
 
-			return(
-				<div className={style.wrap} ></div>
-			)
+                                })
+                            }
+                    </tbody>
+                </table>
+			</div>
+		)
+	}
+	foreach(e){
+        let dom = [];
+	    for(let i in e){
+            dom.push(<td>{e[i]}</td>)
+        }
+        return <tr>{dom}</tr>
+    }
 
-		}
 }
 export default GridTable;

@@ -79,21 +79,21 @@ class ApplyCommission extends React.Component{
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"出佣金额"} wid={180}>
+                            <TitValueBox tit={"出佣金额"} wid={196}>
                                 <div className={style.inputc}>
                                     <Input pla="至少10美元"/>
                                 </div>
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"开户行网点"} wid={180}>
+                            <TitValueBox tit={"开户行网点"} wid={196}>
                                 <div className={style.martop}>
                                     <Selectarea widthProv={240} widthCity={240} widthKhh={120} />
                                 </div>
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"银行账号"} wid={180}>
+                            <TitValueBox tit={"银行账号"} wid={196}>
 						<span className={style.appcontent}>
                             {
                                 this.show('2363216574979614')
@@ -102,21 +102,21 @@ class ApplyCommission extends React.Component{
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"收款人姓名"} wid={180}>
+                            <TitValueBox tit={"收款人姓名"} wid={196}>
 						<span className={style.appcontent}>
 							福德宝投资有限公司
 						</span>
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"银行SwiftCode"} wid={180}>
+                            <TitValueBox tit={"银行SwiftCode"} wid={196}>
 						<span className={style.appcontent}>
 							HASEHKHH
 						</span>
                             </TitValueBox>
                         </div>
                         <div className={style.apccc}>
-                            <TitValueBox tit={"输入密码"} wid={180}>
+                            <TitValueBox tit={"输入密码"} wid={196}>
                                 <div className={style.psd}>
                                     <Input pwa={true} />
                                 </div>

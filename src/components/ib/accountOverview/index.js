@@ -46,35 +46,35 @@ class AccountOverview extends React.Component{
                 </div>
                 <div className={style.accontent}>
                     <div className={style.acccontent}>
-                        <TitValueBox tit={"代理姓名"} wid={180}>
+                        <TitValueBox tit={"代理姓名"} wid={196}>
 						<span className={style.appcontent}>
 							福德宝投资有限公司
 						</span>
                         </TitValueBox>
                     </div>
                     <div className={style.acccontent}>
-                        <TitValueBox tit={"客户总量"} wid={180}>
+                        <TitValueBox tit={"客户总量"} wid={196}>
 						<span className={style.appcontent}>
 							<span>1</span>（本月新增：<span>0</span>）
 						</span>
                         </TitValueBox>
                     </div>
                     <div className={style.acccontent}>
-                        <TitValueBox tit={"本月返佣"} wid={180}>
+                        <TitValueBox tit={"本月返佣"} wid={196}>
 						<span className={style.appcontent}>
 							<span>$0.00</span>（可用余额：<span>$0</span>）
 						</span>
                         </TitValueBox>
                     </div>
                     <div className={style.acccontent}>
-                        <TitValueBox tit={"待出佣金额"} wid={180}>
+                        <TitValueBox tit={"待出佣金额"} wid={196}>
 						<span className={style.appcontent}>
 							<span>$0.00</span>（共<span>0</span>笔）
 						</span>
                         </TitValueBox>
                     </div>
                     <div className={style.acccontent}>
-                        <TitValueBox tit={"客户活跃"} wid={180}>
+                        <TitValueBox tit={"客户活跃"} wid={196}>
 						<span className={style.appcontent}>
 							<span>0.00%</span>的客户在近7天均在交易
 						</span>

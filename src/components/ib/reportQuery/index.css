@@ -1,17 +1,47 @@
 
-.applycom{
-    padding: 0 20px;
+.reportquery{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
 }
-.title{
-    margin: 48px 0;
+.acheader{
+    height: 40px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.acheader>.title{
+    width:200px;
+    float: left;
+}
+.acheader>.himport{
+    width: 600px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.acccontent{
+    border-top: 1px solid #dfdce4;
+}
+.himport{
+    clear: both;
+}
+.hileft{
+    width: 120px;
+    float: left;
+    font-size: 16px;
+}
+.hiright{
+    width: 460px;
+    float: right;
 }
 .appcc{
+
     border-top: 1px solid #dfdce4;
-    overflow: hidden;
 }
 .appcc>.import{
     height: 70px;
     width: 100%;
+
 }
 .importt{
     height: 70px;
@@ -56,7 +86,18 @@
     float: left;
 }
 .total{
+    float: right;
+    width: 500px;
+}
+.linput{
+    width: 260px;
+    height: 40px;
     float: left;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.gtbale{
+    width: 100%;
 }
 
 .submit{
@@ -76,3 +117,13 @@
     cursor: pointer;
 }
 
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+.clearfloat {
+    zoom: 1
+}

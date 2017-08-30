@@ -2,8 +2,12 @@
 .applycom{
     padding: 0 20px;
 }
-.title{
-    margin: 48px 0;
+.ftitle{
+    margin-top: 48px;
+    margin-bottom: 80px;
+}
+.ltitle{
+    margin: 80px 0;
 }
 .appcc{
     border-top: 1px solid #dfdce4;
@@ -56,7 +60,15 @@
     float: left;
 }
 .total{
+    float: right;
+    width: 500px;
+}
+.linput{
+    width: 260px;
+    height: 40px;
     float: left;
+    cursor: pointer;
+    padding-top: 10px;
 }
 
 .submit{

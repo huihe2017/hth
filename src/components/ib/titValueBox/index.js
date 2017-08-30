@@ -17,7 +17,7 @@ class TitValueBox extends React.Component {
         return (
             <div className={style.titbox}>
                 <span className={style.title} style={wid}>
-                    {this.props.tit+" ："}
+                    {this.props.tit+"："}
                 </span>
                 <div className={style.titval}>
                     {

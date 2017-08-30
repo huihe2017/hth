@@ -23,7 +23,7 @@ class AccountLlink extends React.Component{
                         <TitValueBox tit={"传统开户"} wid={100}>
                             <div className={style.importc}>
                                 <div className={style.input}>
-                                    <Input val="https://github.com/ruanyf/react-demos" edit={false}/>
+                                    <Input val="https://github.com/ruanyf/react-demos" edit={true}/>
                                 </div>
                                 <div className={style.butt}>
                                     <button>
@@ -35,7 +35,7 @@ class AccountLlink extends React.Component{
                         <TitValueBox tit={"快速开户"} wid={100}>
                             <div className={style.importc}>
                                 <div className={style.input}>
-                                    <Input val="https://github.com/ruanyf/react-demos" edit={false}/>
+                                    <Input val="https://github.com/ruanyf/react-demos" edit={true}/>
                                 </div>
                                 <div className={style.butt}>
                                     <button>

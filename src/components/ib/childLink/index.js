@@ -22,7 +22,7 @@ class Childlink extends React.Component{
                         <TitValueBox tit={"子代理申请链接(A级)"} wid={200}>
                             <div className={style.importc}>
                                 <div className={style.input}>
-                                    <Input val="https://github.com/ruanyf/react-demos" edit={false}/>
+                                    <Input val="https://github.com/ruanyf/react-demos" edit={true}/>
                                 </div>
                                 <div className={style.butt}>
                                     <button>
@@ -34,7 +34,7 @@ class Childlink extends React.Component{
                         <TitValueBox tit={"子代理申请链接(B级)"} wid={200}>
                             <div className={style.importc}>
                                 <div className={style.input}>
-                                    <Input val="https://github.com/ruanyf/react-demos" edit={false}/>
+                                    <Input val="https://github.com/ruanyf/react-demos" edit={true}/>
                                 </div>
                                 <div className={style.butt}>
                                     <button>
@@ -46,7 +46,7 @@ class Childlink extends React.Component{
                         <TitValueBox tit={"子代理申请链接(C级)"} wid={200}>
                             <div className={style.importc}>
                                 <div className={style.input}>
-                                    <Input val="https://github.com/ruanyf/react-demos" edit={false}/>
+                                    <Input val="https://github.com/ruanyf/react-demos" edit={true}/>
                                 </div>
                                 <div className={style.butt}>
                                     <button>

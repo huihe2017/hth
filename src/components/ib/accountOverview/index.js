@@ -5,6 +5,7 @@ import Input from '../../partnerReg/input';
 import Title from '../../partnerReg/title';
 import Tipdown from "../../partnerReg/tipDown";
 
+
 class AccountOverview extends React.Component{
     constructor(props){
         super(props);
@@ -26,7 +27,7 @@ class AccountOverview extends React.Component{
                 key:3,
                 value:"组织"
             }
-        ]
+        ];
 		return(
 
 			<div className={style.accover}>

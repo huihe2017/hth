@@ -19,7 +19,7 @@ class Ib extends React.Component {
             <div className={style.wrap}>
                 <ApplyCommission/>
                 <AccountOverview/>
-                <GridTable data={{
+                <GridTable tit={['用户名', '用户名', '用户名', '用户名', '用户名']} data={{
                     value: [{
                         username: '用户名',
                         username: '用户名',
@@ -32,8 +32,7 @@ class Ib extends React.Component {
                         username: '用户名',
                         username: '用户名',
                         username: '用户名'
-                    }],
-                    tit:['用户名','用户名','用户名','用户名','用户名']
+                    }]
                 }}/>
             </div>
         )

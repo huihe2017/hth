@@ -24,9 +24,9 @@ class Prephone extends React.Component{
     selected(e){
         let ww;
         if(this.props.data.value instanceof Array){
-            this.props.get(e[1])
+            this.props.get(e[1],this.props.data.key)
         }else {
-            this.props.get(e)
+            this.props.get(e,this.props.data.key)
         }
     }
 }

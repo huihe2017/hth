@@ -47,7 +47,6 @@ class Tipdown extends React.Component{
         };
         return(
             <div className={style.prephone} >
-
                 <span style={this.state.isringht?rig:error}>
                     {this.props.tip}
                 </span>
@@ -101,7 +100,7 @@ class Tipdown extends React.Component{
 
     }
     //获取点击所得电话前缀，并恢复默认样式
-    getNum(e){
+    getNum(e,r){
         this.setState({
             show:e,
             issshow:true,
@@ -113,6 +112,12 @@ class Tipdown extends React.Component{
                 borderRadius:5
             }
         });
+        if(this.props.change()){
+            this.props.change(r)
+        }else {
+            
+        }
+
         this.flag=false;
     }
     componentWillMount(){

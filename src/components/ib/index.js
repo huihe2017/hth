@@ -8,6 +8,7 @@ import ApplyCommission from "./applyCommission";
 import AccountOverview from "./accountOverview";
 import AccountLlink from "./accountLink";
 import ReportQuery from "./reportQuery";
+import TipDown from "../partnerReg/tipDown"
 
 
 import Childlink from './childLink';
@@ -19,6 +20,20 @@ class Ib extends React.Component {
     }
 
     render() {
+        let data=[
+            {
+                key:1,
+                value:"个人"
+            },
+            {
+                key:2,
+                value:"企业"
+            },
+            {
+                key:3,
+                value:"组织"
+            }
+        ];
         return (
             <div className={style.wrap}>
                 <ApplyCommission/>
@@ -26,9 +41,14 @@ class Ib extends React.Component {
                 <Childlink/>
                 <AccountLlink/>
                 <ReportQuery/>
+                <TipDown lebal="userSeach" show={"搜用户"} data={data} ww={120} change={this.alerte.bind(this)}/>
             </div>
         )
     }
+    alerte(e){
+        console.log(e)
+    }
+
 }
 
 export default Ib;

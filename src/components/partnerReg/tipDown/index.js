@@ -112,12 +112,13 @@ class Tipdown extends React.Component{
                 borderRadius:5
             }
         });
-        if(this.props.change()){
-            this.props.change(r)
+        if(this.props.change){
+            let x={};
+            x[this.props.lebal]=r;
+            this.props.change(x)
         }else {
-            
-        }
 
+        }
         this.flag=false;
     }
     componentWillMount(){

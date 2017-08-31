@@ -70,6 +70,8 @@ class Partnerreg extends React.Component {
                         value: '',
                         state: 'error'
                     },
+                    state: 'error',
+                    firstEdit: true
                 }
             },
             companyMsg: {

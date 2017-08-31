@@ -44,7 +44,6 @@ class Selphone extends React.Component{
 
 
     tchange(e,t,i){
-        console.log(i)
         qh=e||{
             value:i
         };

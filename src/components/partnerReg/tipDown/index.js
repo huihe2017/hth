@@ -129,7 +129,7 @@ class Tipdown extends React.Component{
                     issshow:true
                 },()=>{return});
                 if(this.props.change){
-                    this.props.change("","",v.value[1])
+                    this.props.change("","",v.key)
                 }else {
 
                 }

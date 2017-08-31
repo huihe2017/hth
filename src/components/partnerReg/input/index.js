@@ -7,11 +7,7 @@ class FormItem extends React.Component{
         this.onchangeHandle = this.onchangeHandle.bind(this)
     }
     onchangeHandle(e){
-        if(this.props.la){
-            this.props.la()
-        }else {
 
-        }
         let v = e.target.value
         let state = 'error';
         console.log(v)
@@ -22,6 +18,11 @@ class FormItem extends React.Component{
         }
 
         this.props.change({value:v,state,firstEdit:false},this.props.lebal)
+        if(this.props.la){
+            this.props.la()
+        }else {
+
+        }
     }
     render(){
         let dib={

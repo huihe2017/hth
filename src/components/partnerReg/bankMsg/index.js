@@ -59,6 +59,9 @@ class Bankmsg extends React.Component {
                         show={"请选择银行"}
                         data={bank1} ww={'100%'}
                         tip={"文案待定"}
+                        lebal="bankChoce"
+                        cla={this.props.data.bankChoce.state}
+                        change={this.change.bind(this)}
                     />
                     <Selectarea
                         widthProv={160}

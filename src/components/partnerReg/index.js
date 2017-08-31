@@ -13,23 +13,23 @@ class Partnerreg extends React.Component {
                 email: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 },
                 userName: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 },
                 contactPerson: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 },
                 phoneMsg: {
                     phone: {
                         value: '',
                         state: 'error',
-                        firstEdit:true
+                        firstEdit: true
                     },
                     qh: {
                         value: ''
@@ -38,19 +38,19 @@ class Partnerreg extends React.Component {
                 sfz: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 }
             },
             bankMsg: {
                 settlementAccount: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 },
                 settlementCardNumber: {
                     value: '',
                     state: 'error',
-                    firstEdit:true
+                    firstEdit: true
                 },
                 bankChoce: {
                     value: '',
@@ -98,11 +98,36 @@ class Partnerreg extends React.Component {
         }
         this.change = this.change.bind(this)
     }
-    change(vaildMsg,type,name){
+
+    change(vaildMsg, type, name) {
         this.state[type][name] = vaildMsg
-        this.setState({state:this.state})
+        this.setState({state: this.state})
         console.log(this.state);
     }
+
+    submitFn() {
+        let personalMsg = this.state.personalMsg
+        let bankMsg = this.state.bankMsg
+        let flag = true
+        for (let s in personalMsg) {
+            personalMsg[s].firstEdit && (personalMsg[s].firstEdit = false)
+            if(personalMsg[s].state === 'error'){
+                flag = false
+            }
+        }
+        for (let s in bankMsg) {
+            bankMsg[s].firstEdit && (bankMsg[s].firstEdit = false)
+            if(bankMsg[s].state === 'error'){
+                flag = false
+            }
+        }
+        this.setState({personalMsg})
+        this.setState({bankMsg})
+        if(flag){
+            alert('提交成功')
+        }
+    }
+
     render() {
         return (
             <div className={style.partreg}>
@@ -110,19 +135,19 @@ class Partnerreg extends React.Component {
                     <input type="file"/>
                 </div>
                 <div className={style.part}>
-                    <Personmsg change={this.change} data = {this.state.personalMsg} />
+                    <Personmsg change={this.change} data={this.state.personalMsg}/>
                 </div>
                 <div className={style.part}>
-                    <Bannkmsg change={this.change} data = {this.state.bankMsg}  />
+                    <Bannkmsg change={this.change} data={this.state.bankMsg}/>
                 </div>
                 <div className={style.part}>
-                    <Companymsg change={this.change} data = {this.state.companyMsg} />
+                    <Companymsg change={this.change} data={this.state.companyMsg}/>
                 </div>
                 <div className={style.prfooter}>
                     <span className={style.protocol}>
                     提交申请即表示您已阅读并同意 <a href="javascript:void (0);">《海豚汇服务协议》</a>
                 </span>
-                    <button className={style.submit}>
+                    <button onClick={this.submitFn.bind(this)} className={style.submit}>
                         提交申请
                     </button>
                 </div>

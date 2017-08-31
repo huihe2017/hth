@@ -9,6 +9,7 @@ import AccountOverview from "./accountOverview";
 import AccountLlink from "./accountLink";
 import ReportQuery from "./reportQuery";
 import TipDown from "../partnerReg/tipDown"
+import Selphone from "../partnerReg/selPhone"
 
 
 import Childlink from './childLink';
@@ -42,10 +43,19 @@ class Ib extends React.Component {
                 <AccountLlink/>
                 <ReportQuery/>
                 <TipDown lebal="userSeach" show={"搜用户"} data={data} ww={120} change={this.alerte.bind(this)}/>
+                <Selphone
+                    lebal="phoneMsg"
+                    change={this.alertee.bind(this)}
+                    pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
+
+                />
             </div>
         )
     }
     alerte(e){
+        console.log(e)
+    }
+    alertee(e){
         console.log(e)
     }
 

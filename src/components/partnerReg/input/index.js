@@ -7,6 +7,11 @@ class FormItem extends React.Component{
         this.onchangeHandle = this.onchangeHandle.bind(this)
     }
     onchangeHandle(e){
+        if(this.props.la){
+            this.props.la()
+        }else {
+
+        }
         let v = e.target.value
         let state = 'error';
         console.log(v)
@@ -46,6 +51,7 @@ class FormItem extends React.Component{
     }
     //失去焦点
     onbulr (){
+
         this.setState({
             cla:"error"
         },()=>{

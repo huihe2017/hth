@@ -46,16 +46,16 @@ class AccountLlink extends React.Component{
                         </TitValueBox>
                     </div>
                     <div className={style.ltitle}>
-                        <Title content={"/子代理"} color={"#3b3d40"}/>
+                        <Title content={"/查看激活"} color={"#3b3d40"}/>
                     </div>
                     <div className={style.appcc}>
                         <div className={style.creat}>
-                            <TitValueBox tit={"开户时间"} wid={100}>
+                            <TitValueBox tit={"激活时间"} wid={100}>
 
                             </TitValueBox>
                         </div>
                         <div className={style.total}>
-                            <TitValueBox tit={"所属用户组"} wid={100}>
+                            <TitValueBox tit={"账号名称"} wid={100}>
                                 <div className={style.linput}>
                                     <Input pla={"请输入完整的MT4账号"}/>
                                 </div>

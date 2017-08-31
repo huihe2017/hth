@@ -128,8 +128,15 @@ class Tipdown extends React.Component{
                     show:v.value[1],
                     issshow:true
                 },()=>{return});
+                if(this.props.change){
+                    this.props.change("","",v.value[1])
+                }else {
+
+                }
             }
+
         });
+
     }
 
 

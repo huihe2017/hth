@@ -11,6 +11,7 @@ class Personal extends React.Component {
         this.props.change(vaildMsg, 'personalMsg', name)
     }
 
+
     render() {
         let data1 = [{
             value: ["中国大陆", "+86"],

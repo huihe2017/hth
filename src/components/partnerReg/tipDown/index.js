@@ -114,8 +114,8 @@ class Tipdown extends React.Component{
         });
         if(this.props.change){
             let x={};
-            x[this.props.lebal]=r;
-            this.props.change(x)
+            x.value=r;
+            this.props.change(x,this.props.lebal)
         }else {
 
         }

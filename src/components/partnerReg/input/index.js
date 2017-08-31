@@ -4,13 +4,6 @@ import style from "./index.css"
 class FormItem extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            cla:this.props.cla,
-            search:this.props.search,
-            dollar:this.props.unit,
-            edit:this.props.edit||false,
-            val:this.props.val||""
-        }
         this.onchangeHandle = this.onchangeHandle.bind(this)
     }
     onchangeHandle(e){
@@ -39,11 +32,11 @@ class FormItem extends React.Component{
                     {this.props.tip}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.props.cla+"1"]} value={this.state.val} disabled={this.state.edit?"disabled":""}/>
-                    <span className={style.dollar} style={this.state.dollar?dib:din}>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} onFocus={this.onfocus.bind(this)} onBlur={this.onbulr.bind(this)}  name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""}/>
+                    <span className={style.dollar} style={this.props.dollar?dib:din}>
                         $
                     </span>
-                    <span className={style.search} style={this.state.search?dib:din}>
+                    <span className={style.search} style={this.props.search?dib:din}>
                         <i className="fa fa-search fa-lg"></i>
                     </span>
                 </div>

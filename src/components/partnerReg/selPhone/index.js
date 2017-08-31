@@ -24,14 +24,15 @@ class Selphone extends React.Component{
             key:3,
 
         }]
+        this.props.firstEdit?(this.props.cla='default'):''
         return(
             <div className={style.selphone} style={this.props.st}>
-                <span className={style[this.state.cla]}>
+                <span className={style[this.props.cla]}>
                     联络人姓名需与身份证姓名一致
                 </span>
                 <div className={style.conimport}>
                     <Tipdown data={data2} ww={100}/>
-                    <Input pla={"联络电话"} ww={400} pattern={this.props.pattern} cla={this.props.cla} sta={this.state.cla} jug={this.isfoucs.bind(this)}/>
+                    <Input firstEdit={this.props.firstEdit} pla={"联络电话"} ww={400} pattern={this.props.pattern} cla={this.props.cla} sta={this.state.cla} jug={this.isfoucs.bind(this)}/>
                 </div>
 
             </div>

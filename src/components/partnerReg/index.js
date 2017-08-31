@@ -28,7 +28,8 @@ class Partnerreg extends React.Component {
                 phoneMsg: {
                     phone: {
                         value: '',
-                        state: 'error'
+                        state: 'error',
+                        firstEdit:true
                     },
                     qh: {
                         value: ''

@@ -3,6 +3,10 @@ import style from  "./index.css"
 import Input from "../input/index";
 import Tipdown from "../tipDown/index"
 
+let sheng={};
+let shi={};
+let khh={};
+
 class Selectarea extends React.Component{
     render(){
         let bank1=[
@@ -30,6 +34,22 @@ class Selectarea extends React.Component{
         let w={
             width:this.props.widthKhh
         }
+        // bankChoceMsg: {
+        //     sheng: {
+        //         value: '',
+        //             state: 'error'
+        //     },
+        //     shi: {
+        //         value: '',
+        //             state: 'error'
+        //     },
+        //     khh: {
+        //         value: '',
+        //             state: 'error'
+        //     },
+        //     state: 'error',
+        //     firstEdit: true
+        // }
         return(
             <div className={style.selarea} >
                 <span>
@@ -37,20 +57,49 @@ class Selectarea extends React.Component{
                 </span>
                 <div className={style.perimport+' '+style.clearfloat}>
                     <div className={style.sheng}>
-                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.widthProv}/>
+                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.widthProv}  change={this.shengchange.bind(this)} la={this.zchagne.bind(this)}/>
                     </div>
                     <div className={style.shi}>
-                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.widthCity}/>
+                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.widthCity}  change={this.shichange.bind(this)} la={this.zchagne.bind(this)}/>
                     </div>
                     <div className={style.hang} style={w}>
-                        <Input pla={"开户行"} />
+                        <Input pla={"开户行"}  firstEdit={this.props.firstEdit} change={this.khhchange.bind(this)} la={this.zchagne.bind(this)}/>
                     </div>
-
-
                 </div>
             </div>
         )
 
+    }
+
+    shengchange(e,t,i){
+        sheng=e||{
+            value:i
+        };
+        sheng.state="default"
+    }
+    shichange(e,t,i){
+        shi=e||{
+            value:i
+        };
+        shi.state="default"
+    }
+    khhchange(e){
+        khh=e;
+
+    }
+
+    zchagne(e,r){
+        let area={};
+        area.sheng=sheng;
+        area.shi=shi;
+        area.khh={value:khh.value};
+        if(sheng.state=="default"&&shi.state=="default"&&khh.state!="error"){
+            area.state = "default";
+        }else {
+            area.state = "error";
+        }
+        area.firstEdit=true;
+        this.props.change(area,this.props.lebal)
     }
 
 }

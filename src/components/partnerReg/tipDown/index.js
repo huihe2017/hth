@@ -4,34 +4,24 @@ import Prephone from "./downitem/index";
 
 
 class Tipdown extends React.Component{
+
     constructor(props){
+
         super(props);
         this.state = {
             show:this.props.show,
             issshow:false,
 
             isShow:false,
-            prephone:this.props.data,
             isringht:true,
-            border:{
-                width:this.props.ww,
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent",
-                borderRadius:5
-            }
         }
     }
-    render(){
-        let rig={
-            color:"#dfdce4",
-        };
-        let error={
-            color:"#f59294",
-        };
-        let err={
 
+
+
+    render(){
+        let wid={
             width:this.props.ww,
-            border:"1px solid #f59294",
         };
         let sss={
             display:"none"
@@ -40,26 +30,29 @@ class Tipdown extends React.Component{
             display:"block"
         };
         let sc={
-            color:"#3b3d40",
+            color:"#3b3d40"
         };
         let ssc={
-            color:"#dfdce4",
+            color:"#dfdce4"
         };
+
+
+
         return(
             <div className={style.prephone} >
-                <span style={this.state.isringht?rig:error}>
+                <span  className={style[this.props.cla]}>
                     {this.props.tip}
                 </span>
                 <div className={style.select}>
-                    <div className={style.sedphone} onClick={this.prePhone.bind(this)} style={this.state.isringht?this.state.border:err}>
-                        <span title={this.state.show} style={this.state.issshow?sc:ssc}>
+                    <div className={style[this.props.cla+"1"]+" "+style.sedphone} onClick={this.prePhone.bind(this)} style={wid}>
+                        <span title={this.state.show} style={this.state.issshow?sc:ssc} className={style.show}>
                             {this.state.show}
                         </span>
                         <i className="fa fa-angle-down"></i>
                     </div>
                     <ul className={style.selphone} style={this.state.isShow?ss:sss}>
                         {
-                            this.state.prephone.map((v,i)=>{
+                            this.props.data.map((v,i)=>{
                                 return <Prephone key={i} data={v} get={this.getNum.bind(this)} />
                             })
                         }
@@ -68,6 +61,20 @@ class Tipdown extends React.Component{
 
             </div>
         )
+    }
+    componentWillMount(){
+        this.props.firstEdit?(this.props.cla='default'):''
+        this.props.data.map((v,i)=>{
+            if(v.checked){
+                this.setState({
+                    show:v.value[1],
+                    issshow:true
+                },()=>{return});
+                if(this.props.change){
+                    this.props.change("","",v.key)
+                }
+            }
+        });
     }
 
     //点击切换电话前缀的显示状态
@@ -78,66 +85,42 @@ class Tipdown extends React.Component{
             if(this.state.isShow){
                 this.setState({
                     isShow:true,
-                    border:{
-                        width:this.props.ww,
-                        border:"1px solid #5262ff",
-                        boxShadow:"0 0 5px 5px rgba(82,98,255,0.1)",
-                        borderRadius:"5px 5px 0 0"
-                    }
+                    cla:'isfocus'
                 });
+
             } else {
                 this.setState({
                     isShow:false,
-                    border:{
-                        width:this.props.ww,
-                        border:"1px solid #dfdce4",
-                        boxShadow:"0 0 5px 5px transparent",
-                        borderRadius:5
-                    }
+                    cla:"default"
+
                 });
+
             }
         })
 
     }
+
     //获取点击所得电话前缀，并恢复默认样式
     getNum(e,r){
+        if(this.props.la){
+            this.props.la()
+        }
         this.setState({
             show:e,
             issshow:true,
             isShow:false,
-            border:{
-                width:this.props.ww,
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent",
-                borderRadius:5
-            }
+            cla:'default'
         });
         if(this.props.change){
             let x={};
             x.value=r;
             this.props.change(x,this.props.lebal)
-        }else {
+        }else
 
-        }
-        this.flag=false;
+            this.flag=false;
     }
-    componentWillMount(){
-        this.state.prephone.map((v,i)=>{
-            if(v.checked){
-                this.setState({
-                    show:v.value[1],
-                    issshow:true
-                },()=>{return});
-                if(this.props.change){
-                    this.props.change("","",v.key)
-                }else {
 
-                }
-            }
 
-        });
-
-    }
 
 
 }

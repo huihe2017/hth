@@ -62,12 +62,17 @@ class Bankmsg extends React.Component {
                         lebal="bankChoce"
                         cla={this.props.data.bankChoce.state}
                         change={this.change.bind(this)}
+                        firstEdit={this.props.data.bankChoce.firstEdit}
                     />
                     <Selectarea
                         widthProv={160}
                         widthCity={160}
                         widthKhh={160}
                         tip={"文案待定"}
+                        lebal={"bankChoceMsg"}
+                        cla={this.props.data.bankChoceMsg.state}
+                        change={this.change.bind(this)}
+                        firstEdit={this.props.data.bankChoceMsg.firstEdit}
                     />
                 </div>
                 <Webfile title={"上传银行卡照片"} putword={putword1} tipword={tipword1}/>

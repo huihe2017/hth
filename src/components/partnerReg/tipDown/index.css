@@ -1,6 +1,32 @@
 .prephone{
 
 }
+.prephone .isfocus{
+    color:#5262ff;
+    border-color:#5262ff;
+
+}
+.prephone .isfocus1{
+    border-color:#5262ff;
+    border-radius: 5px 5px 0 0;
+    box-shadow:0 0 5px 5px rgba(82,98,255,0.1)
+}
+.prephone .error{
+    color:#f59294;
+    border-color:#f59294
+}
+.prephone .error1{
+    border-color:#f59294;
+    border-radius: 5px;
+}
+.prephone .default{
+    color:#dfdce4;
+    border-color:#dfdce4
+}
+.prephone .default1{
+    border-color:#dfdce4;
+    border-radius: 5px;
+}
 .prephone>span{
     color:#dfdce4;
     font-size: 12px;
@@ -20,7 +46,7 @@
     padding: 0 12px;
     border:1px solid #dfdce4;
 }
-.sedphone>span{
+.show{
     float: left;
     width: 85%;
     height: 40px;

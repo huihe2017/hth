@@ -27,13 +27,14 @@ class Partnerreg extends React.Component {
                 },
                 phoneMsg: {
                     phone: {
-                        value: '',
-                        state: 'error',
-                        firstEdit: true
+                        value: ''
+
                     },
                     qh: {
                         value: ''
-                    }
+                    },
+                    firstEdit: true,
+                    state: 'error'
                 },
                 sfz: {
                     value: '',

@@ -55,6 +55,7 @@ class Selphone extends React.Component{
         let phone={};
         phone.qh=qh;
         phone.phone=ph;
+        phone.state = ph.state
         phone.firstEdit=false;
         this.props.change(phone,this.props.lebal)
     }

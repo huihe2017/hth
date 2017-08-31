@@ -72,8 +72,8 @@ class Personal extends React.Component {
                         lebal="phoneMsg"
                         change={this.change.bind(this)}
                         pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
-                        cla={this.props.data.phoneMsg.phone.state}
-                        firstEdit={this.props.data.phoneMsg.phone.firstEdit}
+                        cla={this.props.data.phoneMsg.state}
+                        firstEdit={this.props.data.phoneMsg.firstEdit}
                     />
                     <Input
                         st={'100%'}

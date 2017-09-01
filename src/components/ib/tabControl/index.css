@@ -10,9 +10,10 @@
 
     color: #3b3d40;
 }
-.reportquery>.naved{
+.reportquery>.active{
     color: #5262ff;
 }
+
 .reportquery>.nav,.reportquery>.naved{
     width: 120px;
     float: left;

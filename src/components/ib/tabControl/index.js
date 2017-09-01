@@ -3,26 +3,27 @@ import style from  "./index.css";
 
 
 class TabControl extends React.Component{
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            index: 1
+        }
+    }
+    handleClick(i) {
+        this.setState({
+            index: i
+        })
+    }
     render(){
         return(
             <div className={style.reportquery}>
 
                 {
                     this.props.data.map((v,i)=>{
-                        if(v.checked){
-                            return (
-                                <div className={style.naved}>
-                                    {v.value}
-                                </div>
-                            )
-                        }else {
-                            return (
-                                <div className={style.nav}>
-                                    {v.value}
-                                </div>
-                            )
-                        }
+                        return (
+                            <div  onClick={this.handleClick.bind(this,v.key)} className={style.nav+" "+((this.state.index == v.key)?style.active:'')}>
+                                {v.value}
+                            </div>
                     })
                 }
 

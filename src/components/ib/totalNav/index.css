@@ -19,6 +19,7 @@
 .active{
     background-color: #fff;
     color: #5262ff;
+    border-bottom: 1px solid #5262ff;
 }
 .totalnav ul li>span{
     font-size: 18px;

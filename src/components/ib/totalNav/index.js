@@ -2,29 +2,23 @@ import React from 'react';
 import style from "./index.css"
 
 
-class TotalNav extends React.Component {
+class xxxxx extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            index: 0
-        }
+        this.state = {}
     }
-    handleClick(i) {
-        this.setState({
-            index: i
-        })
-    }
+
     render() {
-        console.log(this.state.index)
+
         return (
-            <div className={style.totalnav}>
+            <div className={style.wrap}>
                 <ul>
-                    {this.props.data.map((v)=>{
-                        return <li onClick={this.handleClick.bind(this,v.key)} className={style.nav+" "+((this.state.index == v.key)?style.active:'')}>
-                            <span className={"fa fa-"+v.icon}></span>
-                            {v.value}
-                        </li>
-                    })}
+                    <li><a>IB账号</a></li>
+                    <li><a>申请出佣</a></li>
+                    <li><a>开户链接</a></li>
+                    <li><a>子代理链接</a></li>
+                    <li><a>报表查询</a></li>
+                    <li><a>用户分组</a></li>
                 </ul>
             </div>
         )
@@ -32,4 +26,4 @@ class TotalNav extends React.Component {
     }
 }
 
-export default TotalNav;
+export default xxxxx;

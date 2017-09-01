@@ -21,7 +21,7 @@
     color: #5262ff;
     border-bottom: 1px solid #5262ff;
 }
-.totalnav ul li>span{
+.nav>span{
     font-size: 18px;
     padding-right: 30px;
 }

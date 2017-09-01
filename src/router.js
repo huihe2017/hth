@@ -11,9 +11,10 @@ class PageRouter extends Component {
         return (
             <Router>
                 <div>
-                    <Route path="/"  component={App}/>
+
                     <Route path="/getAccount" component={GetAccount}/>
                     <Route path="/account" component={Account}/>
+                    <Route path="/"   component={App}/>
                 </div>
             </Router>
         )

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderR from '../headerR'
 import style from "./index.css"
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 
 class TitValueBox extends React.Component {
@@ -51,7 +51,7 @@ class TitValueBox extends React.Component {
     shouldComponentUpdate(){
         this.setState({isShowSideBar: false})
 
-        if(browserHistory.getCurrentLocation().pathname !== '/'){
+        if(hashHistory.getCurrentLocation().pathname !== '/'){
             this.setState({position: 'relative'})
             this.setState({otherStyle: true})
             window.onscroll = null
@@ -71,7 +71,7 @@ class TitValueBox extends React.Component {
     }
 
     choceType(){
-        if(browserHistory.getCurrentLocation().pathname === '/'){
+        if(hashHistory.getCurrentLocation().pathname === '/'){
             this.setState({position: 'absolute'})
             this.setState({otherStyle: false})
             let dance = document.body.clientWidth * 0.46
@@ -98,7 +98,7 @@ class TitValueBox extends React.Component {
     }
 
     componentWillUnmount(){
-        alert(444)
+
     }
 
     render() {

@@ -50,7 +50,7 @@ class Ib extends React.Component {
                     key:5
                 }
                 ]} />
-        <div>
+        <div className={style.wrapDown} >
             <Switch>
                 <Route path="/ib/applyCommission" component={ApplyCommission}/>
                 <Route path="/ib/accountLink" component={AccountLink}/>
@@ -59,10 +59,6 @@ class Ib extends React.Component {
                 <Route path="/ib" component={AccountOverview}/>
             </Switch>
         </div>
-        <ApplyCommission/>
-        <AccountLink/>
-        <ChildLink/>
-        <ReportQuery/>
     </div>
     )
     }

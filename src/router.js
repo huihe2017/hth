@@ -17,10 +17,7 @@ class PageRouter extends Component {
                     <Switch>
                         <Route path="/getAccount" component={GetAccount}/>
                         <Route path="/account" component={Account}/>
-                        <Route path="/accountLink" component={AccountLink}/>
-                        <Route path="/accountLink/e/r/t/y" component={AccountLink}/>
                         <Route path="/" component={App}/>
-
                     </Switch>
                 </div>
             </Router>

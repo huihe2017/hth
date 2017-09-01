@@ -1,7 +1,7 @@
 import style from  "./index.css"
 import React from 'react';
-import Prephone from "./prephone/index";
-import FormItem from "./input/index";
+import SelectPhone from "../partnerReg/selPhone";
+import Input from "../partnerReg/input";
 
 class Register extends React.Component{
     constructor(props){
@@ -27,22 +27,54 @@ class Register extends React.Component{
             showNum:60,
             isShow:false,
             isytu:true,
-            isBlock:false
+            isBlock:false,
+            regMsg:{
+                regUser: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                regGraphics: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                regMsg: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true,
+                    istu: false
+                },
+                regPassword: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                regRepassword: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                }
+            }
+        }
+    }
+
+    submitFn() {
+        let regMsg = this.state.regMsg
+        let flag = true
+        for (let s in regMsg) {
+            regMsg[s].firstEdit && (regMsg[s].firstEdit = false)
+            if(regMsg[s].state === 'error'){
+                flag = false
+            }
+        }
+
+        this.setState({regMsg})
+        if(flag){
+            alert('提交成功')
         }
     }
     render(){
-        // var usernmerules: [
-        //     {
-        //         pattern: function (value) {
-        //             return value.length > 0;
-        //         },
-        //         error: '请输入用户名'
-        //     },
-        //     {
-        //         pattern: /^.{1,4}$/,
-        //         error: '用户名最多4个字符'
-        //     }
-        // ]
         let sss={
             display:"none"
         };
@@ -56,34 +88,41 @@ class Register extends React.Component{
                     <div className={style.lctitle}>
                         注册海豚汇账号
                     </div>
-                    <div className={style.lcphone}>
-                        <div className={style.prephone}>
-                            <div className={style.sedphone} onClick={this.prePhone.bind(this)} style={this.state.border}>
-                                <span>{this.state.sednum.num}</span> <i className="fa fa-angle-down"></i>
-                            </div>
-                            <ul className={style.selphone}  style={this.state.isShow?ss:sss}>
-                                {
-                                    this.state.prephone.map((v,i)=>{
-                                        return <Prephone key={i} data={v} get={this.getNum.bind(this)} />
-                                    })
-                                }
-                            </ul>
-                        </div>
-                        <FormItem
-                        //rules={usernmerules}
-                        tt={"text"} pla={"请输入手机号"} st={{width:'220px',float:'right'}} rex={/^1[3|4|5|8][0-9]\d{4,8}$/} nn={'rphone'}/>
+                    <div className={style.llcphone}>
+                        <SelectPhone
+                            lebal="phoneMsg"
+                            change={this.change.bind(this)}
+                            twidth={80}
+                            iwidth={220}
+                            pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
+                            cla={this.state.regMsg.regUser.state}
+                            firstEdit={this.state.regMsg.regUser.firstEdit}/>
 
                     </div>
                     <div className={style.lccaptcha}>
-                        <FormItem tt={"text"} pla={"请输入图形验证码"} nn={"tx"} st={{width:'100%'}}  isf={this.state.isFocus} />
+                        <Input
+                            st={'100%'}
+                            pla={"图形验证码"}
+                            lebal="username"
+                            change={this.change.bind(this)}
+                            cla={this.state.regMsg.regGraphics.state}
+                            firstEdit={this.state.regMsg.regGraphics.firstEdit}
+                        />
                         <div className={style.captcha}>
 
                         </div>
                     </div>
                     <div className={style.lcmessage}>
-                        <FormItem tt={"text"} pla={"请输入短信验证码"} nn={"dx"} st={{width:'100%',float:'left'}}/>
+                        <Input
+                            st={'100%'}
+                            pla={"短信验证码"}
+                            lebal="username"
+                            change={this.change.bind(this)}
+                            cla={this.state.regMsg.regMsg.state}
+                            firstEdit={this.state.regMsg.regMsg.firstEdit}
+                        />
                         <div className={style.butt}>
-                            <button name="regm" onClick={this.state.isBlock?null:this.timeOut.bind(this)} style={this.state.istu?{color:"#fff"}:{color:"#3b3d40"}}>
+                            <button name="regm" onClick={this.state.isBlock?null:this.timeOut.bind(this)} style={this.state.regMsg.regMsg.istu?{color:"#3b3d40"}:{color:"#fff"}} disabled={this.state.regMsg.regMsg.istu?'':'disabled'}>
                                 <span  style={this.state.isBlock?sss:ss}>发送短信验证码</span>
                                 <span style={this.state.isBlock?ss:sss}>
                                     <span>{this.state.showNum}</span>s后重新获取
@@ -91,14 +130,33 @@ class Register extends React.Component{
                             </button>
                         </div>
                     </div>
-                    <div className={style.lcfirstmm}>
-                        <FormItem tt={"password"} pla={"密码6-24位字母、数字、字符"} st={{width:'100%'}} rex={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/} nn={'pas1'}/>
+                    <div className={style.llcfirstmm}>
+                        <Input
+                            st={'100%'}
+                            pla={"请输入密码"}
+                            lebal="password"
+
+                            change={this.change.bind(this)}
+                            pwa={true}
+                            cla={this.state.regMsg.regPassword.state}
+                            firstEdit={this.state.regMsg.regPassword.firstEdit}
+                        />
+
                     </div>
-                    <div className={style.lcregmm}>
-                        <FormItem tt={"password"} pla={"请再次输入密码"} st={{width:'100%'}} nn={'pas2'}/>
+                    <div className={style.llcfirstmm}>
+                        <Input
+                            st={'100%'}
+                            pla={"请再次输入密码"}
+                            lebal="password"
+
+                            change={this.change.bind(this)}
+                            pwa={true}
+                            cla={this.state.regMsg.regRepassword.state}
+                            firstEdit={this.state.regMsg.regRepassword.firstEdit}
+                        />
                     </div>
                     <div className={style.lcsubmit}>
-                        <button >
+                        <button onClick={this.submitFn.bind(this)}>
                             完成注册并登录
                         </button>
                     </div>
@@ -112,7 +170,9 @@ class Register extends React.Component{
         )
     }
 
+    change(){
 
+    }
     off(){
         this.setState({
             styless:{

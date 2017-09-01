@@ -28,10 +28,11 @@ class FormItem extends React.Component{
         let din={
             display:"none"
         };
+        let bottomtip=""
         this.props.firstEdit?(this.props.cla='default'):''
         return(
             <div className={style.inp} >
-                <span className={style[this.props.cla]}>
+                <span className={style[this.props.cla]+" "+style.ttip}>
                     {this.props.tip}
                 </span>
                 <div className={style.import}>
@@ -43,6 +44,9 @@ class FormItem extends React.Component{
                         <i className="fa fa-search fa-lg"></i>
                     </span>
                 </div>
+                <span className={style[this.props.cla]+" "+style.btip}>
+                    {bottomtip}
+                </span>
 
             </div>
         )

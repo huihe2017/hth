@@ -103,6 +103,7 @@
 }
 .llccaptcha{
    position: relative;
+    overflow: hidden;
 }
 .llccaptcha>input{
     width: 320px;
@@ -116,6 +117,7 @@
     width: 150px;
     height: 40px;
     background-image: url("./images/captcha.png");
+    border-radius: 0 5px 5px 0;
 }
 .llcmessage>input{
     width: 150px;

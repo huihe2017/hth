@@ -32,7 +32,7 @@ export default class RenderLayer extends Component {
 
 class Dom extends Component {
     componentDidMount() {
-        this.refs['wrap'].style.position = 'absolute'
+        this.refs['wrap'].style.position = 'fixed'
         this.refs['wrap'].style.top = '0px'
         let layerStyle = {
             width: this.refs['wrap'].offsetWidth,
@@ -40,8 +40,9 @@ class Dom extends Component {
             top: '50%',
             left: '50%',
             marginLeft: -this.refs['wrap'].offsetWidth / 2,
-            marginTop: -this.refs['wrap'].offsetHeight / 2 + document.body.scrollTop,
-            zIndex: 2,
+            // marginTop: -this.refs['wrap'].offsetHeight / 2 + document.body.scrollTop,
+            marginTop: -this.refs['wrap'].offsetHeight / 2,
+            zIndex: 30,
             background: '#fff'
         }
         this.setState({

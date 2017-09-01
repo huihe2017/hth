@@ -1,7 +1,7 @@
 import style from  "./index.css"
 import React from 'react';
-import Prephone from "./prephone/index";
-import FormItem from "./input/index";
+import SelectPhone from "../partnerReg/selPhone";
+import Input from "../partnerReg/input";
 
 class Login extends React.Component{
     constructor(props){
@@ -24,22 +24,45 @@ class Login extends React.Component{
             sednum:{
                 num:"+86"
             },
-            isShow:false
+            isShow:false,
+            loginMsg:{
+                loginUser: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                loginGraphics: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                loginPassword: {
+                    value: '',
+                    state: 'error',
+                    firstEdit: true
+                }
+            }
+
         }
     }
+
+    submitFn() {
+        let loginMsg = this.state.loginMsg
+        let flag = true
+        for (let s in loginMsg) {
+            loginMsg[s].firstEdit && (loginMsg[s].firstEdit = false)
+            if(loginMsg[s].state === 'error'){
+                flag = false
+            }
+        }
+
+        this.setState({loginMsg})
+        if(flag){
+            alert('提交成功')
+        }
+    }
+
     render(){
-        // var usernmerules: [
-        //     {
-        //         pattern: function (value) {
-        //             return value.length > 0;
-        //         },
-        //         error: '请输入用户名'
-        //     },
-        //     {
-        //         pattern: /^.{1,4}$/,
-        //         error: '用户名最多4个字符'
-        //     }
-        // ]
         let sss={
             display:"none"
         };
@@ -49,45 +72,50 @@ class Login extends React.Component{
         return(
             <div className={style.llogin}  style={this.state.styless}>
                 <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow?ss:sss}></div>
-
-
                 <div className={style.llogincontent}>
                     <div className={style.llctitle}>
                         欢迎来到海豚汇、请登录
                     </div>
                     <div className={style.llcphone}>
-                        <div className={style.prephone}>
-                            <div className={style.sedphone} onClick={this.prePhone.bind(this)} style={this.state.border}>
-                                <span>{this.state.sednum.num}</span> <i className="fa fa-angle-down"></i>
-                            </div>
-                            <ul className={style.selphone} style={this.state.isShow?ss:sss}>
-                                {
-                                    this.state.prephone.map((v,i)=>{
-                                        return <Prephone key={i} data={v} get={this.getNum.bind(this)} />
-                                    })
-                                }
-                            </ul>
-                        </div>
-                        <FormItem
-                        //rules={usernmerules}
-                        tt={"text"} pla={"请输入手机账号登陆"} st={{width:'220px',float:'right'}} rex={/^1[3|4|5|8][0-9]\d{4,8}$/} nn={'phone'}/>
+                        <SelectPhone
+                            lebal="phoneMsg"
+                            change={this.change.bind(this)}
+                            twidth={80}
+                            iwidth={220}
+                            pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
+                            cla={this.state.loginMsg.loginUser.state}
+                            firstEdit={this.state.loginMsg.loginUser.firstEdit}/>
 
                     </div>
                     <div className={style.llccaptcha}>
-                        <FormItem tt={"text"} pla={"请输入图形验证码"} nn={"ttx"} st={{width:'100%'}}  isf={this.state.isFocus} />
+                        <Input
+                            st={'100%'}
+                            pla={"请输入图形验证码"}
+                            lebal="username"
+                            change={this.change.bind(this)}
+                            cla={this.state.loginMsg.loginGraphics.state}
+                            firstEdit={this.state.loginMsg.loginGraphics.firstEdit}
+                        />
                         <div className={style.captcha}>
 
                         </div>
                     </div>
 
                     <div className={style.llcfirstmm}>
-                        <FormItem tt={"password"} pla={"密码6-24位字母、数字、字符"} st={{width:'100%'}} rex={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/} nn={'pas'}/>
+                        <Input
+                            st={'100%'}
+                            pla={"密码6-24位字母、数字、字符"}
+                            lebal="password"
+
+                            change={this.change.bind(this)}
+                            pwa={true}
+                            cla={this.state.loginMsg.loginPassword.state}
+                            firstEdit={this.state.loginMsg.loginPassword.firstEdit}
+                        />
                         <a href="javascript:void (0);">忘记密码？</a>
                     </div>
                     <div className={style.llcsubmit}>
-                        <input type="button" value='马上登录'/>
-
-
+                        <input onClick={this.submitFn.bind(this)} type="button" value='马上登录'/>
                     </div>
                     <div className={style.gollogin}>
                         <span>
@@ -98,7 +126,6 @@ class Login extends React.Component{
             </div>
         )
     }
-
     off(){
         this.setState({
             styless:{
@@ -129,9 +156,7 @@ class Login extends React.Component{
                 });
             }
         })
-
     }
-
     //获取点击所得电话前缀，并恢复默认样式
     getNum(e){
         this.setState({
@@ -154,6 +179,9 @@ class Login extends React.Component{
                 boxShadow:"0 0 5px 5px transparent"
             }
         })
+    }
+    change(){
+
     }
 
 

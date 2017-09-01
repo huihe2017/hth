@@ -1,12 +1,10 @@
 
 .selphone{
     margin: 0 auto;
-    height: 80px;
-
 }
-.selphone>span{
-    display: block;
+.ttip{
 
+    display: block;
     width: 100%;
     line-height: 40px;
     font-size: 12px;
@@ -17,17 +15,15 @@
     width: 100%;
     position: relative;
 }
-.conimport>div:first-child{
+.tipd{
     float: left;
     width: 100%;
 }
-.conimport>div:last-child{
+.inpu{
     position: absolute;
     top: 0;
-    left: 120px;
-    width: 400px;
-}
 
+}
 .selphone .focus{
     color:#5262ff;
     border-color:#5262ff
@@ -39,6 +35,24 @@
 .selphone .default{
     color:#dfdce4;
     border-color:#dfdce4
+}
+.btip{
+    display: block;
+    width: 100%;
+    line-height: 20px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: right;
+}
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+.clearfloat {
+    zoom: 1
 }
 
 

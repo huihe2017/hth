@@ -69,10 +69,13 @@ class Personal extends React.Component {
                         firstEdit={this.props.data.contactPerson.firstEdit}
                     />
                     <Selphone
+                        ttip="联络人姓名需与身份证姓名一致"
                         lebal="phoneMsg"
                         change={this.change.bind(this)}
                         pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
                         cla={this.props.data.phoneMsg.state}
+                        twidth={100}
+                        iwidth={400}
                         firstEdit={this.props.data.phoneMsg.firstEdit}
                     />
                     <Input

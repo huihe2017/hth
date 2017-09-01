@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Header from './header'
 import Footer from './footer'
 import PageHome from './pageHome'
@@ -14,14 +14,14 @@ export default class App extends Component {
             <div>
                 {/*<Header/>*/}
                 <HeadRR/>
-                <Router>
                     <div>
-                        <Route path="/"  component={PageHome}/>
-                        <Route path="/partnerReg" component={PartnerReg}/>
-                        <Route path="/ib" component={Ib}/>
-                        <Route path="/partnerLogin" component={PartnerLogin}/>
+                        <Switch>
+                            <Route path="/partnerReg" component={PartnerReg}/>
+                            <Route path="/ib" component={Ib}/>
+                            <Route path="/partnerLogin" component={PartnerLogin}/>
+                            <Route path="/" component={PageHome}/>
+                        </Switch>
                     </div>
-                </Router>
                 <Footer/>
             </div>
 

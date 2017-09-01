@@ -3,7 +3,7 @@ import SideBar from './sideBar'
 import Login from '../login'
 import Register from '../register'
 import Layer from '../renderLayer'
-import { browserHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import style from './header.css'
 
 export default class Header extends Component {
@@ -16,7 +16,7 @@ export default class Header extends Component {
                 <div className= {this.props.otherStyle?( style.header + ' ' + style[this.props.position]+ ' ' + style.otherStyle):( style.header + ' ' + style[this.props.position])}>
                     <div className={style.logo}>
                         {
-                            this.props.otherStyle?<img src={require("./logoO.png")}/>:<img src={require("./logo.png")}/>
+                            this.props.otherStyle?<Link to="/" ><img src={require("./logoO.png")}/></Link>:<Link to="/" ><img src={require("./logo.png")}/></Link>
                         }
 
                     </div>

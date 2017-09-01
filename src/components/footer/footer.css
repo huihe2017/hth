@@ -48,3 +48,7 @@
 .email {
     padding-bottom: 20px;
 }
+.blueLine {
+    height: 10px;
+    background: #5262ff;
+}

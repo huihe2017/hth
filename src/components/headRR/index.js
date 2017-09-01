@@ -48,7 +48,7 @@ class TitValueBox extends React.Component {
         this.setState({isShowSideBar:true});
     }
 
-    shouldComponentUpdate(){
+    componentWillReceiveProps(){
         this.setState({isShowSideBar: false})
 
         if(hashHistory.getCurrentLocation().pathname !== '/'){

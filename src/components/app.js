@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Header from './header'
+import {Route, Switch} from 'react-router-dom'
+import { hashHistory } from 'react-router'
 import Footer from './footer'
 import PageHome from './pageHome'
 import PartnerReg from './partnerReg'
@@ -11,7 +11,7 @@ import HeadRR from './headRR'
 export default class App extends Component {
     render() {
         return (
-            <div>
+            <div style={{background:(hashHistory.getCurrentLocation().pathname !== '/')?'#f5f5f6':''}}>
                 {/*<Header/>*/}
                 <HeadRR/>
                     <div>

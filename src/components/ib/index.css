@@ -2,8 +2,10 @@
     font-size: 18px;
     width:1200px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 .wrapDown{
     padding: 0 20px;
     padding-top: 48px;
+    background: #fff;
 }

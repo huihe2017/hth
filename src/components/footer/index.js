@@ -6,6 +6,7 @@ class Footer extends Component {
     render() {
         return (
             <div className={style.footer}>
+                <div className={style.blueLine}></div>
                 <div className={style.footerIn}>
                     <div className={style.footerInLeft}>
                         <ul className={style.list}>

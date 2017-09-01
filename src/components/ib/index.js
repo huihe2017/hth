@@ -18,7 +18,6 @@ class Ib extends React.Component {
 
         return (
             <div className={style.wrap}>
-                <br/><br/><br/>
                 <TotalNav data={[{
                     icon:"user-o",
                     value:"IB账号",

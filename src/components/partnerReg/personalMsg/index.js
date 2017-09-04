@@ -44,6 +44,7 @@ class Personal extends React.Component {
                         lebal="email"
                         st={'100%'}
                         cla={this.props.data.email.state}
+                        align={"top"}
                         pla={"邮箱"}
                         tip={"联络人姓名需与身份证姓名一致"}
                         firstEdit={this.props.data.email.firstEdit}
@@ -52,6 +53,7 @@ class Personal extends React.Component {
                         st={'100%'}
                         lebal="userName"
                         cla={this.props.data.userName.state}
+                        align={"top"}
                         pattern={/\S/}
                         pla={"账号名"}
                         tip={"文案待定"}
@@ -61,6 +63,7 @@ class Personal extends React.Component {
                     <Input
                         st={'100%'}
                         cla={this.props.data.contactPerson.state}
+                        align={"top"}
                         pla={"联络人"}
                         tip={"联络人姓名需与身份证姓名一致"}
                         pattern={/\S/}
@@ -74,6 +77,7 @@ class Personal extends React.Component {
                         change={this.change.bind(this)}
                         pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
                         cla={this.props.data.phoneMsg.state}
+                        align={"top"}
                         twidth={100}
                         iwidth={400}
                         firstEdit={this.props.data.phoneMsg.firstEdit}
@@ -81,6 +85,7 @@ class Personal extends React.Component {
                     <Input
                         st={'100%'}
                         cla={this.props.data.sfz.state}
+                        align={"top"}
                         pla={"身份证号"}
                         lebal="sfz"
                         pattern={/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/}

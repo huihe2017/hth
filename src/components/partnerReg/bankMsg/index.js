@@ -41,6 +41,7 @@ class Bankmsg extends React.Component {
                         tip={"文案待定"}
                         lebal="settlementAccount"
                         cla={this.props.data.settlementAccount.state}
+                        align={"top"}
                         pattern={/\S/}
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.settlementAccount.firstEdit}
@@ -51,6 +52,7 @@ class Bankmsg extends React.Component {
                         tip={"文案待定"}
                         lebal="settlementCardNumber"
                         cla={this.props.data.settlementCardNumber.state}
+                        align={"top"}
                         pattern={/\S/}
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.settlementCardNumber.firstEdit}
@@ -61,6 +63,7 @@ class Bankmsg extends React.Component {
                         tip={"文案待定"}
                         lebal="bankChoce"
                         cla={this.props.data.bankChoce.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.bankChoce.firstEdit}
                     />
@@ -71,6 +74,7 @@ class Bankmsg extends React.Component {
                         tip={"文案待定"}
                         lebal={"bankChoceMsg"}
                         cla={this.props.data.bankChoceMsg.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.bankChoceMsg.firstEdit}
                     />

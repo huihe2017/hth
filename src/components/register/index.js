@@ -90,12 +90,14 @@ class Register extends React.Component{
                     </div>
                     <div className={style.llcphone}>
                         <SelectPhone
-                            lebal="phoneMsg"
+                            lebal="regUser"
                             change={this.change.bind(this)}
                             twidth={80}
                             iwidth={220}
                             pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
                             cla={this.state.regMsg.regUser.state}
+                            align={"bottom"}
+                            tip={"请输入正确的手机号码"}
                             firstEdit={this.state.regMsg.regUser.firstEdit}/>
 
                     </div>
@@ -103,9 +105,12 @@ class Register extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"图形验证码"}
-                            lebal="username"
+                            pattern={/\S/}
+                            lebal="regGraphics"
                             change={this.change.bind(this)}
                             cla={this.state.regMsg.regGraphics.state}
+                            align={"bottom"}
+                            tip={"请输入正确的验证码"}
                             firstEdit={this.state.regMsg.regGraphics.firstEdit}
                         />
                         <div className={style.captcha}>
@@ -116,9 +121,12 @@ class Register extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"短信验证码"}
-                            lebal="username"
+                            pattern={/\S/}
+                            lebal="regMsg"
                             change={this.change.bind(this)}
                             cla={this.state.regMsg.regMsg.state}
+                            align={"bottom"}
+                            tip={"请输入正确的验证码"}
                             firstEdit={this.state.regMsg.regMsg.firstEdit}
                         />
                         <div className={style.butt}>
@@ -134,11 +142,13 @@ class Register extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"请输入密码"}
-                            lebal="password"
-
+                            lebal="regPassword"
+                            pattern={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/}
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.state.regMsg.regPassword.state}
+                            align={"bottom"}
+                            tip={"请输入正确的密码"}
                             firstEdit={this.state.regMsg.regPassword.firstEdit}
                         />
 
@@ -147,11 +157,13 @@ class Register extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"请再次输入密码"}
-                            lebal="password"
-
+                            lebal="regRepassword"
+                            pattern={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/}
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.state.regMsg.regRepassword.state}
+                            align={"bottom"}
+                            tip={"请输入正确的密码"}
                             firstEdit={this.state.regMsg.regRepassword.firstEdit}
                         />
                     </div>
@@ -170,7 +182,9 @@ class Register extends React.Component{
         )
     }
 
-    change(){
+    change(vaildMsg, name) {
+        this.state.regMsg[name] = vaildMsg;
+        this.setState({state: this.state});
 
     }
     off(){
@@ -253,16 +267,6 @@ class Register extends React.Component{
             }
         });
     }
-
-    // regmm(){
-    //     console.log(document.querySelector("input[name='pas1']").value);
-    //     console.log(document.querySelector("input[name='pas2']").value);
-    //     if((document.querySelector("input[name='pas1']").value==document.querySelector("input[name='pas2']").value)){
-    //
-    //     }else {
-    //         document.querySelector("input[name='pas2']+span").innerHTML="两次输入密码不同"
-    //     }
-    // }
 }
 
 export default Register;

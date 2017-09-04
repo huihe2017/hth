@@ -22,6 +22,13 @@
 .inp .default1{
     border-color:#dfdce4
 }
+.inp .error2{
+    border-color:#f59294;
+    opacity: 1;
+}
+.inp .default2{
+    opacity: 0;
+}
 .ttip{
     display: block;
     width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./index.css"
-
 class FormItem extends React.Component{
+
     constructor(props){
         super(props);
         this.onchangeHandle = this.onchangeHandle.bind(this)
@@ -9,11 +9,17 @@ class FormItem extends React.Component{
     onchangeHandle(e){
         let v = e.target.value;
         let state = 'error';
-        console.log(v);
         if(this.props.pattern){
-            this.props.pattern.test(v)?(state='default'):''
+
+            //this.props.pattern.test(v)?(state='default'):'';
+
+            if(this.props.pattern.test(v)){
+                state='default'
+            }else {
+                state='error';
+            }
         }else {
-            state='isfocus'
+            state='isfocus';
         }
 
         this.props.change({value:v,state,firstEdit:false},this.props.lebal)
@@ -28,15 +34,15 @@ class FormItem extends React.Component{
         let din={
             display:"none"
         };
-        let bottomtip=""
+
         this.props.firstEdit?(this.props.cla='default'):''
         return(
             <div className={style.inp} >
                 <span className={style[this.props.cla]+" "+style.ttip}>
-                    {this.props.tip}
+                    {this.props.align=="top"?this.props.tip:""}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle}   name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""}/>
                     <span className={style.dollar} style={this.props.dollar?dib:din}>
                         $
                     </span>
@@ -44,36 +50,12 @@ class FormItem extends React.Component{
                         <i className="fa fa-search fa-lg"></i>
                     </span>
                 </div>
-                <span className={style[this.props.cla]+" "+style.btip}>
-                    {bottomtip}
+                <span className={style[this.props.cla+"2"]+" "+style.btip}>
+                    {this.props.align=="bottom"?this.props.tip:""}
                 </span>
-
             </div>
         )
     }
-    // //失去焦点
-    // onbulr (){
-    //     this.setState({
-    //         cla:"error"
-    //     },()=>{
-    //         if(this.state.cla=="error"){
-    //
-    //
-    //         }else {
-    //             this.setState({
-    //                 cla:"default"
-    //             })
-    //         }
-    //     })
-    // }
-    //
-    // //获取焦点
-    // onfocus(){
-    //     this.setState({
-    //         cla:"isfocus"
-    //     })
-    // }
-
 }
 
 export default FormItem;

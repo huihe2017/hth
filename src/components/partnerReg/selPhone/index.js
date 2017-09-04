@@ -43,7 +43,7 @@ class Selphone extends React.Component{
                         <Tipdown lebal={"qh"} change={this.tchange.bind(this)} data={data2} ww={this.props.twidth}/>
                     </div>
                     <div className={style.inpu} style={ss}>
-                        <Input firstEdit={this.props.firstEdit} pla={"手机号"} ww={this.props.iwidth} pattern={this.props.pattern} cla={this.props.cla} sta={this.state.cla} jug={this.isfoucs.bind(this)} change={this.ichange.bind(this)} la={this.zchagne.bind(this)}/>
+                        <Input firstEdit={this.props.firstEdit} pla={"手机号"} ww={this.props.iwidth} pattern={this.props.pattern} cla={this.props.cla} sta={this.state.cla} jug={this.isfoucs.bind(this)} change={this.ichange.bind(this)} la={this.zchagne.bind(this)} align={this.props.align} tip={this.props.tip}/>
                     </div>
 
                 </div>

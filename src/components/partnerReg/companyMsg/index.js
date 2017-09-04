@@ -38,6 +38,7 @@ class Company extends React.Component{
                         tip={"文案待定"}
                         lebal="companyName"
                         cla={this.props.data.companyName.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                     />
                     <Input
@@ -46,6 +47,7 @@ class Company extends React.Component{
                         tip={"文案待定"}
                         lebal="companyAddress"
                         cla={this.props.data.companyAddress.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                     />
                     <Input
@@ -54,6 +56,7 @@ class Company extends React.Component{
                         tip={"文案待定"}
                         lebal="companyCode"
                         cla={this.props.data.companyCode.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                     />
 
@@ -63,6 +66,7 @@ class Company extends React.Component{
                         tip={"文案待定"}
                         lebal="companyGrunp"
                         cla={this.props.data.companyGrunp.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                     />
                     <Input
@@ -71,6 +75,7 @@ class Company extends React.Component{
                         tip={"文案待定"}
                         lebal="companyBoss"
                         cla={this.props.data.companyBoss.state}
+                        align={"top"}
                         change={this.change.bind(this)}
                     />
                 </div>

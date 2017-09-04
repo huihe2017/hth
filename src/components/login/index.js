@@ -46,6 +46,8 @@ class Login extends React.Component{
         }
     }
 
+
+
     submitFn() {
         let loginMsg = this.state.loginMsg
         let flag = true
@@ -55,7 +57,6 @@ class Login extends React.Component{
                 flag = false
             }
         }
-
         this.setState({loginMsg})
         if(flag){
             alert('提交成功')
@@ -78,11 +79,13 @@ class Login extends React.Component{
                     </div>
                     <div className={style.llcphone}>
                         <SelectPhone
-                            lebal="phoneMsg"
+                            lebal="loginUser"
                             change={this.change.bind(this)}
                             twidth={80}
                             iwidth={220}
                             pattern={/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/}
+                            align={"bottom"}
+                            tip={"请输入正确的手机号码"}
                             cla={this.state.loginMsg.loginUser.state}
                             firstEdit={this.state.loginMsg.loginUser.firstEdit}/>
 
@@ -91,9 +94,12 @@ class Login extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"请输入图形验证码"}
-                            lebal="username"
+                            lebal="loginGraphics"
                             change={this.change.bind(this)}
                             cla={this.state.loginMsg.loginGraphics.state}
+                            align={"bottom"}
+                            tip={"请输入正确的图形验证码"}
+                            pattern={/\S/}
                             firstEdit={this.state.loginMsg.loginGraphics.firstEdit}
                         />
                         <div className={style.captcha}>
@@ -105,11 +111,13 @@ class Login extends React.Component{
                         <Input
                             st={'100%'}
                             pla={"密码6-24位字母、数字、字符"}
-                            lebal="password"
-
+                            lebal="loginPassword"
+                            pattern={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/}
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.state.loginMsg.loginPassword.state}
+                            align={"bottom"}
+                            tip={"请输入正确的密码"}
                             firstEdit={this.state.loginMsg.loginPassword.firstEdit}
                         />
                         <a href="javascript:void (0);">忘记密码？</a>
@@ -133,7 +141,7 @@ class Login extends React.Component{
             }
         })
     }
-    //点击切换电话前缀的显示状态
+
     prePhone(e){
         this.setState({
             isShow:true,
@@ -157,7 +165,7 @@ class Login extends React.Component{
             }
         })
     }
-    //获取点击所得电话前缀，并恢复默认样式
+
     getNum(e){
         this.setState({
             sednum: {
@@ -180,7 +188,10 @@ class Login extends React.Component{
             }
         })
     }
-    change(){
+    change(vaildMsg, name) {
+        this.state.loginMsg[name] = vaildMsg;
+        console.log(this.state)
+        this.setState({state: this.state});
 
     }
 

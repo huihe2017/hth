@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import SideBar from './sideBar'
-import Login from '../login'
-import Register from '../register'
-import Layer from '../renderLayer'
+import SideBar from './sideBar/index'
+import Login from '../../login/index'
+import Register from '../../register/index'
+import Layer from '../../renderLayer/index'
 import { Link } from 'react-router-dom';
 import style from './header.css'
 

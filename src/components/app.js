@@ -6,7 +6,7 @@ import PageHome from './pageHome'
 import PartnerReg from './partnerReg'
 import Ib from './ib'
 import PartnerLogin from './partnerLogin'
-import HeadRR from './headRR'
+import HeadRR from './header'
 
 export default class App extends Component {
     render() {

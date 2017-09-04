@@ -189,8 +189,8 @@ class Login extends React.Component{
         })
     }
     change(vaildMsg, name) {
+
         this.state.loginMsg[name] = vaildMsg;
-        console.log(this.state)
         this.setState({state: this.state});
 
     }

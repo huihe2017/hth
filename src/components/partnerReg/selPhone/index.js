@@ -17,11 +17,11 @@ class Selphone extends React.Component{
     render(){
         let data2 =  [{
             value:["中国大陆","+86"],
-            key:1
+            key:1,
+            checked:true
         }, {
             value:["中国香港","+886"],
-            key:2,
-            checked:true
+            key:2
         }, {
             value:["中国台湾","+853"],
             key:3,

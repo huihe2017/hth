@@ -10,19 +10,21 @@ class FormItem extends React.Component{
         let v = e.target.value;
         let state = 'error';
         if(this.props.pattern){
-
-            //this.props.pattern.test(v)?(state='default'):'';
-
             if(this.props.pattern.test(v)){
                 state='default'
             }else {
                 state='error';
             }
-        }else {
+        }else if(this.props.tip=="请保证两次密码输入相同"){
+                if(v!==document.querySelector("#pass").value){
+                    state='error'
+                }else {
+                    state='default';
+                }
+            }else {
             state='isfocus';
         }
-
-        this.props.change({value:v,state,firstEdit:false},this.props.lebal)
+        this.props.change({value:v,state,firstEdit:false},this.props.lebal);
         if(this.props.la){
             this.props.la()
         }
@@ -35,14 +37,14 @@ class FormItem extends React.Component{
             display:"none"
         };
 
-        this.props.firstEdit?(this.props.cla='default'):''
+        this.props.firstEdit?(this.props.cla='default'):'';
         return(
             <div className={style.inp} >
                 <span className={style[this.props.cla]+" "+style.ttip}>
                     {this.props.align=="top"?this.props.tip:""}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""} id={this.props.id}/>
                     <span className={style.dollar} style={this.props.dollar?dib:din}>
                         $
                     </span>

@@ -150,6 +150,7 @@ class Register extends React.Component{
                             align={"bottom"}
                             tip={"请输入正确的密码"}
                             firstEdit={this.state.regMsg.regPassword.firstEdit}
+                            id={"pass"}
                         />
 
                     </div>
@@ -158,13 +159,13 @@ class Register extends React.Component{
                             st={'100%'}
                             pla={"请再次输入密码"}
                             lebal="regRepassword"
-                            pattern={/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/}
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.state.regMsg.regRepassword.state}
                             align={"bottom"}
-                            tip={"请输入正确的密码"}
+                            tip={"请保证两次密码输入相同"}
                             firstEdit={this.state.regMsg.regRepassword.firstEdit}
+
                         />
                     </div>
                     <div className={style.lcsubmit}>
@@ -183,7 +184,83 @@ class Register extends React.Component{
     }
 
     change(vaildMsg, name) {
-        this.state.regMsg[name] = vaildMsg;
+        if(name=="regGraphics"){
+            if(vaildMsg.state=="default"&&this.state.regMsg.regUser.state=="default"){
+                this.setState({
+                    regMsg:{
+                        regUser: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regGraphics: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regMsg: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true,
+                            istu: true
+                        },
+                        regPassword: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regRepassword: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        }
+                    }
+                });
+            }else if(vaildMsg.state=="error"){
+                this.setState({
+                    regMsg:{
+                        regUser: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regGraphics: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regMsg: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true,
+                            istu: false
+                        },
+                        regPassword: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        },
+                        regRepassword: {
+                            value: '',
+                            state: 'error',
+                            firstEdit: true
+                        }
+                    }
+                })
+            }
+        }
+
+        if(name=="regMsg"){
+
+            if(this.state.regMsg.regMsg.istu){
+
+                console.log(vaildMsg)
+                this.state.regMsg[name] = {...vaildMsg,istu: true};
+            }
+        }else {
+            this.state.regMsg[name] = vaildMsg;
+        }
+
         this.setState({state: this.state});
 
     }

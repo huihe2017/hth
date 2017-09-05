@@ -46,7 +46,6 @@ class userCenterHeadView extends React.Component{
                                         this.getTime(this.props.openingTime)
 
                                     }
-
                                 </div>
                             </div>
 				        </div>

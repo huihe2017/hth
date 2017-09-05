@@ -16,11 +16,11 @@ class FormItem extends React.Component{
                 state='error';
             }
         }else if(this.props.tip=="请保证两次密码输入相同"){
-                if(v!==document.querySelector("#pass").value){
-                    state='error'
-                }else {
-                    state='default';
-                }
+            if(v!==document.querySelector("#pass").value){
+                state='error'
+            }else {
+                state='default';
+            }
         }else {
             state='isfocus';
         }

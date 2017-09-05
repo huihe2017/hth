@@ -7,6 +7,7 @@ import PartnerReg from './partnerReg'
 import Ib from './ib'
 import PartnerLogin from './partnerLogin'
 import HeadRR from './header'
+import AccountDeposit from './accountDeposit'
 
 export default class App extends Component {
     render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
                 <HeadRR/>
                     <div>
                         <Switch>
+                            <Route path="/accountDeposit" component={AccountDeposit}/>
                             <Route path="/partnerReg" component={PartnerReg}/>
                             <Route path="/ib" component={Ib}/>
                             <Route path="/partnerLogin" component={PartnerLogin}/>

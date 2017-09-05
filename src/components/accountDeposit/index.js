@@ -8,43 +8,102 @@ class AccountDeposit extends React.Component {
         this.state = {
             depositCount: 0,
             inputState: {
-                firstEdit: ture,
+                value:"",
+                firstEdit: true,
                 state: 'error'
             },
             rmb: 0,
             exchangeRate: 6.597000,
             choceBank:'',
             bankState:true,
-            banks:
-                [
+            banks: [
                     {
                         name: '中国银行',
-                        code: '1',
-                        logo: './xxx.jpg'
+                        code: '0',
+                        logo: './images/0.png'
                     },
                     {
                         name: '中国银行',
                         code: '1',
-                        logo: './xxx.jpg'
+                        logo: './images/1.png'
                     },
                     {
                         name: '中国银行',
-                        code: '1',
-                        logo: './xxx.jpg'
+                        code: '2',
+                        logo: './images/2.png'
                     },
                     {
                         name: '中国银行',
-                        code: '1',
-                        logo: './xxx.jpg'
+                        code: '3',
+                        logo: './images/3.png'
                     },
                     {
                         name: '中国银行',
-                        code: '1',
-                        logo: './xxx.jpg'
+                        code: '4',
+                        logo: './images/4.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '5',
+                        logo: './images/5.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '6',
+                        logo: './images/6.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '7',
+                        logo: './images/7.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '8',
+                        logo: './images/8.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '9',
+                        logo: './images/9.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '10',
+                        logo: './images/10.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '11',
+                        logo: './images/11.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '12',
+                        logo: './images/12.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '13',
+                        logo: './images/13.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '14',
+                        logo: './images/14.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '15',
+                        logo: './images/15.png'
+                    },
+                    {
+                        name: '中国银行',
+                        code: '16',
+                        logo: './images/16.png'
                     }
+
                 ]
-
-
         }
     }
 
@@ -55,11 +114,15 @@ class AccountDeposit extends React.Component {
             }else {
                 this.setState({bankState:false})
             }
+        }else {
+            if(!this.state.choceBank){
+                this.setState({bankState:false})
+            }
         }
     }
 
     depositChange(obj) {
-
+        console.log(obj);
         this.setState({
             inputState: obj
         }, () => {
@@ -72,14 +135,21 @@ class AccountDeposit extends React.Component {
     }
 
     choceBank(code){
-        this.setState({choceBank: code})
+        this.setState({
+            choceBank: code,
+            bankState:false
+        })
     }
 
     render() {
 
         return (
-            <AccountDepositView choceBank{this.choceBank.bind(this)} submit={this.submitFn.bind(this)}
-                                change={this.depositChange.bind(this)} {...this.state}></AccountDepositView>
+            <AccountDepositView
+                choceBankList={this.choceBank.bind(this)}
+                submit={this.submitFn.bind(this)}
+                change={this.depositChange.bind(this)}
+                {...this.state}
+            ></AccountDepositView>
         )
 
     }

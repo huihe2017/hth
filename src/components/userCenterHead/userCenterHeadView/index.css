@@ -1,0 +1,85 @@
+.userCenterHeadView{
+    width: 800px;
+    height: 220px;
+    border-right: 1px solid #dfdce4;
+}
+.userchvheader{
+    width: 800px;
+    height: 140px;
+    border-bottom: 1px solid #dfdce4;
+}
+.avatar{
+    width: 140px;
+    height: 140px;
+    position: relative;
+    float: left;
+}
+.avatar>img{
+    display: block;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -44px;
+    margin-top: -44px;
+}
+.userhc{
+    height: 140px;
+    float: left;
+}
+.userhch{
+    overflow: hidden;
+    font-size: 21px;
+    line-height: 41px;
+    color: #3b3d40;
+    margin-top: 26px;
+}
+.username{
+    float: left;
+    margin-right: 20px;
+
+}
+.userphone{
+    float: left;
+}
+.userhcc{
+
+    font-size: 14px;
+    line-height: 24px;
+    color: #aaa;
+}
+.userchvfooter{
+    height: 80px;
+    margin-left: 19px;
+}
+.userchvfooter>div{
+    float: left;
+    width: 260px;
+    margin-top: 12px;
+    height: 48px;
+    border-right: 1px solid #dfdce4;
+}
+.userchvfooter>div:last-child{
+    border-right: none;
+}
+.userchvfooter .money{
+    font-size: 24px;
+    line-height: 24px;
+    color: #3b3d40;
+    text-align: center;
+}
+.userchvfooter .top{
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #aaa;
+    text-align: center;
+}
+.userchvfooter>.balance>.money{
+    color: #5262ff;
+}
+.userchvfooter>.balance>.top{
+    color: #3b3d40;
+}

@@ -24,7 +24,7 @@ class UserCenterHead extends React.Component {
     render() {
 
         return (
-            <UserCenterHeadView handle={binding} {...this.state} />
+            <UserCenterHeadView handle={this.binding} {...this.state} />
         )
 
     }

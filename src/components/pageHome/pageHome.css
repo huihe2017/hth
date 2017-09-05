@@ -11,7 +11,8 @@
 .PageTableDiv {
     position: absolute;
     right: 0;
-    top:80px
+    top:80px;
+    z-index:1;
 }
 
 

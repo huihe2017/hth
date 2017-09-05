@@ -21,7 +21,7 @@ class FormItem extends React.Component{
                 }else {
                     state='default';
                 }
-            }else {
+        }else {
             state='isfocus';
         }
         this.props.change({value:v,state,firstEdit:false},this.props.lebal);

@@ -251,10 +251,7 @@ class Register extends React.Component{
         }
 
         if(name=="regMsg"){
-
             if(this.state.regMsg.regMsg.istu){
-
-                console.log(vaildMsg)
                 this.state.regMsg[name] = {...vaildMsg,istu: true};
             }
         }else {

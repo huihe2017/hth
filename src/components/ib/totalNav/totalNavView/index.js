@@ -1,20 +1,8 @@
 import React from 'react';
 import style from "./index.css"
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router'
 
 class TotalNav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            index: 0
-        }
-    }
-
-    handleClick(i) {
-        this.setState({
-            index: i
-        })
-    }
 
     render() {
 

@@ -9,6 +9,10 @@ class userCenterHeadView extends React.Component{
 
         }
 	}
+	getTime(e){
+        let now=new Date(e);
+        return   [now.getFullYear(),now.getMonth()+1,now.getDate()].join("-")+" "+[now.getHours(),now.getMinutes()].join(":");
+    }
 	render(){
             let imgurl= ""
 			return(
@@ -36,13 +40,12 @@ class userCenterHeadView extends React.Component{
                                 <div>
                                     出金绑定银行卡：
                                     <a href="javascript:void (0);">去绑定</a>
-                                <div/>
-                                <div>
-                                    出户时间：{this.props.openingTime}
-
                                 </div>
+                                <div>
+                                    出户时间：{
+                                        this.getTime(this.props.openingTime)
 
-
+                                    }
 
                                 </div>
                             </div>

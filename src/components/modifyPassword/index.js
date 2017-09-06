@@ -25,6 +25,11 @@ class modifyPassword extends React.Component {
     }
 
     submitFn(){
+        let mpMsg = this.state
+        for (let s in mpMsg) {
+            mpMsg[s].firstEdit && (mpMsg[s].firstEdit = false)
+        }
+        this.setState({mpMsg})
         if(this.state.initialPassword.state !== 'error' && this.state.confirmPassword.state !== 'error' && this.state.setPassword.state !== 'error'){
             alert('修改成功')
         }
@@ -36,9 +41,12 @@ class modifyPassword extends React.Component {
     }
 
     render() {
-
         return (
-            <ModifyPasswordView change={this.change.bind(this)} submit={this.submitFn.bind(this)} {...this.state}></ModifyPasswordView>
+            <ModifyPasswordView
+                change={this.change.bind(this)}
+                submit={this.submitFn.bind(this)} {...this.state}>
+
+            </ModifyPasswordView>
         )
 
     }

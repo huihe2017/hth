@@ -12,7 +12,6 @@ class UserCenter extends React.Component{
         }
 	}
 	render(){
-
 			return(
 				<div  className={style.wrap} >
 					<div>

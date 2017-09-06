@@ -111,7 +111,6 @@ class AccountDeposit extends React.Component {
     submitFn() {
         console.log(this.state.inputState.value)
         if (this.state.inputState.value !== '') {
-            console.log(111)
             if(this.state.choceBank){
                 alert('成功入金' + this.state.depositCount+ '///' + this.state.choceBank)
             }else {

@@ -70,12 +70,12 @@ class Register extends React.Component{
             }
         }
 
-        this.setState({regMsg})
-        if(flag){
-            alert('提交成功')
-        }else {
-            return
-        }
+        // this.setState({regMsg})
+        // if(flag){
+        //     alert('提交成功')
+        // }else {
+        //     return
+        // }
         axios.post('http://47.91.236.245:3020/user', {
             phone: this.state.regMsg.regUser.value,
             password: this.state.regMsg.regPassword.value,

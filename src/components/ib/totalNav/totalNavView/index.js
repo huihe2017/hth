@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./index.css"
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 class TotalNav extends React.Component {
 

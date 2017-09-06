@@ -18,36 +18,37 @@ class Ib extends React.Component {
 
         return (
             <div className={style.wrap}>
-                <TotalNav data={[{
-                    icon:"user-o",
-                    value:"IB账号",
-                    key:0
-                },
-                {
-                    icon:"sign-out",
-                    value:"申请出佣",
-                    key:1
-                },
-                {
-                    icon:"pencil-square-o",
-                    value:"开户链接",
-                    key:2
-                },
-                {
-                    icon:"list-alt",
-                    value:"子代理链接",
-                    key:3
-                },
-                {
-                    icon:"sliders",
-                    value:"报表查询",
-                    key:4
-                },
-                {
-                    icon:"address-book-o",
-                    value:"用户分组",
-                    key:5
-                }
+                <TotalNav data={[
+                    {
+                        icon: "user-o",
+                        value: "IB账号",
+                        path: '/ib'
+                    },
+                    {
+                        icon: "sign-out",
+                        value: "申请出佣",
+                        path: '/ib/applyCommission'
+                    },
+                    {
+                        icon: "pencil-square-o",
+                        value: "开户链接",
+                        path: '/ib/accountLink'
+                    },
+                    {
+                        icon: "list-alt",
+                        value: "子代理链接",
+                        path: '/ib/childLink'
+                    },
+                    {
+                        icon: "sliders",
+                        value: "报表查询",
+                        path: '/ib/reportQuery'
+                    },
+                    {
+                        icon: "address-book-o",
+                        value: "用户分组",
+                        path: '/ib/accountOverview'
+                    }
                 ]} />
         <div className={style.wrapDown} >
             <Switch>

@@ -2,6 +2,7 @@ import style from  "./index.css"
 import React from 'react';
 import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
+import axios from 'axios'
 
 class Login extends React.Component{
     constructor(props){
@@ -58,9 +59,26 @@ class Login extends React.Component{
             }
         }
         this.setState({loginMsg})
-        if(flag){
-            alert('提交成功')
-        }
+
+
+        axios.post('http://47.91.236.245:3020/user', {
+            phone: '13725503790',
+            password: '111111q'
+        })
+            .then(function (response) {
+                console.log(response);
+                if(flag){
+                    alert('提交成功')
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+
+
+
+
     }
 
     render(){

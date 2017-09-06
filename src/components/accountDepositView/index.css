@@ -10,9 +10,16 @@
     font-size: 14px;
 }
 .title{
-
+    font-size: 14px;
     margin-right: 40px;
     margin-top: 8px;
+    position: relative;
+}
+.tttip{
+    color: #f59294;
+    position: absolute;
+    left: 120px;
+    top:7px;
 }
 .inputc{
     float: left;
@@ -39,6 +46,11 @@
 .btitle{
     font-size: 14px;
     margin-top: 20px;
+}
+.error{
+    color: #f59294;
+}
+.default{
     color: #3b3d40;
 }
 .banklist{
@@ -54,6 +66,9 @@
     border: 1px solid #dfdce4;
     margin-right: 20px;
     margin-top: 20px;
+}
+.banklist>.active{
+    border: 1px solid #5262ff;
 }
 .banklist>li:nth-child(5){
     margin-right: 0;

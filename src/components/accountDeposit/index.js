@@ -15,6 +15,7 @@ class AccountDeposit extends React.Component {
             rmb: 0,
             exchangeRate: 6.597000,
             choceBank:'',
+            cla:'error',
             bankState:true,
             banks: [
                     {
@@ -108,21 +109,38 @@ class AccountDeposit extends React.Component {
     }
 
     submitFn() {
-        if (this.state.inputState.state !== 'error') {
+        console.log(this.state.inputState.value)
+        if (this.state.inputState.value !== '') {
+            console.log(111)
             if(this.state.choceBank){
                 alert('成功入金' + this.state.depositCount+ '///' + this.state.choceBank)
             }else {
-                this.setState({bankState:false})
+                this.setState({
+                    bankState:false,
+                    inputState: {
+                        value:"",
+                        firstEdit: false,
+                        state: 'default'
+                    },
+                })
             }
         }else {
+            this.setState({
+                inputState: {
+                    value:"",
+                    firstEdit: false,
+                    state: 'error'
+                }
+            })
             if(!this.state.choceBank){
-                this.setState({bankState:false})
+                this.setState({
+                    bankState:false
+                })
             }
         }
     }
 
     depositChange(obj) {
-        console.log(obj);
         this.setState({
             inputState: obj
         }, () => {
@@ -137,7 +155,8 @@ class AccountDeposit extends React.Component {
     choceBank(code){
         this.setState({
             choceBank: code,
-            bankState:false
+            bankState:false,
+            cla:'default'
         })
     }
 

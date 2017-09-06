@@ -24,6 +24,18 @@ class AccountDepositView extends React.Component {
     submit(){
         this.props.submit()
     }
+
+    mapItem(v,i){
+        if(this.props.choceBank!==""){
+            return (<li className={i==this.props.choceBank?style.active:""} onClick={this.getCode.bind(this,i)} title={v.name}>
+                    <img src={require(`${v.logo}`)}/>
+             </li>)
+        }else{
+            return (<li onClick={this.getCode.bind(this,i)} title={v.name}>
+                <img src={require(`${v.logo}`)}/>
+            </li>)
+        }
+    }
     render() {
         let ssw={
             color:"#f59294"
@@ -31,24 +43,17 @@ class AccountDepositView extends React.Component {
         let ssr={
             color:"#3b3d40"
         };
-        if(this.props.bankState){
-            if(this.props.choceBank){
-
-            }else {
-                this.props.choceBank=true
-            }
-        }else {
-            if(this.props.choceBank){
-                this.props.choceBank=true
-            }else {
-                this.props.choceBank=false
-            }
-        }
+        this.props.bankState?(this.props.cla='default'):'';
         return (
             <div className={style.accountDepositView}>
                 <div className={style.accheader}>
                     <div className={style.title}>
                         <Title content={"/入金金额"} color={"#3b3d40"}/>
+                        <span className={style.tttip}>
+                            尚未开户，当钱可入金额：美元$ <span>
+                            {5000-this.props.depositCount}
+                        </span>
+                        </span>
                     </div>
                     <div className={style.inputc}>
                         <Input
@@ -72,17 +77,13 @@ class AccountDepositView extends React.Component {
                     </div>
                 </div>
                 <div className={style.acccontent}>
-                    <div className={style.btitle}
-                         style={this.props.choceBank?ssr:ssw}
-                    >
+                    <div className={style.btitle+" "+style[this.props.cla]}>
                         选择银行网银支付
                     </div>
                     <ul className={style.banklist}>
                         {
                             this.props.banks.map((v,i)=>{
-                                return <li onClick={this.getCode.bind(this,i)} title={v.name}>
-                                    <img src={require(`${v.logo}`)}/>
-                                </li>
+                                return this.mapItem(v,i)
                             })
                         }
                     </ul>

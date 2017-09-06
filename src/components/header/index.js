@@ -12,7 +12,9 @@ class TitValueBox extends React.Component {
             otherStyle:true,
             isShowReg:false,
             isShowLogin:false,
-            isShowSideBar: false
+            isShowSideBar: false,
+            userName:'',
+            isLogin:false
         }
         this.hideLogin = this.hideLogin.bind(this)
         this.hideReg = this.hideReg.bind(this)

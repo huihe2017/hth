@@ -3,7 +3,7 @@ import SideBar from './sideBar/index'
 import Login from '../../login/index'
 import Register from '../../register/index'
 import Layer from '../../renderLayer/index'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import style from './header.css'
 
 export default class Header extends Component {
@@ -13,18 +13,24 @@ export default class Header extends Component {
         return (
             <div>
                 {/*<div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>*/}
-                <div className= {this.props.otherStyle?( style.header + ' ' + style[this.props.position]+ ' ' + style.otherStyle):( style.header + ' ' + style[this.props.position])}>
+                <div
+                    className={this.props.otherStyle ? ( style.header + ' ' + style[this.props.position] + ' ' + style.otherStyle) : ( style.header + ' ' + style[this.props.position])}>
                     <div className={style.logo}>
                         {
-                            this.props.otherStyle?<Link to="/" ><img src={require("./logoO.png")}/></Link>:<Link to="/" ><img src={require("./logo.png")}/></Link>
+                            this.props.otherStyle ? <Link to="/"><img src={require("./logoO.png")}/></Link> :
+                                <Link to="/"><img src={require("./logo.png")}/></Link>
                         }
 
                     </div>
                     <div className={style.headerRight}>
-                        <a className={style.checked}>中文</a>
-                        <a className="english">EN</a>
-                        <a onClick={()=>{this.props.toggle(true)}} className={style.login}>&nbsp;&nbsp;&nbsp;&nbsp;登录</a>
-                        <a onClick={()=>{this.props.toggle(false)}} className={style.login}>注册</a>
+                        <a className={style.checked} style={{display: 'none'}}>中文</a>
+                        <a className="english" style={{display: 'none'}}>EN</a>
+                        <a onClick={() => {
+                            this.props.toggle(true)
+                        }} className={style.login}>{this.props.isLogin ? this.props.userName : '登录'}</a>
+                        <a onClick={() => {
+                            this.props.toggle(false)
+                        }} className={style.login}>{this.props.isLogin ? '退出' : '注册'}</a>
                         <a onMouseLeave={() => {
                             this.props.hideSideBar()
                         }} onMouseOver={() => {
@@ -35,8 +41,10 @@ export default class Header extends Component {
                         </a>
                     </div>
                 </div>
-                {this.props.isShowLogin?<Layer closeFn={this.props.hideLogin}><Login toReg={this.props.toggle.bind(this)} /></Layer>:''}
-                {this.props.isShowReg?<Layer closeFn={this.props.hideReg}><Register toLogin={this.props.toggle.bind(this)} /></Layer>:''}
+                {this.props.isShowLogin ?
+                    <Layer closeFn={this.props.hideLogin}><Login toReg={this.props.toggle.bind(this)}/></Layer> : ''}
+                {this.props.isShowReg ?
+                    <Layer closeFn={this.props.hideReg}><Register toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
             </div>
         )
     }

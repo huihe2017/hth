@@ -61,9 +61,11 @@ class Login extends React.Component{
         this.setState({loginMsg})
 
 
-        axios.post('http://47.91.236.245:3020/user', {
+        axios.post('http://47.91.236.245:3020/sign-in', {
             phone: '13725503790',
-            password: '111111q'
+            password: '111111q',
+            agent:'web'
+
         })
             .then(function (response) {
                 console.log(response);

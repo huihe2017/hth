@@ -66,13 +66,31 @@ class Register extends React.Component{
             regMsg[s].firstEdit && (regMsg[s].firstEdit = false)
             if(regMsg[s].state === 'error'){
                 flag = false
+                return
             }
         }
 
         this.setState({regMsg})
         if(flag){
             alert('提交成功')
+        }else {
+            return
         }
+        axios.post('http://47.91.236.245:3020/user', {
+            phone: this.state.regMsg.regUser.value,
+            password: this.state.regMsg.regPassword.value,
+            agent:'web'
+
+        })
+            .then(function (response) {
+                console.log(response);
+                if(flag){
+                    alert('提交成功')
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     render(){
         let sss={
@@ -185,68 +203,76 @@ class Register extends React.Component{
 
     change(vaildMsg, name) {
         if(name=="regGraphics"){
-            if(vaildMsg.state=="default"&&this.state.regMsg.regUser.state=="default"){
-                this.setState({
-                    regMsg:{
-                        regUser: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regGraphics: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regMsg: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true,
-                            istu: true
-                        },
-                        regPassword: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regRepassword: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
+            console.log(vaildMsg.state)
+            if(vaildMsg.state=="default"){
+                if(this.state.regMsg.regUser.state=="default"){
+                    this.setState({
+                        regMsg:{
+                            regUser: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regGraphics: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regMsg: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true,
+                                istu: true
+                            },
+                            regPassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regRepassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }else if(vaildMsg.state=="error"){
-                this.setState({
-                    regMsg:{
-                        regUser: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regGraphics: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regMsg: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true,
-                            istu: false
-                        },
-                        regPassword: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
-                        },
-                        regRepassword: {
-                            value: '',
-                            state: 'error',
-                            firstEdit: true
+                if(this.state.regMsg.regUser.state=="default"){
+
+                }else {
+                    this.setState({
+                        regMsg:{
+                            regUser: {
+                                value: '',
+                                state: 'default',
+                                firstEdit: true
+                            },
+                            regGraphics: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regMsg: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true,
+                                istu: false
+                            },
+                            regPassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regRepassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            }
                         }
-                    }
-                })
+                    })
+                }
+
             }
         }
 

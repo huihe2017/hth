@@ -55,15 +55,16 @@ class Login extends React.Component{
         for (let s in loginMsg) {
             loginMsg[s].firstEdit && (loginMsg[s].firstEdit = false)
             if(loginMsg[s].state === 'error'){
-                flag = false
+                flag = false;
+                return
             }
         }
         this.setState({loginMsg})
 
 
         axios.post('http://47.91.236.245:3020/sign-in', {
-            phone: '13725503790',
-            password: '111111q',
+            phone: this.state.loginMsg.loginUser.value,
+            password: this.state.loginMsg.loginPassword.value,
             agent:'web'
 
         })
@@ -71,6 +72,8 @@ class Login extends React.Component{
                 console.log(response);
                 if(flag){
                     alert('提交成功')
+                }else {
+                    return
                 }
             })
             .catch(function (error) {

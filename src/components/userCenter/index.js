@@ -1,8 +1,11 @@
 import React from 'react';
 import style from  "./index.css"
 
+import {Route, Switch} from 'react-router-dom'
+
 import UserCenterHead from '../userCenterHead'
 import TotalNav from '../ib/totalNav'
+import AccountDeposit from '../accountDeposit'
 
 class UserCenter extends React.Component{
     constructor(props){
@@ -21,26 +24,32 @@ class UserCenter extends React.Component{
 						<TotalNav data={[
                             {
                                 icon: "user-o",
-                                value: "IB账号",
-                                path: '/ib'
+                                value: "账户入金",
+                                path: '/userCenter'
                             },
                             {
                                 icon: "sign-out",
-                                value: "申请出佣",
+                                value: "账户出金",
                                 path: '/ib/applyCommission'
                             },
                             {
                                 icon: "pencil-square-o",
-                                value: "开户链接",
+                                value: "用户资料",
                                 path: '/ib/accountLink'
                             },
                             {
                                 icon: "list-alt",
-                                value: "子代理链接",
+                                value: "更改密码",
                                 path: '/ib/childLink'
                             }
                         ]} />
 					</div>
+                    <div>
+                        <Switch>
+                            <Route path="/userCenter" component={AccountDeposit}/>
+                            
+                        </Switch>
+                    </div>
 				</div>
 			)
 

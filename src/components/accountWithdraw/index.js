@@ -13,8 +13,12 @@ class AccountWithdraw extends React.Component{
 			},
             rmb: 0,
             exchangeRate: 6.597000,
-            withdrawCard:'',
-            allWithdraw:0,
+            withdrawMsg:{
+                card:'2634654653737347',
+                logo:'',
+                name:''
+            },
+            allWithdraw:2355,
             pwd:{
                 firstEdit:true,
                 state:'error',

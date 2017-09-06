@@ -1,5 +1,6 @@
 .wrap ul li{
     display: inline-block;
+    font-size: 18px;
 }
 .totalnav{
     width: 100%;

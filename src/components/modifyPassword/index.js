@@ -25,14 +25,23 @@ class modifyPassword extends React.Component {
     }
 
     submitFn(){
-        let mpMsg = this.state
+        let mpMsg = this.state;
+        let flag=true
         for (let s in mpMsg) {
             mpMsg[s].firstEdit && (mpMsg[s].firstEdit = false)
         }
         this.setState({mpMsg})
         if(this.state.initialPassword.state !== 'error' && this.state.confirmPassword.state !== 'error' && this.state.setPassword.state !== 'error'){
+            flag=true
+
+        }
+        if(!flag){
+            return
+        }
+        if(flag){
             alert('修改成功')
         }
+
     }
 
     change(obj,lebal){

@@ -130,6 +130,9 @@ class Partnerreg extends React.Component {
         }
         this.setState({personalMsg})
         this.setState({bankMsg})
+        if(!flag){
+            return
+        }
         if(flag){
             alert('提交成功')
         }else {

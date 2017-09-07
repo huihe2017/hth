@@ -60,7 +60,9 @@ class Login extends React.Component{
         }
         this.setState({loginMsg})
 
-
+        if(!flag){
+            return
+        }
         axios.post('http://47.91.236.245:3020/sign-in', {
             phone: this.state.loginMsg.loginUser.value,
             password: this.state.loginMsg.loginPassword.value,
@@ -71,8 +73,6 @@ class Login extends React.Component{
                 console.log(response);
                 if(flag){
                     alert('提交成功')
-                }else {
-                    return
                 }
             })
             .catch(function (error) {

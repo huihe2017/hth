@@ -55,20 +55,24 @@ class Partnerreg extends React.Component {
                 },
                 bankChoce: {
                     value: '',
-                    state: 'error'
+                    state: 'error',
+                    firstEdit: true
                 },
                 bankChoceMsg: {
                     sheng: {
                         value: '',
-                        state: 'error'
+                        state: 'error',
+                        firstEdit: true
                     },
                     shi: {
                         value: '',
-                        state: 'error'
+                        state: 'error',
+                        firstEdit: true
                     },
                     khh: {
                         value: '',
-                        state: 'error'
+                        state: 'error',
+                        firstEdit: true
                     },
                     state: 'error',
                     firstEdit: true

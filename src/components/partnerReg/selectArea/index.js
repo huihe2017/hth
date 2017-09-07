@@ -34,22 +34,6 @@ class Selectarea extends React.Component{
         let w={
             width:this.props.widthKhh
         }
-        // bankChoceMsg: {
-        //     sheng: {
-        //         value: '',
-        //             state: 'error'
-        //     },
-        //     shi: {
-        //         value: '',
-        //             state: 'error'
-        //     },
-        //     khh: {
-        //         value: '',
-        //             state: 'error'
-        //     },
-        //     state: 'error',
-        //     firstEdit: true
-        // }
         return(
             <div className={style.selarea} >
                 <span>
@@ -57,13 +41,20 @@ class Selectarea extends React.Component{
                 </span>
                 <div className={style.perimport+' '+style.clearfloat}>
                     <div className={style.sheng}>
-                        <Tipdown show={"请选择省份"} data={bank1} ww={this.props.widthProv}  change={this.shengchange.bind(this)} la={this.zchagne.bind(this)}/>
+                        <Tipdown
+                            show={"请选择省份"}
+                            data={bank1}
+                            ww={this.props.widthProv}
+                            change={this.shengchange.bind(this)}
+                            la={this.zchagne.bind(this)}
+                            firstEdit1={this.props.firstEdit1}
+                        />
                     </div>
                     <div className={style.shi}>
-                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.widthCity}  change={this.shichange.bind(this)} la={this.zchagne.bind(this)}/>
+                        <Tipdown show={"请选择市区"} data={bank1} ww={this.props.widthCity}  change={this.shichange.bind(this)} la={this.zchagne.bind(this)} firstEdit1={this.props.firstEdit2}/>
                     </div>
                     <div className={style.hang} style={w}>
-                        <Input pla={"开户行"}  firstEdit={this.props.firstEdit} change={this.khhchange.bind(this)} la={this.zchagne.bind(this)}/>
+                        <Input pla={"开户行"}  firstEdit={this.props.firstEdi3} change={this.khhchange.bind(this)} la={this.zchagne.bind(this)}/>
                     </div>
                 </div>
             </div>
@@ -98,7 +89,6 @@ class Selectarea extends React.Component{
         }else {
             area.state = "error";
         }
-        area.firstEdit=true;
         this.props.change(area,this.props.lebal)
     }
 

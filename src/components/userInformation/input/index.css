@@ -1,0 +1,88 @@
+.inp{
+    overflow: hidden;
+}
+.inp .isfocus{
+    color:#5262ff;
+    border-color:#5262ff
+}
+.inp .isfocus1{
+    border-color:#5262ff
+}
+.inp .error{
+    color:#f59294;
+    border-color:#f59294
+}
+.inp .error1{
+    border-color:#f59294
+}
+.inp .default{
+    color:#dfdce4;
+    border-color:#dfdce4
+}
+.inp .default1{
+    border-color:#dfdce4
+}
+.inp .error2{
+    border-color:#f59294;
+    opacity: 1;
+}
+.inp .default2{
+    opacity: 0;
+}
+.ttip{
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: left;
+
+}
+.inp input{
+    height: 40px;
+    float: left;
+    width: 100%;
+    padding-left: 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #dfdce4;
+}
+.inp input:focus{
+    border:1px solid #5262ff;
+    box-shadow:0 0 5px 5px rgba(82,98,255,0.1)
+}
+.inp>.import{
+
+    position: relative;
+}
+.import .dollar{
+    font-size: 18px;
+    line-height: 40px;
+    color: #5262ff;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+.import .search{
+    display: block;
+    height: 40px;
+    width: 60px;
+    border-radius: 0 5px 5px 0;
+    background-color: #5262ff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.btip{
+    float: left;
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    color: #f59294;
+    line-height: 20px;
+}

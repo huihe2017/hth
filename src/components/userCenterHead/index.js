@@ -13,7 +13,25 @@ class UserCenterHead extends React.Component {
             openingTime: 1504586278838,
             floating: 44,
             worth: 33,
-            balance: 444
+            balance: 444,
+            dynamics:[
+                {
+                    state:'complete',
+                    content:'完成完成完成完成完成完成'
+                },
+                {
+                    state:'unComplete',
+                    content:'未完成未完成未完成未完成未完成'
+                },
+                {
+                    state:'waiting',
+                    content:'等待完成等待完成等待完成等待完成'
+                },
+                {
+                    state:'news',
+                    content:'新闻动态新闻动态新闻动态新闻动态'
+                }
+            ]
         }
     }
 

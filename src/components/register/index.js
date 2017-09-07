@@ -59,7 +59,7 @@ class Register extends React.Component{
         }
     }
 
-    submitFn() {alert(localStorage)
+    submitFn() {//alert(localStorage)
         localStorage.userName = 'fbgreb'
         this.props.login()
         let regMsg = this.state.regMsg

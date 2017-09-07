@@ -2,7 +2,6 @@ import style from  "./index.css"
 import React from 'react';
 import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
-import axios from "axios"
 
 class Register extends React.Component{
     constructor(props){
@@ -60,10 +59,9 @@ class Register extends React.Component{
         }
     }
 
-    submitFn() {
-        // alert(localStorage)
-        // localStorage.userName = 'fbgreb'
-        // this.props.login()
+    submitFn() {alert(localStorage)
+        localStorage.userName = 'fbgreb'
+        this.props.login()
         let regMsg = this.state.regMsg
         let flag = true
         for (let s in regMsg) {
@@ -74,7 +72,11 @@ class Register extends React.Component{
         }
 
         this.setState({regMsg})
-
+        // if(flag){
+        //     alert('提交成功')
+        // }else {
+        //     return
+        // }
         axios.post('http://47.91.236.245:3020/user', {
             phone: this.state.regMsg.regUser.value,
             password: this.state.regMsg.regPassword.value,
@@ -167,7 +169,7 @@ class Register extends React.Component{
                             align={"bottom"}
                             tip={"请输入正确的密码"}
                             firstEdit={this.state.regMsg.regPassword.firstEdit}
-                            iid={"pass"}
+                            id={"pass"}
                         />
 
                     </div>
@@ -202,39 +204,88 @@ class Register extends React.Component{
 
     change(vaildMsg, name) {
         if(name=="regGraphics"){
+            console.log(vaildMsg.state)
             if(vaildMsg.state=="default"){
                 if(this.state.regMsg.regUser.state=="default"){
-                    this.state.regMsg.regMsg.istu=true
-                }else {
-                    this.state.regMsg.regMsg.istu=false
+                    this.setState({
+                        regMsg:{
+                            regUser: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regGraphics: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regMsg: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true,
+                                istu: true
+                            },
+                            regPassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regRepassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            }
+                        }
+                    });
                 }
-                this.setState({
-                    state:this.state
-                });
             }else if(vaildMsg.state=="error"){
                 if(this.state.regMsg.regUser.state=="default"){
-                    this.state.regMsg.regMsg.istu=false
-                }else {
-                    this.state.regMsg.regMsg.istu=false
 
+                }else {
+                    this.setState({
+                        regMsg:{
+                            regUser: {
+                                value: '',
+                                state: 'default',
+                                firstEdit: true
+                            },
+                            regGraphics: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regMsg: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true,
+                                istu: false
+                            },
+                            regPassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            },
+                            regRepassword: {
+                                value: '',
+                                state: 'error',
+                                firstEdit: true
+                            }
+                        }
+                    })
                 }
 
             }
         }
 
         if(name=="regMsg"){
-            console.log(this.state.regMsg.regMsg.istu)
-
             if(this.state.regMsg.regMsg.istu){
                 this.state.regMsg[name] = {...vaildMsg,istu: true};
             }
-
         }else {
             this.state.regMsg[name] = vaildMsg;
         }
-        console.log(this.state)
-        this.setState({state: this.state});
 
+        this.setState({state: this.state});
 
     }
     off(){

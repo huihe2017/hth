@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderR from './headerView'
 import style from "./index.css"
 import { hashHistory } from 'react-router';
-
+import {Redirect} from 'react-router-dom'
 
 class TitValueBox extends React.Component {
     constructor(props) {
@@ -38,6 +38,8 @@ class TitValueBox extends React.Component {
     signOut(){
         this.setState({
             isLogin:false
+        },()=>{
+
         })
     }
 
@@ -121,7 +123,7 @@ class TitValueBox extends React.Component {
 
     render() {
         return (
-            <HeaderR login={this.login.bind(this)} {...this.state} hideLogin={this.hideLogin} hideReg={this.hideReg}  toggle={this.toggle} hideSideBar={this.hideSideBar} showSideBar={this.showSideBar} />
+            <HeaderR login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state} hideLogin={this.hideLogin} hideReg={this.hideReg}  toggle={this.toggle} hideSideBar={this.hideSideBar} showSideBar={this.showSideBar} />
         )
     }
 }

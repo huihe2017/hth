@@ -29,7 +29,12 @@ export default class Header extends Component {
                             this.props.toggle(true)
                         }} className={style.login}>{this.props.isLogin ? localStorage.userName : '登录'}</a>
                         <a onClick={() => {
-                            this.props.toggle(false)
+                            if(this.props.isLogin){
+                                this.props.signOut()
+                            }else{
+                                this.props.toggle(false)
+                            }
+
                         }} className={style.login}>{this.props.isLogin ? '退出' : '注册'}</a>
                         <a onMouseLeave={() => {
                             this.props.hideSideBar()

@@ -61,8 +61,8 @@ class Register extends React.Component{
     }
 
     submitFn() {//alert(localStorage)
-        localStorage.userName = 'fbgreb'
-        this.props.login()
+        //localStorage.userName = 'fbgreb'
+       // this.props.login()
 
         let regMsg = this.state.regMsg
         let flag = true
@@ -74,7 +74,6 @@ class Register extends React.Component{
         }
 
         this.setState({regMsg})
-
         axios.post('http://47.91.236.245:3020/user', {
             phone: this.state.regMsg.regUser.value,
             password: this.state.regMsg.regPassword.value,

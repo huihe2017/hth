@@ -54,7 +54,7 @@ class FormItem extends React.Component{
                     {this.props.align=="top"?this.props.tip:""}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""} id={this.props.id}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""} id={this.props.iid}/>
                     <span className={style.dollar} style={this.props.dollar?dib:din}>
                         $
                     </span>

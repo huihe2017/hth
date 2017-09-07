@@ -15,23 +15,26 @@ class FormItem extends React.Component{
             }else {
                 state='error';
             }
-        }else if(this.props.tip=="请保证两次密码输入相同"){
-            if(document.querySelector("#pass1")){
-                if(v!==document.querySelector("#pass1").value){
-                    state='error'
-                }else {
-                    state='default';
-                }
-            }
-            if(document.querySelector("#pass")){
+        }else if(this.props.iid=="repass"){
+            console.log(v)
+            if(document.querySelector("#pass").value){
                 if(v!==document.querySelector("#pass").value){
                     state='error'
                 }else {
                     state='default';
                 }
             }
-
-        }else {
+        }else if(this.props.iid=="repass1"){
+            console.log(v)
+            if(document.querySelector("#pass1").value){
+                console.log(document.querySelector("#pass1").value)
+                if(v!==document.querySelector("#pass1").value){
+                    state='error'
+                }else {
+                    state='default';
+                }
+            }
+        } else {
             state='isfocus';
         }
         this.props.change({value:v,state,firstEdit:false},this.props.lebal);

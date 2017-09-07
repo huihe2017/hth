@@ -179,6 +179,7 @@ class Register extends React.Component{
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.state.regMsg.regRepassword.state}
+                            iid="repass"
                             align={"bottom"}
                             tip={"请保证两次密码输入相同"}
                             firstEdit={this.state.regMsg.regRepassword.firstEdit}

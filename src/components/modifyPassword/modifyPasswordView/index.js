@@ -29,7 +29,7 @@ class modifyPasswordView extends React.Component {
                             align={"bottom"}
                             tip={"请输入正确的密码"}
                             firstEdit={this.props.initialPassword.firstEdit}
-                            id={"pass"}
+
                         />
                     </div>
                 </div>
@@ -46,7 +46,7 @@ class modifyPasswordView extends React.Component {
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.props.setPassword.state}
-                            id="pass1"
+                            iid="pass1"
                             align={"bottom"}
                             tip={"请输入正确的密码"}
                             firstEdit={this.props.setPassword.firstEdit}
@@ -66,6 +66,7 @@ class modifyPasswordView extends React.Component {
                             change={this.change.bind(this)}
                             pwa={true}
                             cla={this.props.confirmPassword.state}
+                            iid="repass1"
                             align={"bottom"}
                             tip={"请保证两次密码输入相同"}
 

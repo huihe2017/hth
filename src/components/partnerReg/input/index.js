@@ -16,15 +16,14 @@ class FormItem extends React.Component{
                 state='error';
             }
         }else if(this.props.tip=="请保证两次密码输入相同"){
-            console.log(document.querySelector("#pass").value)
-            if(document.querySelector("#pass1")){
+            if(document.querySelector("#pass1").value){
                 if(v!==document.querySelector("#pass1").value){
                     state='error'
                 }else {
                     state='default';
                 }
             }
-            if(document.querySelector("#pass")){
+            if(document.querySelector("#pass").value){
                 if(v!==document.querySelector("#pass").value){
                     state='error'
                 }else {
@@ -55,7 +54,7 @@ class FormItem extends React.Component{
                     {this.props.align=="top"?this.props.tip:""}
                 </span>
                 <div className={style.import}>
-                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""} id={this.props.iid}/>
+                    <input type={this.props.pwa?'password':'text'} placeholder={this.props.pla} onChange={this.onchangeHandle} name={this.props.nn} className={style[this.props.cla+"1"]} value={this.props.val} disabled={this.props.edit?"disabled":""} id={this.props.id}/>
                     <span className={style.dollar} style={this.props.dollar?dib:din}>
                         $
                     </span>

@@ -116,20 +116,20 @@ class Partnerreg extends React.Component {
             personalMsg[s].firstEdit && (personalMsg[s].firstEdit = false)
             if(personalMsg[s].state === 'error'){
                 flag = false
-                return
             }
         }
         for (let s in bankMsg) {
             bankMsg[s].firstEdit && (bankMsg[s].firstEdit = false)
             if(bankMsg[s].state === 'error'){
                 flag = false
-                return
             }
         }
         this.setState({personalMsg})
         this.setState({bankMsg})
         if(flag){
             alert('提交成功')
+        }else {
+            return
         }
     }
 

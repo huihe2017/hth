@@ -25,12 +25,11 @@
     margin-top: 100px;
 }
 .but>button{
-
-
     width: 160px;
     height: 40px;
     background-color: #5262ff;
     color: #fff;
     border: none;
     border-radius: 5px;
+    outline: none;
 }

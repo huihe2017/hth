@@ -1,0 +1,85 @@
+
+.accountWithdrawView{
+
+}
+.tcontent{
+
+}
+.tctitle{
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+.tccontent{
+    overflow: hidden;
+}
+.input{
+    float: left;
+    width: 260px;
+    height: 40px;
+}
+.withdraw{
+    float: left;
+    font-size: 18px;
+    margin-left: 20px;
+    width: 120px;
+    height: 40px;
+}
+.withdraw>button{
+    width: 120px;
+    height: 40px;
+    border: 1px solid #5262ff;
+    background-color: transparent;
+    color: #5262ff;
+    border-radius: 5px;
+    outline: none;
+}
+.ttip{
+    float: left;
+    width: 740px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.tltip{
+    float: left;
+    font-size: 14px;
+}
+.tltip>li{
+    color: #aaa;
+    line-height: 20px;
+}
+.tltip>li>span{
+    color: #5262ff;
+}
+.ttbank{
+    float: right;
+    overflow: hidden;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.ttbank>li{
+    float: left;
+    color: #aaa;
+    line-height: 20px;
+}
+.ttbank>li:first-child{
+    margin-right: 20px;
+}
+.but{
+    width: 160px;
+    height: 40px;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.but>button{
+
+
+    width: 160px;
+    height: 40px;
+    background-color: #5262ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}

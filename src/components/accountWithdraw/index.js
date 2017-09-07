@@ -15,63 +15,74 @@ class AccountWithdraw extends React.Component{
             exchangeRate: 6.597000,
             withdrawMsg:{
                 card:'2634654653737347',
-                logo:'',
-                name:''
+                name:'工商银行'
             },
-            allWithdraw:2355,
+            isShowHand:false,
+            allWithdraw:2546,
             pwd:{
                 firstEdit:true,
                 state:'error',
                 value:''
             }
-
         }
 	}
 
 	getAll(){
-    	this.state.withdrawInput.value = this.state.allWithdraw
-    	this.setState({state:this.state})
-	}
 
-    withdrawChange(obj) {
-        this.setState({
-            withdrawInput: obj
-        }, () => {
-            if (obj.state !== 'error') {
-                this.setState({rmb: obj.value * this.state.exchangeRate})
-            }
-        })
-
-    }
-
-    submitFn(){
-		if(this.state.withdrawInput.firstEdit === true){
-            this.state.withdrawInput.firstEdit === false
-            this.setState({state: this.state})
-			return false
-		}
-        if(this.state.pwd.firstEdit === true){
-            this.state.pwd.firstEdit === false
-            this.setState({state: this.state})
-            return false
-        }
-		if(this.state.withdrawInput.state === 'error'){
-            return false
-		}
-        if(this.state.pwd.state === 'error'){
-            return false
-        }
-
-        alert('出金'+this.state.withdrawInput.value)
-
+    	this.setState({
+            withdrawInput:{
+                value:this.state.allWithdraw,
+                firstEdit:false,
+                state:'default'
+            },
+            rmb:this.state.allWithdraw*this.state.exchangeRate
+    	})
 	}
 
 	render(){
-
 			return(
-				<AccountWithdrawView change={this.withdrawChange.bind(this)}  {...this.state} getAll={this.getAll.bind(this)} submitFn={this.submitFn.bind(this)} className={style.wrap} ></AccountWithdrawView>
+				<AccountWithdrawView
+                    change={this.withdrawChange.bind(this)}
+                    {...this.state}
+                    getAll={this.getAll.bind(this)}
+                    submitFn={this.submitFn.bind(this)}
+                    className={style.wrap}
+                />
 			)
-
 		}
+    withdrawChange(obj,lebal) {
+        this.state[lebal] = obj
+        this.setState({
+            state: this.state
+        }, () => {
+            this.setState({rmb: this.state.withdrawInput.value * this.state.exchangeRate})
+        })
+    }
+
+    submitFn(){
+        let flag=true;
+        if(this.state.withdrawInput.firstEdit === true){
+            this.state.withdrawInput.firstEdit = false
+            this.setState({state: this.state})
+        }
+        if(this.state.pwd.firstEdit === true){
+            this.state.pwd.firstEdit = false
+            this.setState({state: this.state})
+        }
+
+        if(this.state.withdrawInput.state === 'error'){
+            flag=false
+        }
+        if(this.state.pwd.state === 'error'){
+            flag=false
+        }
+        if(flag){
+            alert('出金'+this.state.withdrawInput.value)
+        }else {
+            return
+        }
+
+    }
+
 }
 export default AccountWithdraw;

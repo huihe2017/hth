@@ -53,10 +53,9 @@ class Login extends React.Component{
         let loginMsg = this.state.loginMsg
         let flag = true
         for (let s in loginMsg) {
-            loginMsg[s].firstEdit && (loginMsg[s].firstEdit = false)
+            loginMsg[s].firstEdit = false
             if(loginMsg[s].state === 'error'){
                 flag = false;
-                return
             }
         }
         this.setState({loginMsg})

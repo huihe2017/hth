@@ -66,11 +66,10 @@ class Register extends React.Component{
             regMsg[s].firstEdit && (regMsg[s].firstEdit = false)
             if(regMsg[s].state === 'error'){
                 flag = false
-                return
             }
         }
 
-        // this.setState({regMsg})
+        this.setState({regMsg})
         // if(flag){
         //     alert('提交成功')
         // }else {

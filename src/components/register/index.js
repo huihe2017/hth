@@ -78,8 +78,8 @@ class Register extends React.Component{
             return
         }
         axios.post('http://47.91.236.245:3020/user', {
-            phone: this.state.regMsg.regUser.value,
-            password: this.state.regMsg.regPassword.value,
+            phone: this.state.regMsg.regMsg.regUser.value,
+            password: this.state.regMsg.regMsg.regPassword.value,
             agent:'web'
 
         })

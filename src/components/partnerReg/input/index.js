@@ -16,14 +16,14 @@ class FormItem extends React.Component{
                 state='error';
             }
         }else if(this.props.tip=="请保证两次密码输入相同"){
-            if(document.querySelector("#pass1").value){
+            if(document.querySelector("#pass1")){
                 if(v!==document.querySelector("#pass1").value){
                     state='error'
                 }else {
                     state='default';
                 }
             }
-            if(document.querySelector("#pass").value){
+            if(document.querySelector("#pass")){
                 if(v!==document.querySelector("#pass").value){
                     state='error'
                 }else {

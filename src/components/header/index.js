@@ -25,6 +25,18 @@ class TitValueBox extends React.Component {
 
     }
 
+    login(){
+        this.setState({
+            isLogin:true
+        })
+    }
+
+    signOut(){
+        this.setState({
+            isLogin:false
+        })
+    }
+
     hideLogin() {
         this.setState({isShowLogin: false}, () => {
         })
@@ -105,7 +117,7 @@ class TitValueBox extends React.Component {
 
     render() {
         return (
-            <HeaderR {...this.state} hideLogin={this.hideLogin} hideReg={this.hideReg}  toggle={this.toggle} hideSideBar={this.hideSideBar} showSideBar={this.showSideBar} />
+            <HeaderR login={this.login.bind()} {...this.state} hideLogin={this.hideLogin} hideReg={this.hideReg}  toggle={this.toggle} hideSideBar={this.hideSideBar} showSideBar={this.showSideBar} />
         )
     }
 }

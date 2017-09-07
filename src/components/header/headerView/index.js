@@ -27,7 +27,7 @@ export default class Header extends Component {
                         <a className="english" style={{display: 'none'}}>EN</a>
                         <a onClick={() => {
                             this.props.toggle(true)
-                        }} className={style.login}>{this.props.isLogin ? this.props.userName : '登录'}</a>
+                        }} className={style.login}>{this.props.isLogin ? localStorage.userName : '登录'}</a>
                         <a onClick={() => {
                             this.props.toggle(false)
                         }} className={style.login}>{this.props.isLogin ? '退出' : '注册'}</a>
@@ -44,7 +44,7 @@ export default class Header extends Component {
                 {this.props.isShowLogin ?
                     <Layer closeFn={this.props.hideLogin}><Login toReg={this.props.toggle.bind(this)}/></Layer> : ''}
                 {this.props.isShowReg ?
-                    <Layer closeFn={this.props.hideReg}><Register toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
+                    <Layer closeFn={this.props.hideReg}><Register login={this.props.login} toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
             </div>
         )
     }

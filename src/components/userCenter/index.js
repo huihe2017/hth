@@ -8,6 +8,7 @@ import TotalNav from '../ib/totalNav'
 import AccountDeposit from '../accountDeposit'
 import AccountWithdraw from '../accountWithdraw'
 import ModifyPassword from '../modifyPassword'
+import UserInformation from '../userInformation'
 
 class UserCenter extends React.Component{
     constructor(props){
@@ -37,7 +38,7 @@ class UserCenter extends React.Component{
                             {
                                 icon: "pencil-square-o",
                                 value: "用户资料",
-                                path: '/ib/accountLink'
+                                path: '/userCenter/userInformation'
                             },
                             {
                                 icon: "list-alt",
@@ -48,8 +49,9 @@ class UserCenter extends React.Component{
 					</div>
                     <div>
                         <Switch>
-                            <Route path="/userCenter/modifyPassword" component={ModifyPassword}/>\
+                            <Route path="/userCenter/modifyPassword" component={ModifyPassword}/>
                             <Route path="/userCenter/accountWithdraw" component={AccountWithdraw}/>
+                            <Route path="/userCenter/userInformation" component={UserInformation}/>
                             <Route path="/userCenter" component={AccountDeposit}/>
                         </Switch>
                     </div>

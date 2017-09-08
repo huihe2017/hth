@@ -1,15 +1,32 @@
 .userCenterHeadView{
-    width: 800px;
-    height: 220px;
-    border-right: 1px solid #dfdce4;
+    background-color: #fff;
+    padding-left: 20px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.userCHl{
+    width: 780px;
+    font-size: 14px;
+    float: left;
+    padding-top: 20px;
+}
+.userCHlt{
+    display: block;
+    height: 20px;
+    line-height: 14px;
+    color: #656b6f;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dfdce4;
+
 }
 .userchvheader{
-    width: 800px;
+    width: 780px;
     height: 140px;
     border-bottom: 1px solid #dfdce4;
+    border-right: 1px solid #dfdce4;
 }
 .avatar{
-    width: 140px;
+    width: 120px;
     height: 140px;
     position: relative;
     float: left;
@@ -21,8 +38,8 @@
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin-left: -44px;
+    left: 0;
+
     margin-top: -44px;
 }
 .userhc{
@@ -51,12 +68,14 @@
     color: #aaa;
 }
 .userchvfooter{
-    height: 80px;
-    margin-left: 19px;
+    border-right: 1px solid #dfdce4;
+    height: 60px;
+    width: 780px;
+
 }
 .userchvfooter>div{
     float: left;
-    width: 260px;
+    width: 259px;
     margin-top: 12px;
     height: 48px;
     border-right: 1px solid #dfdce4;
@@ -71,7 +90,7 @@
     text-align: center;
 }
 .userchvfooter .top{
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 14px;
     line-height: 14px;
     color: #aaa;
@@ -82,4 +101,52 @@
 }
 .userchvfooter>.balance>.top{
     color: #3b3d40;
+}
+.userCHr{
+    width: 396px;
+    font-size: 14px;
+    float: left;
+    padding-top: 20px;
+}
+.userCHrc{
+    height: 200px;
+    overflow-y: auto;
+    padding-left: 20px;
+}
+.item{
+    width: 360px;
+    margin-top: 20px;
+    font-size: 12px;
+    clear: both;
+    position: relative;
+}
+.state{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    background-color: #fff;
+}
+
+.item>span{
+    margin-left: 9px;
+    float: left;
+    border-left: 2px solid #656b6f;
+    padding-left: 26px;
+    color: #3b3d40;
+    line-height: 20px;
+    width: 300px;
+    min-height: 20px;
+    height: auto !important;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+.clearfloat {
+    zoom: 1
 }

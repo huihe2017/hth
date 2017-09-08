@@ -17,15 +17,15 @@ class UserCenterHead extends React.Component {
             dynamics:[
                 {
                     state:'complete',
-                    content:'完成完成完成完成完成完成'
+                    content:'完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成完成'
                 },
                 {
                     state:'unComplete',
-                    content:'未完成未完成未完成未完成未完成'
+                    content:'未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成未完成'
                 },
                 {
                     state:'waiting',
-                    content:'等待完成等待完成等待完成等待完成'
+                    content:'等待完成等待完成等待完成等待完等待完成等待完成等待完成等待完成等待完成等待完成等待完成等待完成成'
                 },
                 {
                     state:'news',
@@ -40,7 +40,6 @@ class UserCenterHead extends React.Component {
     }
 
     render() {
-
         return (
             <UserCenterHeadView handle={this.binding} {...this.state} />
         )

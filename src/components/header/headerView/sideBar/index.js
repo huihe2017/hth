@@ -5,7 +5,13 @@ import style from './sideBar.css'
 
 class SideBar extends Component {
 
+    onClickHandle(e){
+        if(localStorage.userName==='null'){
+            e.preventDefault()
+            this.props.userCenterClick()
+        }
 
+    }
     render() {
         let isHide = this.props.show ? '' : style.hide
 
@@ -18,7 +24,7 @@ class SideBar extends Component {
                     <div>关于海豚汇</div>
                     <div>合伙人计划</div>
                     <div>海豚学院</div>
-                    <Link to="/userCenter"><div>个人中心</div></Link>
+                    <Link onClick={this.onClickHandle.bind(this)} to="/userCenter"><div>个人中心</div></Link>
                     <Link to="/ib"><div>代理系统</div></Link>
                     <Link to="/partnerReg"><div>合伙人注册</div></Link>
                     <Link to="/partnerLogin"><div>合伙人登录</div></Link>

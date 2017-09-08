@@ -3,11 +3,13 @@ import React from 'react';
 import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
 import axios from "axios"
+import Layer from '../renderLayer'
 
 class Register extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            loading:false,
             prephone:[
                 {
                     "area":"中国大陆",
@@ -77,7 +79,8 @@ class Register extends React.Component{
         if(!flag){
             return
         }
-        console.log(this.state.regMsg.regUser.phone.value)
+        this.setState({loading:true})
+        let _this = this
         axios.post('http://47.91.236.245:3020/user', {
             phone: this.state.regMsg.regUser.phone.value,
             password: this.state.regMsg.regPassword.value,
@@ -86,13 +89,55 @@ class Register extends React.Component{
         })
             .then(function (response) {
                 console.log(response);
-                if(flag){
-                    alert('提交成功')
+                if(response.code !== '1011'){
+                    _this.toLogin()
                 }
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+    toLogin(){
+        let _this = this
+        axios.post('http://47.91.236.245:3020/sign-in', {
+            phone: this.state.regMsg.regUser.phone.value,
+            password: this.state.regMsg.regPassword.value,
+            agent:'web'
+
+        })
+            .then(function (response) {
+                // {
+                //     "code": 0,
+                //     "data": {
+                //     "bt_demo_id": "",
+                //         "bt_live_id": "",
+                //         "create_ts": 0,
+                //         "deleted": false,
+                //         "demo_id": "",
+                //         "email": null,
+                //         "id": 16,
+                //         "live_id": "",
+                //         "mt4_demo_id": "",
+                //         "mt4_live_id": "",
+                //         "nickname": "",
+                //         "phone": "13696666666",
+                //         "remark": "",
+                //         "token": "2de7d9c3-72b6-4ec4-9264-38f8b0d60c93",
+                //         "update_ts": 0
+                // },
+                //     "msg": "success"
+                // }
+                if(response.data.code === 0){
+                    localStorage.userName = response.data.data.phone
+                    localStorage.token = response.data.data.token
+                    _this.props.login()
+                    _this.setState({loading:false})
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
     render(){
         let sss={
@@ -200,6 +245,9 @@ class Register extends React.Component{
                         </span>
                     </div>
                 </div>
+                {
+                    this.state.loading?<Layer tip close={true} shadowIndex="100" ><i style={{color:'#ccc'}} className="fa fa-spinner fa-pulse"></i></Layer>:''
+                }
             </div>
         )
     }

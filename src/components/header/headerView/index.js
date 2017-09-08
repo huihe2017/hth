@@ -26,7 +26,11 @@ export default class Header extends Component {
                         <a className={style.checked} style={{display: 'none'}}>中文</a>
                         <a className="english" style={{display: 'none'}}>EN</a>
                         <a onClick={() => {
-                            this.props.toggle(true)
+                            if(this.props.isLogin){
+                                ''
+                            }else{
+                                this.props.toggle(true)
+                            }
                         }} className={style.login}>{this.props.isLogin ? localStorage.userName : '登录'}</a>
                         <a onClick={() => {
                             if(this.props.isLogin){
@@ -42,12 +46,12 @@ export default class Header extends Component {
                             this.props.showSideBar()
                         }} className={style.isPand}><i
                             className={this.props.isShowSideBar ? 'fa fa-list-ul fa-rotate-90' : 'fa fa-list-ul'}></i>
-                            <SideBar show={this.props.isShowSideBar}/>
+                            <SideBar userCenterClick={this.props.toggle.bind(this)} show={this.props.isShowSideBar}/>
                         </a>
                     </div>
                 </div>
                 {this.props.isShowLogin ?
-                    <Layer closeFn={this.props.hideLogin}><Login toReg={this.props.toggle.bind(this)}/></Layer> : ''}
+                    <Layer closeFn={this.props.hideLogin}><Login login={this.props.login} toReg={this.props.toggle.bind(this)}/></Layer> : ''}
                 {this.props.isShowReg ?
                     <Layer closeFn={this.props.hideReg}><Register login={this.props.login} toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
             </div>

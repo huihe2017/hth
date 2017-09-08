@@ -64,6 +64,7 @@ class Login extends React.Component{
             return
         }
         console.log(this.state.loginMsg.loginUser.phone.value)
+        let _this = this
         axios.post('http://47.91.236.245:3020/sign-in', {
             phone: this.state.loginMsg.loginUser.phone.value,
             password: this.state.loginMsg.loginPassword.value,
@@ -71,9 +72,10 @@ class Login extends React.Component{
 
         })
             .then(function (response) {
-                console.log(response);
-                if(flag){
-                    alert('提交成功')
+                if(response.data.code === 0){
+                    localStorage.userName = response.data.data.phone
+                    localStorage.token = response.data.data.token
+                    _this.props.login()
                 }
             })
             .catch(function (error) {

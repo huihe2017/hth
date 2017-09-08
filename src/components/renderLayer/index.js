@@ -42,9 +42,11 @@ class Dom extends Component {
             marginLeft: -this.refs['wrap'].offsetWidth / 2,
             // marginTop: -this.refs['wrap'].offsetHeight / 2 + document.body.scrollTop,
             marginTop: -this.refs['wrap'].offsetHeight / 2,
-            zIndex: 30,
-            background: '#fff'
+            zIndex: 30
         }
+
+        !this.props.tip?(layerStyle.background = '#fff'):''
+
         this.setState({
             layerStyle
         })
@@ -62,7 +64,7 @@ class Dom extends Component {
                     {!this.props.close && this.props.children ?
                         <span onClick={this.closeHandle.bind(this)} className={style.close}>+</span> : ''}
                 </div>
-                <Shadow closeHandle={this.closeHandle.bind(this)}/>
+                <Shadow shadowIndex={this.props.shadowIndex} closeHandle={this.closeHandle.bind(this)}/>
             </div>
         )
     }

@@ -1,20 +1,20 @@
 import React from 'react';
 import HeaderR from './headerView'
 import style from "./index.css"
-import { hashHistory } from 'react-router';
+import {hashHistory} from 'react-router';
 import {Redirect} from 'react-router-dom'
+import axios from "axios"
 
 class TitValueBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            position:'relative',
-            otherStyle:true,
-            isShowReg:false,
-            isShowLogin:false,
+            position: 'relative',
+            otherStyle: true,
+            isShowReg: false,
+            isShowLogin: false,
             isShowSideBar: false,
-            userName:'',
-            isLogin:false
+            isLogin: localStorage.userName === 'null' ? false : localStorage.userName
         }
         this.hideLogin = this.hideLogin.bind(this)
         this.hideReg = this.hideReg.bind(this)
@@ -25,7 +25,7 @@ class TitValueBox extends React.Component {
 
     }
 
-    login(){
+    login() {
         this.state.isLogin = true
         this.state.isShowReg = false
         this.state.isShowLogin = false
@@ -35,12 +35,23 @@ class TitValueBox extends React.Component {
         })
     }
 
-    signOut(){
-        this.setState({
-            isLogin:false
-        },()=>{
+    signOut() {
+        let _this = this
+        axios.post('http://47.91.236.245:3020/sign-out', {
+            token: localStorage.token,
+            agent: 'web'
+        }).then(function (response) {
+            if (response.data.code === 0) {
+                localStorage.userName = null
+                _this.setState({
+                    isLogin: false
+                }, () => {
 
-        })
+                })
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
 
     hideLogin() {
@@ -52,32 +63,33 @@ class TitValueBox extends React.Component {
         this.setState({isShowReg: false}, () => {
         })
     }
-    toggle(flag){
+
+    toggle(flag) {
 
         let state = this.state
         state.isShowLogin = flag
         state.isShowReg = !flag
-        this.setState({state:state});
+        this.setState({state: state});
     }
 
-    hideSideBar(){
-        this.setState({isShowSideBar:false});
+    hideSideBar() {
+        this.setState({isShowSideBar: false});
     }
 
-    showSideBar(){
-        this.setState({isShowSideBar:true});
+    showSideBar() {
+        this.setState({isShowSideBar: true});
     }
 
-    componentWillReceiveProps(){
+    componentWillReceiveProps() {
         this.setState({isShowSideBar: false})
 
-        if(hashHistory.getCurrentLocation().pathname !== '/'){
+        if (hashHistory.getCurrentLocation().pathname !== '/') {
             this.setState({position: 'relative'})
             this.setState({otherStyle: true})
             window.onscroll = null
             return true
-        }else {
-            if(!window.onscroll){
+        } else {
+            if (!window.onscroll) {
                 this.choceType()
                 return true
             }
@@ -85,13 +97,13 @@ class TitValueBox extends React.Component {
         return true
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.choceType()
 
     }
 
-    choceType(){
-        if(hashHistory.getCurrentLocation().pathname === '/'){
+    choceType() {
+        if (hashHistory.getCurrentLocation().pathname === '/') {
             this.setState({position: 'absolute'})
             this.setState({otherStyle: false})
             let dance = document.body.clientWidth * 0.46
@@ -104,7 +116,8 @@ class TitValueBox extends React.Component {
                     this.setState({position: 'absolute'})
                     this.setState({otherStyle: false})
                     return false
-                }console.log(document.body.scrollTop - dance)
+                }
+                console.log(document.body.scrollTop - dance)
                 if (document.body.scrollTop - dance < 0) {
                     this.setState({position: 'fixed'})
                     this.setState({otherStyle: true})
@@ -117,13 +130,14 @@ class TitValueBox extends React.Component {
         }
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
 
     }
-
     render() {
         return (
-            <HeaderR login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state} hideLogin={this.hideLogin} hideReg={this.hideReg}  toggle={this.toggle} hideSideBar={this.hideSideBar} showSideBar={this.showSideBar} />
+            <HeaderR  login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state}
+                     hideLogin={this.hideLogin} hideReg={this.hideReg} toggle={this.toggle}
+                     hideSideBar={this.hideSideBar} showSideBar={this.showSideBar}/>
         )
     }
 }

@@ -1,5 +1,5 @@
 .header {
-    height: 80px;
+    height: 68px;
     padding-left: 36px;
     border-bottom: 1px solid #808080;
     position: absolute;
@@ -27,12 +27,12 @@
 }
 .logo {
     float: left;
-    padding-top: 15px;
+    padding-top: 9px;
 }
 
 .headerRight {
     float: right;
-    line-height: 79px;
+    line-height: 67px;
 }
 .headerRight > a {
     margin-right: 90px;
@@ -66,7 +66,7 @@
 }
 
 .headerRight .isPand {
-    height: 79px;
+    height: 67px;
     display: inline-block;
     width: 80px;
     text-align: center;

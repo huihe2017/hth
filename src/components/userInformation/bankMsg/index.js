@@ -1,9 +1,9 @@
 import React from 'react';
 import style from "./index.css"
-import Title from "../title/index";
-import Webfile from "../webFile/index";
-import Input from "../input/index";
-import Tipdown from "../tipDown/index";
+import Title from "../../partnerReg/title/index";
+import Webfile from "../../partnerReg/webFile/index";
+import Input from "../../partnerReg/input/index";
+import Tipdown from "../../partnerReg/tipDown/index";
 
 class Bankmsg extends React.Component {
     change(vaildMsg, name) {

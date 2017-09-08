@@ -1,8 +1,8 @@
 import React from 'react';
 import style from "./index.css";
-import Title from "../title/index";
-import Webfile from "../webFile/index";
-import Input from "../input/index";
+import Title from "../../partnerReg/title/index";
+import Webfile from "../../partnerReg/webFile/index";
+import Input from "../../partnerReg/input/index";
 
 
 class Personal extends React.Component {

@@ -8,6 +8,10 @@ import Ib from './ib'
 import PartnerLogin from './partnerLogin'
 import Header from './header'
 import UserCenter from './userCenter'
+import AboutUs from './aboutUs'
+import DealTerrace from './dealTerrace'
+import ProductDeal from './productDeal'
+import DolphinSchool from './dolphinSchool'
 
 export default class App extends Component {
     render() {
@@ -17,6 +21,10 @@ export default class App extends Component {
                 <Header/>
                     <div>
                         <Switch>
+                            <Route path="/aboutUs" component={AboutUs}/>
+                            <Route path="/dealTerrace" component={DealTerrace}/>
+                            <Route path="/productDeal" component={ProductDeal}/>
+                            <Route path="/dolphinSchool" component={DolphinSchool}/>
                             <Route path="/partnerReg" component={PartnerReg}/>
                             <Route path="/ib" component={Ib}/>
                             <Route path="/partnerLogin" component={PartnerLogin}/>

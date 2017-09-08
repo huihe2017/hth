@@ -8,7 +8,7 @@ class SideBar extends Component {
     onClickHandle(e){
         if(localStorage.userName==='null'){
             e.preventDefault()
-            this.props.userCenterClick()
+            this.props.userCenterClick(true)
         }
 
     }

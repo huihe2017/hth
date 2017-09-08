@@ -110,22 +110,24 @@ class TitValueBox extends React.Component {
             let danceCopy = dance
             window.onscroll = null
             window.onscroll = (e) => {
-                //console.log(e)
                 //console.log(document.body.scrollTop)
-                if (document.body.scrollTop < danceCopy) {
+                console.log(document.body.scrollTop)
+                var oTop=document.body.scrollTop==0?document.documentElement.scrollTop:document.body.scrollTop;
+
+                if (oTop < danceCopy) {
                     this.setState({position: 'absolute'})
                     this.setState({otherStyle: false})
                     return false
                 }
-                console.log(document.body.scrollTop - dance)
-                if (document.body.scrollTop - dance < 0) {
+
+                if (oTop - dance < 0) {
                     this.setState({position: 'fixed'})
                     this.setState({otherStyle: true})
                 } else {
                     this.setState({position: 'absolute'})
                     this.setState({otherStyle: false})
                 }
-                dance = document.body.scrollTop
+                dance = oTop
             }
         }
     }

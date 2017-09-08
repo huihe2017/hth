@@ -3,7 +3,6 @@ import style from "./index.css";
 import Personmsg from "./personalMsg/index";
 import Bannkmsg from "./bankMsg/index";
 
-//40  120  60
 class Partnerreg extends React.Component {
     constructor(props) {
         super(props)
@@ -51,7 +50,11 @@ class Partnerreg extends React.Component {
                     state: 'error',
                     firstEdit: true
                 }
+            },
+            dynamics: {
+                state:'waiting'
             }
+
         }
         this.change = this.change.bind(this)
     }
@@ -99,6 +102,17 @@ class Partnerreg extends React.Component {
                     <input type="file"/>
                 </div>
                 <div className={style.part}>
+                    <div className={style.state}>
+                        {
+                            <div className={style.statec}>
+                                <img src={require('./images/'+this.state.dynamics.state+'.png')} alt=""/>
+                                {
+                                    this.statecontent(this.state.dynamics.state)
+                                }
+
+                            </div>
+                        }
+                    </div>
                     <Personmsg change={this.change} data={this.state.personalMsg}/>
                 </div>
                 <div className={style.part}>
@@ -109,11 +123,27 @@ class Partnerreg extends React.Component {
                     <button onClick={this.submitFn.bind(this)} className={style.submit}>
                         提交
                     </button>
-
-
-
             </div>
         )
+    }
+    statecontent(e){
+        if(e=="complete"){
+            return <span style={{color:"#5262ff"}}>
+                已通过审核可以入金
+            </span>
+        }else if(e=="unComplete"){
+            return <span style={{color:"#f59294"}}>
+                开户未完成，入金限额5000
+            </span>
+        }else if(e=="waiting"){
+            return <span style={{color:"#fab001"}}>
+                审核中，已提升入金额度
+            </span>
+        }else if(e=="imperfection"){
+            return <span style={{color:"#656b6f"}}>
+                资料不完全，不可出金
+            </span>
+        }
     }
 }
 

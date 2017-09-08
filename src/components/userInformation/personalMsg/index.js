@@ -24,7 +24,7 @@ class Personal extends React.Component {
         console.log(this.props.data.email.state)
         return (
             <div className={style.personal}>
-                <Title content={"/联络人信息【必填】"} color={"#5262ff"}/>
+                <Title content={"/联络人信息【必填】"} color={"#3b3d40"}/>
                 <div className={style.perimport}>
                     <Input
                         st={'100%'}

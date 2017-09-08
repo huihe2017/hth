@@ -23,7 +23,29 @@
 .part{
     margin-top: 48px;
     clear: both;
+    position: relative;
 }
+.state{
+    position: absolute;
+    top: 0;
+    right: 95px;
+}
+.statec{
+
+    font-size: 14px;
+    height: 20px;
+    overflow: hidden;
+}
+.statec>img{
+    float: left;
+}
+.statec>span{
+    float: left;
+    line-height: 20px;
+    color: #656b6f;
+    margin-left: 14px;
+}
+
 .prfooter{
     width: 1010px;
     margin: 0 auto;
@@ -35,6 +57,7 @@
     margin-top: 14px;
     font-size: 14px;
     color: #656b6f;
+
 }
 .protocol>a{
     color: #5262ff;

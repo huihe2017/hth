@@ -13,6 +13,17 @@ class userCenterHeadView extends React.Component{
         let now=new Date(e);
         return   [now.getFullYear(),now.getMonth()+1,now.getDate()].join("-")+" "+[now.getHours(),now.getMinutes()].join(":");
     }
+    showdata(e){
+        if(e.length==0){
+            return (
+                <img src={require('./images/none.png')} alt="" className={style.none}/>
+            )
+        }else {
+
+
+        }
+
+    }
 	render(){
             let imgurl= ""
 			return(
@@ -85,24 +96,28 @@ class userCenterHeadView extends React.Component{
                             一月内资讯记录
                         </span>
                         <div className={style.userCHrc}>
-                            {this.props.dynamics.map((v)=>{
-                                return (
-                                    <div className={style.item+" "+style.clearfloat}>
-                                        <div className={style.state}>
-                                            <img src={require(`./images/${v.state}.png`)} alt=""/>
+                            {
+                                this.props.dynamics.length==0?(
+                                <img src={require('./images/none.png')} alt="" className={style.none}/>
+                                ):(this.props.dynamics.map((v)=>{
+                                    return (
+                                        <div className={style.item+" "+style.clearfloat}>
+                                            <div className={style.state}>
+                                                <img src={require(`./images/${v.state}.png`)} alt=""/>
+                                            </div>
+                                            <span>
+                            {v.content}
+                        </span>
                                         </div>
-
-                                        <span>
-                                            {v.content}
-                                        </span>
-                                    </div>
-                                )
-                            })}
+                                    )
+                                }))
+                            }
                         </div>
                     </div>
                 </div>
 			)
-		}
+    }
+
 
 }
 export default userCenterHeadView;

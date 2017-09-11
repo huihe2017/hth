@@ -51,11 +51,12 @@ class modifyPassword extends React.Component {
 
     render() {
         return (
-            <ModifyPasswordView
-                change={this.change.bind(this)}
-                submit={this.submitFn.bind(this)} {...this.state}>
+            <div className={style.modifyPassword}>
+                <ModifyPasswordView
+                    change={this.change.bind(this)}
+                    submit={this.submitFn.bind(this)} {...this.state}/>
+            </div>
 
-            </ModifyPasswordView>
         )
 
     }

@@ -111,10 +111,10 @@
 }
 .captcha{
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 150px;
-    height: 40px;
+    right: 1px;
+    top: 1px;
+    width: 149px;
+    height: 38px;
     background-image: url("./images/captcha.png");
     border-radius: 0 5px 5px 0;
 }

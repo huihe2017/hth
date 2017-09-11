@@ -41,13 +41,16 @@ class AccountWithdraw extends React.Component{
 
 	render(){
 			return(
-				<AccountWithdrawView
-                    change={this.withdrawChange.bind(this)}
-                    {...this.state}
-                    getAll={this.getAll.bind(this)}
-                    submitFn={this.submitFn.bind(this)}
-                    className={style.wrap}
-                />
+			    <div className={style.accountWithdraw}>
+                    <AccountWithdrawView
+                        change={this.withdrawChange.bind(this)}
+                        {...this.state}
+                        getAll={this.getAll.bind(this)}
+                        submitFn={this.submitFn.bind(this)}
+                        className={style.wrap}
+                    />
+                </div>
+
 			)
 		}
     withdrawChange(obj,lebal) {

@@ -31,7 +31,10 @@ class Footer extends Component {
                     </div>
                     <div className={style.footerInRight}>
                         关注公众号
-                        <img src={require('./er.jpg')} className={style.erwei}/>
+                        <div className={style.img}>
+                            <img src={require('./er.jpg')} className={style.erwei}/>
+                        </div>
+
                     </div>
                 </div>
             </div>

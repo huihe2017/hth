@@ -6,12 +6,16 @@
 
 }
 .tctitle{
-    margin-top: 40px;
     margin-bottom: 20px;
 
 }
 .tccontent{
     overflow: hidden;
+}
+.bcontent{
+    margin-top: 20px;
+    border-top: 1px solid #dfdce4;
+    padding-top: 20px;
 }
 .input{
     float: left;
@@ -33,7 +37,14 @@
     color: #5262ff;
     border-radius: 5px;
     outline: none;
+    cursor: pointer;
 }
+.withdraw>button:hover{
+    background-color: #5262ff;
+    color: #fff;
+    transition: 0.5s all;
+}
+
 .ttip{
     float: left;
     width: 740px;

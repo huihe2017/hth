@@ -160,14 +160,16 @@ class AccountDeposit extends React.Component {
     }
 
     render() {
-
         return (
-            <AccountDepositView
-                choceBankList={this.choceBank.bind(this)}
-                submit={this.submitFn.bind(this)}
-                change={this.depositChange.bind(this)}
-                {...this.state}
-            ></AccountDepositView>
+            <div className={style.accountDeposit}>
+                <AccountDepositView
+                    choceBankList={this.choceBank.bind(this)}
+                    submit={this.submitFn.bind(this)}
+                    change={this.depositChange.bind(this)}
+                    {...this.state}
+                />
+            </div>
+
         )
 
     }

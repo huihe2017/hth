@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+
 import {Route, Switch} from 'react-router-dom'
 import { hashHistory } from 'react-router'
 import Footer from './footer'
@@ -19,7 +20,7 @@ export default class App extends Component {
             <div style={{background:(hashHistory.getCurrentLocation().pathname !== '/')?'#f5f5f6':''}}>
                 {/*<Header/>*/}
                 <Header/>
-                    <div>
+                    <div style={{paddingBottom:'20px'}}>
                         <Switch>
                             <Route path="/aboutUs" component={AboutUs}/>
                             <Route path="/dealTerrace" component={DealTerrace}/>

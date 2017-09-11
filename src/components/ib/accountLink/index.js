@@ -18,6 +18,14 @@ class AccountLlink extends React.Component{
 				<div className={style.applycom} >
 					<div className={style.ftitle}>
 						<Title content={"/开户链接"} color={"#3b3d40"}/>
+                        <div className={style.qr}>
+                            <span>
+                                扫一扫立即开户
+                            </span>
+                            <div className={style.img}>
+                                <img src={require("../../QRcode/images/qrcode.jpg")} alt=""/>
+                            </div>
+                        </div>
 					</div>
                     <div className={style.appcc}>
                         <TitValueBox tit={"传统开户"} wid={100}>

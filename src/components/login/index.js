@@ -127,9 +127,7 @@ class Login extends React.Component{
                             pattern={/\S/}
                             firstEdit={this.state.loginMsg.loginGraphics.firstEdit}
                         />
-                        <div className={style.captcha}>
-
-                        </div>
+                        <div className={style.captcha}></div>
                     </div>
 
                     <div className={style.llcfirstmm}>

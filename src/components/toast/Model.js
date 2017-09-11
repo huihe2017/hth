@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classnames from 'classnames';
-import style from './style/index.css';
+import style from './index.css';
 
 class Model extends Component {
     constructor(props) {

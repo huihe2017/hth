@@ -64,7 +64,10 @@ class Dom extends Component {
                     {!this.props.close && this.props.children ?
                         <span onClick={this.closeHandle.bind(this)} className={style.close}>+</span> : ''}
                 </div>
-                <Shadow shadowIndex={this.props.shadowIndex} closeHandle={this.closeHandle.bind(this)}/>
+                {
+                    this.props.withoutShadow?'':<Shadow shadowIndex={this.props.shadowIndex} close={true} closeHandle={this.closeHandle.bind(this)}/>
+                }
+
             </div>
         )
     }

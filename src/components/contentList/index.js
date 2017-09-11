@@ -16,7 +16,9 @@ class AboutUs extends React.Component{
                                     {
                                         v.content.map((t)=>{
                                             return (
-                                                <li className={style.item}>{this.red(t)}</li>
+                                                <li className={style.item}>
+            {this.red(t)}
+                                                    </li>
                                             )
                                         })
                                     }
@@ -30,13 +32,12 @@ class AboutUs extends React.Component{
     }
     red(t){
         if(this.props.redw){
-            let s = "利息";
-            let reg = new RegExp("(" + s + ")",'g');
-            let str = t;
-            let newstr = str.replace(reg, `<i style='color: red'>$1</i>`);
-            return newstr
+            let newstr = t.replace(/利息/ig,"<i style='color: red;'>$&</i>");
+            newstr = React.createElement(newstr)
+            return <p>{newstr}</p>
         }else {
-            return t
+
+            return <p>{t}</p>
         }
     }
 }

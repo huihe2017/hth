@@ -14,8 +14,10 @@ class PartnerLogin extends React.Component{
 	render(){
 
 			return(
-				<div className={style.wrap} >
-					<Login/>
+				<div className={style.parlogin} >
+					<div className={style.content}>
+						<Login/>
+					</div>
 				</div>
 			)
 

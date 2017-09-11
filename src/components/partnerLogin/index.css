@@ -1,5 +1,11 @@
-.wrap{
+.parlogin{
+    width: 1200px;
+    background-color: #fff;
+    margin: 0 auto;
+    min-height: 564px;
+    padding-top: 50px;
+}
+.content{
     width: 500px;
-    margin: 50px auto;
-
+    margin: 0 auto;
 }

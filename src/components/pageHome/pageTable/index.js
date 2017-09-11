@@ -25,7 +25,7 @@ class PageTable extends Component {
 
     componentDidMount(){
         this.getData()
-        this.interval = setInterval(this.getData,5000)
+        this.interval = setInterval(this.getData,1000)
 
 
     }

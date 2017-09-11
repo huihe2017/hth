@@ -44,6 +44,7 @@ module.exports = {
 
             {
                 test: /\.css$/,
+            exclude: /node_modules/,
                 loader: "style-loader!css-loader?modules&localIdentName=[local]-[hash:base64:8]"
             },
             {test: /\.scss$/, loader: "style!css!sass"}, //sass加载器

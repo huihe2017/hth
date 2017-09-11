@@ -3,8 +3,9 @@ import RegForm from './regForm'
 import LoginForm from './loginForm'
 import RenderLayer from '../../components/renderLayer'
 import Layer from '../layerR'
-
 import style from './getAccount.css'
+import './gg.css'
+import Toast from '../toast'
 
 class GetAccount extends Component {
     constructor(props) {
@@ -57,11 +58,20 @@ class GetAccount extends Component {
             for (let key in reg) {
                 if (typeof reg[key] === 'object') {
                     if (!reg[key].vaild) {
-                        this.setState({error: reg[key].error})
+                        this.setState({error: reg[key].error},()=>{
+                            Toast({
+                                type: "msg",
+                                msg: this.state.error,
+                                duration: 2000
+                            })
+                        })
                         break
                     }
                 }
             }
+
+
+
         }
     }
 
@@ -85,16 +95,23 @@ class GetAccount extends Component {
                     this.state.select === 'login' ? <LoginForm onChange={this.onChangeLogin}/> :
                         <RegForm onChange={this.onChange}/>
                 }
-                <div className={style.submitBtn} onClick={this.submitFn.bind(this)}>{this.state.select === 'login' ? '登录' : '立即注册'}</div>
+                <div className={style.submitBtn}
+                     onClick={this.submitFn.bind(this)}>{this.state.select === 'login' ? '登录' : '立即注册'}</div>
 
                 {
-                    this.state.error ? <RenderLayer><Layer callback={() => {
-                        this.setState({error: ''})
-                    }} width="30" height="30" content={<div
-                        style={{background: 'red'}}>{this.state.error}</div>}/></RenderLayer> : ''
+                    // this.state.error ? <RenderLayer><Layer callback={() => {
+                    //     this.setState({error: ''})
+                    // }} width="30" height="30" content={<div
+                    //     style={{background: 'red'}}>{this.state.error}</div>}/></RenderLayer> : ''
                 }
 
-
+                {
+                    // this.state.error ?
+                    //     <RenderLayer close={true} tip withoutShadow>
+                    //         <span style={{fontSize: 14,padding:10,background:'rgba(0, 0, 0, 0.7)',borderRadius:5}}>{this.state.error}</span>
+                    //     </RenderLayer>
+                    //     : ''
+                }
             </div>
         )
     }

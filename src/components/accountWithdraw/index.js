@@ -1,11 +1,14 @@
 import React from 'react';
 import style from  "./index.css"
 import AccountWithdrawView from './accountWithdrawView'
+import Layer from '../renderLayer/index'
+import Register from '../register/index'
 
 class AccountWithdraw extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            isShowFind:false,
             withdrawInput:{
             	firstEdit:true,
 				state:'error',
@@ -40,19 +43,29 @@ class AccountWithdraw extends React.Component{
 	}
 
 	render(){
-			return(
-			    <div className={style.accountWithdraw}>
-                    <AccountWithdrawView
-                        change={this.withdrawChange.bind(this)}
-                        {...this.state}
-                        getAll={this.getAll.bind(this)}
-                        submitFn={this.submitFn.bind(this)}
-                        className={style.wrap}
-                    />
-                </div>
-
-			)
-		}
+		return(
+			<div className={style.accountWithdraw}>
+                <AccountWithdrawView
+                    change={this.withdrawChange.bind(this)}
+                    {...this.state}
+                    getAll={this.getAll.bind(this)}
+                    submitFn={this.submitFn.bind(this)}
+                    toFind={this.toggle.bind(this)}
+                    className={style.wrap}
+                />
+            {this.state.isShowFind ?
+                        <Layer closeFn={this.hideFind.bind(this)}><Register title={"忘记密码"} hid={true}/></Layer> : ''}
+            </div>
+        )
+	}
+    toggle(){
+        this.setState({isShowFind: true}, () => {
+        })
+    }
+    hideFind(){
+        this.setState({isShowFind: false}, () => {
+        })
+    }
     withdrawChange(obj,lebal) {
         this.state[lebal] = obj
         this.setState({

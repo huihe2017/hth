@@ -23,7 +23,7 @@ class UserCenter extends React.Component{
 					<div>
 						<UserCenterHead/>
 					</div>
-					<div className={style.nav}>
+					<div>
 						<TotalNav data={[
                             {
                                 icon: "user-o",

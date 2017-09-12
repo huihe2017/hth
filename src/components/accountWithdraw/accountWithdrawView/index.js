@@ -87,7 +87,7 @@ class AccountWithdrawView extends React.Component{
                         <div className={style.ttip}>
                             <ul className={style.tltip}>
                                 <li>
-                                    <a href="javascript:void (0)">
+                                    <a href="javascript:void (0)" onClick={()=>{this.props.toFind(false)}}>
                                         忘记密码？
                                     </a>
                                 </li>

@@ -51,9 +51,11 @@ export default class Header extends Component {
                     </div>
                 </div>
                 {this.props.isShowLogin ?
-                    <Layer closeFn={this.props.hideLogin}><Login login={this.props.login} toReg={this.props.toggle.bind(this)}/></Layer> : ''}
+                    <Layer closeFn={this.props.hideLogin}><Login login={this.props.login} toReg={this.props.toggle.bind(this)} toFind={this.props.ftoggle.bind(this)}/></Layer> : ''}
                 {this.props.isShowReg ?
-                    <Layer closeFn={this.props.hideReg}><Register login={this.props.login} toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
+                    <Layer closeFn={this.props.hideReg}><Register title={"注册海豚汇账号"} hid={false} login={this.props.login} toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
+                {this.props.isShowFind ?
+                    <Layer closeFn={this.props.hideFind}><Register title={"忘记密码"} hid={true} login={this.props.login} /></Layer> : ''}
             </div>
         )
     }

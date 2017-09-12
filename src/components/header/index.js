@@ -14,6 +14,7 @@ class TitValueBox extends React.Component {
             isShowReg: false,
             isShowLogin: false,
             isShowSideBar: false,
+            isShowFind: false,
             isLogin: localStorage.userName === 'null' ? false : localStorage.userName
         }
         this.hideLogin = this.hideLogin.bind(this)
@@ -29,6 +30,7 @@ class TitValueBox extends React.Component {
         this.state.isLogin = true
         this.state.isShowReg = false
         this.state.isShowLogin = false
+        this.state.isShowFind = false
 
         this.setState({
             state: this.state
@@ -63,12 +65,23 @@ class TitValueBox extends React.Component {
         this.setState({isShowReg: false}, () => {
         })
     }
-
+    hideFind(){
+        this.setState({isShowFind: false}, () => {
+        })
+    }
     toggle(flag) {
 
         let state = this.state
         state.isShowLogin = flag
         state.isShowReg = !flag
+        this.setState({state: state});
+    }
+
+    ftoggle(flag) {
+        console.log(this.state)
+        let state = this.state
+        state.isShowLogin = flag
+        state.isShowFind = !flag
         this.setState({state: state});
     }
 
@@ -138,8 +151,10 @@ class TitValueBox extends React.Component {
     render() {
         return (
             <HeaderR  login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state}
-                     hideLogin={this.hideLogin} hideReg={this.hideReg} toggle={this.toggle}
-                     hideSideBar={this.hideSideBar} showSideBar={this.showSideBar}/>
+                     hideLogin={this.hideLogin} hideReg={this.hideReg} hideFind={this.hideFind.bind(this)} toggle={this.toggle} ftoggle={this.ftoggle.bind(this)}
+                     hideSideBar={this.hideSideBar} showSideBar={this.showSideBar}
+
+            />
         )
     }
 }

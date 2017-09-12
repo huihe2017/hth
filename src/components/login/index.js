@@ -143,7 +143,7 @@ class Login extends React.Component{
                             tip={"请输入正确的密码"}
                             firstEdit={this.state.loginMsg.loginPassword.firstEdit}
                         />
-                        <a href="javascript:void (0);">忘记密码？</a>
+                        <a href="javascript:void (0);"  onClick={()=>{this.props.toFind(false)}}>忘记密码？</a>
                     </div>
                     <div className={style.llcsubmit}>
                         <input onClick={this.submitFn.bind(this)} type="button" value='马上登录'/>

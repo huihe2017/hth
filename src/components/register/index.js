@@ -147,11 +147,11 @@ class Register extends React.Component{
             display:"block"
         };
         return(
-            <div className={style.login} style={this.state.styless}>
+            <div className={style.login}>
                 <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow?ss:sss}></div>
                 <div className={style.logincontent}>
                     <div className={style.lctitle}>
-                        注册海豚汇账号
+                        {this.props.title}
                     </div>
                     <div className={style.llcphone}>
                         <SelectPhone
@@ -234,12 +234,12 @@ class Register extends React.Component{
 
                         />
                     </div>
-                    <div className={style.lcsubmit}>
+                    <div className={style.lcsubmit} >
                         <button onClick={this.submitFn.bind(this)}>
                             完成注册并登录
                         </button>
                     </div>
-                    <div className={style.gologin}>
+                    <div className={style.gologin} hidden={this.props.hid}>
                         <span>
                             已有账户、<a onClick={()=>{this.props.toLogin(true)}} href="javascript:void (0);">直接登陆</a>
                         </span>
@@ -289,13 +289,7 @@ class Register extends React.Component{
 
 
     }
-    off(){
-        this.setState({
-            styless:{
-                display:"none"
-            }
-        })
-    }
+
     //点击切换电话前缀的显示状态
     prePhone(e){
         this.setState({

@@ -2,6 +2,8 @@ import React from "react";
 import style from "./index.css";
 import Personmsg from "./personalMsg/index";
 import Bannkmsg from "./bankMsg/index";
+import axios from 'axios'
+
 
 class Partnerreg extends React.Component {
     constructor(props) {
@@ -14,7 +16,7 @@ class Partnerreg extends React.Component {
                     firstEdit: true
                 },
                 email: {
-                    value: 'dafeiji@163.com',
+                    value: '1111@163.com',
                     state: 'error',
                     firstEdit: true
                 },
@@ -89,10 +91,40 @@ class Partnerreg extends React.Component {
         this.setState({personalMsg})
         this.setState({bankMsg})
         if(flag){
-            alert('提交成功')
+            let _this = this
+            axios.patch('http://47.91.236.245:8000/user/customer/'+localStorage.id, {
+                nickname: _this.state.personalMsg.nickname.value,
+                email:_this.state.personalMsg.email.value,
+                realname:_this.state.personalMsg.name.value,
+                address:_this.state.personalMsg.address.value
+            }).then(function (response) {
+                if (response.data.code === 0) {
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+
+
+
         }else {
             return
         }
+    }
+
+    componentDidMount(){
+        let _this = this
+        axios.get('http://47.91.236.245:8000/user/customer/'+localStorage.id).then(function (response) {
+            if (response.data.code === 0) {
+                _this.state.personalMsg.nickname.value = response.data.data.nickname
+                _this.state.personalMsg.email.value = response.data.data.email
+                _this.state.personalMsg.name.value = response.data.data.realname
+                _this.state.personalMsg.address.value = response.data.data.address
+                _this.setState({state:_this.state})
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
 
     render() {

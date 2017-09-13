@@ -65,16 +65,18 @@ class Login extends React.Component{
         }
         console.log(this.state.loginMsg.loginUser.phone.value)
         let _this = this
-        axios.post('http://47.91.236.245:3020/sign-in', {
-            phone: this.state.loginMsg.loginUser.phone.value,
+        axios.post('http://47.91.236.245:8000/user/customer/sign-in', {
+            account: this.state.loginMsg.loginUser.qh.value+ ' ' +this.state.loginMsg.loginUser.phone.value,
+            //account: '13725503790',
             password: this.state.loginMsg.loginPassword.value,
-            agent:'web'
+            type:'phone'
 
         })
             .then(function (response) {
                 if(response.data.code === 0){
                     localStorage.userName = response.data.data.phone
                     localStorage.token = response.data.data.token
+                    localStorage.id = response.data.data.id
                     _this.props.login()
                 }
             })

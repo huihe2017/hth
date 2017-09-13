@@ -38,22 +38,29 @@ class TitValueBox extends React.Component {
     }
 
     signOut() {
+        // let _this = this
+        // axios.post('http://47.91.236.245:8000/user/customer/sign-out', {
+        //     token: localStorage.token,
+        //     agent: 'web'
+        // }).then(function (response) {
+        //     if (response.data.code === 0) {
+        //         localStorage.userName = null
+        //         _this.setState({
+        //             isLogin: false
+        //         }, () => {
+        //
+        //         })
+        //     }
+        // }).catch(function (error) {
+        //     console.log(error);
+        // });
         let _this = this
-        axios.post('http://47.91.236.245:3020/sign-out', {
-            token: localStorage.token,
-            agent: 'web'
-        }).then(function (response) {
-            if (response.data.code === 0) {
-                localStorage.userName = null
-                _this.setState({
-                    isLogin: false
-                }, () => {
+        localStorage.userName = null
+        _this.setState({
+            isLogin: false
+        }, () => {
 
-                })
-            }
-        }).catch(function (error) {
-            console.log(error);
-        });
+        })
     }
 
     hideLogin() {
@@ -65,10 +72,12 @@ class TitValueBox extends React.Component {
         this.setState({isShowReg: false}, () => {
         })
     }
-    hideFind(){
+
+    hideFind() {
         this.setState({isShowFind: false}, () => {
         })
     }
+
     toggle(flag) {
 
         let state = this.state
@@ -125,7 +134,7 @@ class TitValueBox extends React.Component {
             window.onscroll = (e) => {
                 //console.log(document.body.scrollTop)
                 console.log(document.body.scrollTop)
-                var oTop=document.body.scrollTop==0?document.documentElement.scrollTop:document.body.scrollTop;
+                var oTop = document.body.scrollTop == 0 ? document.documentElement.scrollTop : document.body.scrollTop;
 
                 if (oTop < danceCopy) {
                     this.setState({position: 'absolute'})
@@ -148,10 +157,12 @@ class TitValueBox extends React.Component {
     componentWillUnmount() {
 
     }
+
     render() {
         return (
-            <HeaderR  login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state}
-                     hideLogin={this.hideLogin} hideReg={this.hideReg} hideFind={this.hideFind.bind(this)} toggle={this.toggle} ftoggle={this.ftoggle.bind(this)}
+            <HeaderR login={this.login.bind(this)} signOut={this.signOut.bind(this)} {...this.state}
+                     hideLogin={this.hideLogin} hideReg={this.hideReg} hideFind={this.hideFind.bind(this)}
+                     toggle={this.toggle} ftoggle={this.ftoggle.bind(this)}
                      hideSideBar={this.hideSideBar} showSideBar={this.showSideBar}
 
             />

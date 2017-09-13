@@ -4,6 +4,7 @@ import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
 import axios from "axios"
 import Layer from '../renderLayer'
+import Toast from '../toast'
 
 class Register extends React.Component{
     constructor(props){
@@ -62,7 +63,7 @@ class Register extends React.Component{
         }
     }
 
-    submitFn() {//alert(localStorage)
+    submitFn() {//console.log(this.state.regMsg.regUser.qh.value)//alert(localStorage)
         //localStorage.userName = 'fbgreb'
        // this.props.login()
 
@@ -81,28 +82,36 @@ class Register extends React.Component{
         }
         this.setState({loading:true})
         let _this = this
-        axios.post('http://47.91.236.245:3020/user', {
-            phone: this.state.regMsg.regUser.phone.value,
-            password: this.state.regMsg.regPassword.value,
-            agent:'web'
+        axios.post('http://47.91.236.245:8000/user/customer', {
+            phone: this.state.regMsg.regUser.qh.value+ ' ' +this.state.regMsg.regUser.phone.value,
+            password: this.state.regMsg.regPassword.value
 
         })
             .then(function (response) {
-                console.log(response);
-                if(response.code !== '1011'){
+                if(response.data.code === 0){
                     _this.toLogin()
+                }else {
+                    _this.setState({loading:false},()=>{
+                        Toast({
+                            type: "msg",
+                            msg: response.data.msg,
+                            duration: 2000
+                        })
+                    })
                 }
             })
             .catch(function (error) {
+
                 console.log(error);
             });
     }
     toLogin(){
         let _this = this
-        axios.post('http://47.91.236.245:3020/sign-in', {
-            phone: this.state.regMsg.regUser.phone.value,
+        axios.post('http://47.91.236.245:8000/user/customer/sign-in', {
+            account: this.state.regMsg.regUser.qh.value+ ' ' +this.state.regMsg.regUser.phone.value,
+            //account: '86 13725503790',
             password: this.state.regMsg.regPassword.value,
-            agent:'web'
+            type:'phone'
 
         })
             .then(function (response) {

@@ -20,13 +20,13 @@ class Footer extends Component {
                             风险提示：外汇交易存在较高风险，不适合所有投资者。决定参与交易前， 您应该谨慎考虑您的投资目标、经验等级及风险承受能力。 您可能会亏损部分或者全部资金。 如果您有任何疑问，
                             可在必要时向独立的金融顾问征询意见。
                         </p>
-                        <p className={style.email}>客服邮箱：info@rostonesfx.com客服电话：400-8530-050</p>
+                        <p className={style.email}>客服邮箱：info@dolphinforex.com客服电话：400-8530-050</p>
                         <div className={style.line}>
                         </div>
                         <div className={style.paper}>
-                            Formax International Market Limited 是已经在新西兰政府注册的金融服务提供商 （FSP注册号：FSP207987）， Formax
+                            Dolphinforex International Market Limited 是已经在新西兰政府注册的金融服务提供商 （FSP注册号：FSP6266676）， Dolphinforex
                             服务于个人和机构投资者。
-                            地址：level 7, 203 queen street, Auckland Central
+                            地址：13 Gibbston Crescent, Flat Bush, Auckland, 2016, NZ
                         </div>
                     </div>
                     <div className={style.footerInRight}>

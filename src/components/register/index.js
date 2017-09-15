@@ -4,7 +4,6 @@ import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
 import axios from "axios"
 import Layer from '../renderLayer'
-import Toast from '../toast'
 
 class Register extends React.Component{
     constructor(props){
@@ -63,7 +62,7 @@ class Register extends React.Component{
         }
     }
 
-    submitFn() {//console.log(this.state.regMsg.regUser.qh.value)//alert(localStorage)
+    submitFn() {//alert(localStorage)
         //localStorage.userName = 'fbgreb'
        // this.props.login()
 
@@ -82,60 +81,34 @@ class Register extends React.Component{
         }
         this.setState({loading:true})
         let _this = this
-        axios.post('http://47.91.236.245:8000/user/customer', {
-            phone: this.state.regMsg.regUser.qh.value+ ' ' +this.state.regMsg.regUser.phone.value,
-            password: this.state.regMsg.regPassword.value
+        axios.post('http://47.91.236.245:3020/user', {
+            phone: this.state.regMsg.regUser.phone.value,
+            password: this.state.regMsg.regPassword.value,
+            agent:'web'
 
         })
             .then(function (response) {
-                if(response.data.code === 0){
+                console.log(response);
+                if(this.props.toLogin){
+                    this.props.toLogin(true)
+                }
+                if(response.code !== '1011'){
                     _this.toLogin()
-                }else {
-                    _this.setState({loading:false},()=>{
-                        Toast({
-                            type: "msg",
-                            msg: response.data.msg,
-                            duration: 2000
-                        })
-                    })
                 }
             })
             .catch(function (error) {
-
                 console.log(error);
             });
     }
     toLogin(){
         let _this = this
-        axios.post('http://47.91.236.245:8000/user/customer/sign-in', {
-            account: this.state.regMsg.regUser.qh.value+ ' ' +this.state.regMsg.regUser.phone.value,
-            //account: '86 13725503790',
+        axios.post('http://47.91.236.245:3020/sign-in', {
+            phone: this.state.regMsg.regUser.phone.value,
             password: this.state.regMsg.regPassword.value,
-            type:'phone'
+            agent:'web'
 
         })
             .then(function (response) {
-                // {
-                //     "code": 0,
-                //     "data": {
-                //     "bt_demo_id": "",
-                //         "bt_live_id": "",
-                //         "create_ts": 0,
-                //         "deleted": false,
-                //         "demo_id": "",
-                //         "email": null,
-                //         "id": 16,
-                //         "live_id": "",
-                //         "mt4_demo_id": "",
-                //         "mt4_live_id": "",
-                //         "nickname": "",
-                //         "phone": "13696666666",
-                //         "remark": "",
-                //         "token": "2de7d9c3-72b6-4ec4-9264-38f8b0d60c93",
-                //         "update_ts": 0
-                // },
-                //     "msg": "success"
-                // }
                 if(response.data.code === 0){
                     localStorage.userName = response.data.data.phone
                     localStorage.token = response.data.data.token
@@ -148,6 +121,7 @@ class Register extends React.Component{
             });
 
     }
+
     render(){
         let sss={
             display:"none"
@@ -245,7 +219,7 @@ class Register extends React.Component{
                     </div>
                     <div className={style.lcsubmit} >
                         <button onClick={this.submitFn.bind(this)}>
-                            完成注册并登录
+                            {this.props.butword}
                         </button>
                     </div>
                     <div className={style.gologin} hidden={this.props.hid}>

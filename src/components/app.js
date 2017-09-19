@@ -13,6 +13,7 @@ import AboutUs from './aboutUs'
 import DealTerrace from './dealTerrace'
 import ProductDeal from './productDeal'
 import DolphinSchool from './dolphinSchool'
+import PartnerEntry from './partnerEntry'
 
 export default class App extends Component {
     render() {
@@ -27,6 +28,7 @@ export default class App extends Component {
                             <Route path="/productDeal" component={ProductDeal}/>
                             <Route path="/dolphinSchool" component={DolphinSchool}/>
                             <Route path="/partnerReg" component={PartnerReg}/>
+                            <Route path="/partnerEntry" component={PartnerEntry}/>
                             <Route path="/ib" component={Ib}/>
                             <Route path="/partnerLogin" component={PartnerLogin}/>
                             <Route path="/userCenter" component={UserCenter}/>

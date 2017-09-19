@@ -75,12 +75,18 @@ class SideBar extends Component {
                         {/*})()}>代理系统*/}
                         {/*</div>*/}
                     {/*</Link>*/}
-                    <Link to="/partnerReg">
+                    <Link to="/partnerEntry">
                         <div className={(() => {
-                            return this.checkedForPath('/partnerReg')
-                        })()}>合伙人注册
+                            return this.checkedForPath('/partnerEntry')
+                        })()}>合伙人入口
                         </div>
                     </Link>
+                    {/*<Link to="/partnerReg">*/}
+                        {/*<div className={(() => {*/}
+                            {/*return this.checkedForPath('/partnerReg')*/}
+                        {/*})()}>合伙人注册*/}
+                        {/*</div>*/}
+                    {/*</Link>*/}
                     {/*<Link to="/partnerLogin">*/}
                         {/*<div className={(() => {*/}
                             {/*return this.checkedForPath('/partnerLogin')*/}

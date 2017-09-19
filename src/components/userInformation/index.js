@@ -10,8 +10,8 @@ class Partnerreg extends React.Component {
         super(props)
         this.state = {
             personalMsg: {
-                nickname:{
-                    value: '大大大大飞机',
+                phone:{
+                    value: '',
                     state: 'error',
                     firstEdit: true
                 },
@@ -49,6 +49,25 @@ class Partnerreg extends React.Component {
                 },
                 bankChoce: {
                     value: '',
+                    state: 'error',
+                    firstEdit: true
+                },
+                bankChoceMsg: {
+                    sheng: {
+                        value: '',
+                        state: 'error',
+                        firstEdit: true
+                    },
+                    shi: {
+                        value: '',
+                        state: 'error',
+                        firstEdit: true
+                    },
+                    khh: {
+                        value: '',
+                        state: 'error',
+                        firstEdit: true
+                    },
                     state: 'error',
                     firstEdit: true
                 }
@@ -130,9 +149,6 @@ class Partnerreg extends React.Component {
     render() {
         return (
             <div className={style.partreg}>
-                <div className={style.avatar}>
-                    <input type="file"/>
-                </div>
                 <div className={style.part}>
                     <div className={style.state}>
                         {
@@ -151,17 +167,19 @@ class Partnerreg extends React.Component {
                     <Bannkmsg change={this.change} data={this.state.bankMsg}/>
                 </div>
 
+                    <div className={style.but}>
+                        <button onClick={this.submitFn.bind(this)} className={style.submit}>
+                            提交
+                        </button>
+                    </div>
 
-                    <button onClick={this.submitFn.bind(this)} className={style.submit}>
-                        提交
-                    </button>
             </div>
         )
     }
     statecontent(e){
         if(e=="complete"){
             return <span style={{color:"#5262ff"}}>
-                已通过审核可以入金
+                已通过审核，可出金
             </span>
         }else if(e=="unComplete"){
             return <span style={{color:"#f59294"}}>
@@ -173,7 +191,7 @@ class Partnerreg extends React.Component {
             </span>
         }else if(e=="imperfection"){
             return <span style={{color:"#656b6f"}}>
-                资料不完全，不可出金
+                资料不完善，如有疑问请联系客服：400-8530-050
             </span>
         }
     }

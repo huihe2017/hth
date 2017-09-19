@@ -9,6 +9,7 @@ import AccountDeposit from '../accountDeposit'
 import AccountWithdraw from '../accountWithdraw'
 import ModifyPassword from '../modifyPassword'
 import UserInformation from '../userInformation'
+import History from '../history'
 
 class UserCenter extends React.Component{
     constructor(props){
@@ -44,6 +45,11 @@ class UserCenter extends React.Component{
                                 icon: "list-alt",
                                 value: "更改密码",
                                 path: '/userCenter/modifyPassword'
+                            },
+                            {
+                                icon: "sliders",
+                                value: "历史纪录",
+                                path: '/userCenter/history'
                             }
                         ]} />
 					</div>
@@ -52,6 +58,7 @@ class UserCenter extends React.Component{
                             <Route path="/userCenter/modifyPassword" component={ModifyPassword}/>
                             <Route path="/userCenter/accountWithdraw" component={AccountWithdraw}/>
                             <Route path="/userCenter/userInformation" component={UserInformation}/>
+                            <Route path="/userCenter/history" component={History}/>
                             <Route path="/userCenter" component={AccountDeposit}/>
                         </Switch>
                     </div>

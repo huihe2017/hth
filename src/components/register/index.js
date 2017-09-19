@@ -7,8 +7,8 @@ import Layer from '../renderLayer'
 
 class Register extends React.Component{
     constructor(props){
-        super(props);
-        this.state = {
+            super(props);
+            this.state = {
             loading:false,
             prephone:[
                 {

@@ -13,7 +13,10 @@
     margin: 0 auto;
     background-image: url("./images/avatar-default.png");
     background-size: contain;
+
+    font-size: 12px;
 }
+
 .avatar>input{
     width: 160px;
     height: 160px;
@@ -49,6 +52,7 @@
     width: 1010px;
     margin: 0 auto;
 }
+
 .protocol{
     display: block;
     height: 14px;
@@ -61,18 +65,22 @@
 .protocol>a{
     color: #5262ff;
 }
-.submit{
-    display: block;
-    width: 200px;
-    height: 60px;
-    border-radius: 5px;
-    border: 1px solid #5262ff;
-    font-size: 20px;
+.but{
+    width: 160px;
     margin: 0 auto;
     margin-top: 120px;
-    background-color: transparent;
-    color: #5262ff;
+}
+.submit{
+    display: block;
+
     cursor: pointer;
+    width: 160px;
+    height: 40px;
+    background-color: #5262ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }
 .submit:hover{
     background-color: #5262ff;

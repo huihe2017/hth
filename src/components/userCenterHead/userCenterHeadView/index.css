@@ -24,12 +24,49 @@
     height: 140px;
     border-bottom: 1px solid #dfdce4;
     border-right: 1px solid #dfdce4;
+    position: relative;
+}
+.userr{
+    width: 300px;
+    margin-top: 16px;
+
+}
+.redact{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 14px;
+    color: #5262ff;
 }
 .avatar{
-    width: 120px;
-    height: 140px;
+    margin-top: 26px;
+    margin-right: 32px;
+    width: 88px;
+    border-radius: 50%;
+    height: 88px;
     position: relative;
     float: left;
+    overflow: hidden;
+}
+.shade{
+    width: 88px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(232,230,236,0.8);
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    color: #3b3d40;
+    cursor: pointer;
+}
+.file{
+    width: 88px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 .avatar>img{
     display: block;

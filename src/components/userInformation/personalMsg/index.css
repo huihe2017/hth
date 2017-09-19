@@ -5,6 +5,26 @@
     clear: both;
     height: 424px;
 }
+.phoneMsg{
+    overflow: hidden;
+}
+.inp{
+    width: 380px;
+    float: left;
+}
+.phoneMsg button{
+    margin-top: 40px;
+    margin-left: 20px;
+    float: left;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #5262ff;
+    background-color: transparent;
+    color: #5262ff;
+    outline: none;
+    cursor: pointer;
+}
 .perimport{
     width: 520px;
     float: left;

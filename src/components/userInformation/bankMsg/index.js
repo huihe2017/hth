@@ -4,13 +4,14 @@ import Title from "../../partnerReg/title/index";
 import Webfile from "../../partnerReg/webFile/index";
 import Input from "../../partnerReg/input/index";
 import Tipdown from "../../partnerReg/tipDown/index";
+import SeleArea from "../../partnerReg/selectArea"
 
 class Bankmsg extends React.Component {
     change(vaildMsg, name) {
         this.props.change(vaildMsg, 'bankMsg', name)
     }
     render() {
-        let putword1 = ["点击上传银行卡正面", "点击上传银行卡反面"];
+        let putword1 = ["点击上传银行卡正面"];
         let tipword1 = [
             "1.文件为数码照片，请勿进行美化和修改，以免申请失败",
             "2.上传文件格式支持png，jpg和bmp",
@@ -32,12 +33,12 @@ class Bankmsg extends React.Component {
         ];
         return (
             <div className={style.personal}>
-                <Title content={"/银行信息【必填】"} color={"#3b3d40"}/>
+                <Title content={"/银行信息"} color={"#3b3d40"}/>
                 <div className={style.perimport}>
                     <Input
                         st={'100%'}
                         pla={"结算户名"}
-                        tip={"文案待定"}
+                        tip={"结算卡号需与上传银行卡照片信息一致【必填】"}
                         lebal="accountUsername"
                         cla={this.props.data.accountUsername.state}
                         val={this.props.data.accountUsername.value}
@@ -46,30 +47,31 @@ class Bankmsg extends React.Component {
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.accountUsername.firstEdit}
                     />
-                    <Input
-                        st={'100%'}
-                        pla={"结算卡号"}
-                        tip={"文案待定"}
-                        lebal="accountCard"
-                        cla={this.props.data.accountCard.state}
-                        val={this.props.data.accountCard.value}
-                        align={"top"}
-                        pattern={/\S/}
-                        change={this.change.bind(this)}
-                        firstEdit={this.props.data.accountCard.firstEdit}
-                    />
                     <Tipdown
                         show={"请选择银行"}
                         data={bank1} ww={'100%'}
-                        tip={"文案待定"}
+                        tip={"请选择银行，并于上传银行卡照片信息一致【必填】"}
                         lebal="bankChoce"
                         cla={this.props.data.bankChoce.state}
                         align={"top"}
                         change={this.change.bind(this)}
                         firstEdit={this.props.data.bankChoce.firstEdit}
                     />
+                    <SeleArea
+                        widthProv={160}
+                        widthCity={160}
+                        widthKhh={160}
+                        tip={"选择开户行，并与上传银行卡照片信息一致【必填】"}
+                        lebal={"bankChoceMsg"}
+                        cla={this.props.data.bankChoceMsg.state}
+                        align={"top"}
+                        change={this.change.bind(this)}
+                        firstEdit1={this.props.data.bankChoceMsg.firstEdit}
+
+                    />
                 </div>
                 <Webfile title={"上传银行卡照片"} putword={putword1} tipword={tipword1}/>
+
             </div>
         )
     }

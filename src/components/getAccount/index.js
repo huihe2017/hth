@@ -93,7 +93,7 @@ class GetAccount extends Component {
                 </div>
                 {
                     this.state.select === 'login' ? <LoginForm onChange={this.onChangeLogin}/> :
-                        <RegForm onChange={this.onChange}/>
+                        <RegForm {...this.state.reg} onChange={this.onChange}/>
                 }
                 <div className={style.submitBtn}
                      onClick={this.submitFn.bind(this)}>{this.state.select === 'login' ? '登录' : '立即注册'}</div>

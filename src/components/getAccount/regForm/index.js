@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import style from './regForm.css'
+import Toast from '../../toast'
+
 
 class RegForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showQh: false
+            showQh: false,
+            countdown: false
         }
     }
 
@@ -42,7 +45,45 @@ class RegForm extends Component {
         this.props.onChange(key, e.target.innerHTML)
     }
 
+    getSmsCode() {
+        if(this.state.countdown){
+            return false
+        }
+        if (!this.props.telephone.vaild) {
+            Toast({
+                type: "msg",
+                msg: this.props.telephone.error,
+                duration: 2000
+            })
+            return false
+        }
+        if (!this.props.picCode.vaild) {
+            Toast({
+                type: "msg",
+                msg: this.props.picCode.error,
+                duration: 2000
+            })
+            return false
+        }
+
+        this.setState({countdown: true})
+
+    }
+
     render() {
+        if (this.state.countdown) {
+            let seconds = 5
+            this.inter = setInterval(() => {
+                this.refs['countdown'].innerHTML = (seconds--)+'s'
+                if(this.refs['countdown'].innerHTML === '-1s'){
+                    clearInterval(this.inter)
+                    this.refs['countdown'].innerHTML = '重新发送'
+                    this.setState({countdown:false})
+                }
+            }, 1000)
+        }else {
+            clearInterval(this.inter)
+        }
         return (
             <div className={style.wrap}>
                 <div className={style.baseStyle + ' ' + style.telephone}>
@@ -91,7 +132,7 @@ class RegForm extends Component {
                         error: '请输入4位短信验证码'
                     }
                     ])} placeholder="请输入验证码"/>
-                    <div>获取验证码</div>
+                    <div ref="countdown" className={this.state.countdown?style.blue:''} onClick={this.getSmsCode.bind(this)}>获取验证码</div>
                 </div>
                 <div className={style.baseStyle + ' ' + style.pwa}>
                     <input onChange={this.onChange.bind(this, 'pwa', [{

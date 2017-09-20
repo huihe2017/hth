@@ -53,9 +53,9 @@ export default class Header extends Component {
                 {this.props.isShowLogin ?
                     <Layer closeFn={this.props.hideLogin}><Login login={this.props.login} toReg={this.props.toggle.bind(this)} toFind={this.props.ftoggle.bind(this)}/></Layer> : ''}
                 {this.props.isShowReg ?
-                    <Layer closeFn={this.props.hideReg}><Register title={"注册海豚汇账号"} hid={false} login={this.props.login} toLogin={this.props.toggle.bind(this)}/></Layer> : ''}
+                    <Layer closeFn={this.props.hideReg}><Register title={"注册海豚汇账号"} hid={false} login={this.props.login} toLogin={this.props.toggle.bind(this)}  butword={"完成注册并登录"}/></Layer> : ''}
                 {this.props.isShowFind ?
-                    <Layer closeFn={this.props.hideFind}><Register title={"忘记密码"} hid={true} login={this.props.login} /></Layer> : ''}
+                    <Layer closeFn={this.props.hideFind}><Register title={"忘记密码"} hid={true} login={this.props.login}  butword={"确认修改密码"} /></Layer> : ''}
             </div>
         )
     }

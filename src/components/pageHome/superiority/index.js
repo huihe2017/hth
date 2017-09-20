@@ -10,20 +10,20 @@ class Superiority extends React.Component{
                 {
                     "iconclass":"book",
                     "title":"资质合规",
-                    "contentt":"香港证监会认可持牌发团",
-                    "contentb":"持有第1/2/4/9类拍照"
+                    "contentt":"",
+                    "contentb":""
                 },
                 {
                     "iconclass":"right",
                     "title":"实力雄厚",
-                    "contentt":"位居香港券商top5%行列",
-                    "contentb":"腾讯、经纬、红衫连续重金投资"
+                    "contentt":"",
+                    "contentb":""
                 },
                 {
                     "iconclass":"money",
                     "title":"佣金实惠",
-                    "contentt":"港股佣金最低至0",
-                    "contentb":"美股佣金低至$0.01/股"
+                    "contentt":"",
+                    "contentb":""
                 }
             ]
         }

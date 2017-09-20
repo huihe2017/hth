@@ -1,32 +1,33 @@
-import style from  "./index.css"
+import style from "./index.css"
 import React from 'react';
 import SelectPhone from "../partnerReg/selPhone";
 import Input from "../partnerReg/input";
 import axios from 'axios'
+import Toast from '../toast'
 
-class Login extends React.Component{
-    constructor(props){
+class Login extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            prephone:[
+            prephone: [
                 {
-                    "area":"中国大陆",
-                    "num":"+86"
+                    "area": "中国大陆",
+                    "num": "+86"
                 },
                 {
-                    "area":"中国台湾",
-                    "num":"+886"
+                    "area": "中国台湾",
+                    "num": "+886"
                 },
                 {
-                    "area":"中国澳门",
-                    "num":"+853"
+                    "area": "中国澳门",
+                    "num": "+853"
                 }
             ],
-            sednum:{
-                num:"+86"
+            sednum: {
+                num: "+86"
             },
-            isShow:false,
-            loginMsg:{
+            isShow: false,
+            loginMsg: {
                 loginUser: {
                     value: '',
                     state: 'error',
@@ -48,36 +49,41 @@ class Login extends React.Component{
     }
 
 
-
     submitFn() {
         let loginMsg = this.state.loginMsg
         let flag = true
         for (let s in loginMsg) {
             loginMsg[s].firstEdit = false
-            if(loginMsg[s].state === 'error'){
+            if (loginMsg[s].state === 'error') {
                 flag = false;
             }
         }
         this.setState({loginMsg})
 
-        if(!flag){
+        if (!flag) {
             return
         }
         console.log(this.state.loginMsg.loginUser.phone.value)
         let _this = this
         axios.post('http://47.91.236.245:8000/user/customer/sign-in', {
-            account: this.state.loginMsg.loginUser.qh.value+ ' ' +this.state.loginMsg.loginUser.phone.value,
+            account: this.state.loginMsg.loginUser.qh.value + ' ' + this.state.loginMsg.loginUser.phone.value,
             //account: '13725503790',
             password: this.state.loginMsg.loginPassword.value,
-            type:'phone'
+            type: 'phone'
 
         })
             .then(function (response) {
-                if(response.data.code === 0){
+                if (response.data.code === 0) {
                     localStorage.userName = response.data.data.phone
                     localStorage.token = response.data.data.token
                     localStorage.id = response.data.data.id
                     _this.props.login()
+                } else {
+                    Toast({
+                        type: "msg",
+                        msg: '账号或密码错误',
+                        duration: 2000
+                    })
                 }
             })
             .catch(function (error) {
@@ -85,21 +91,18 @@ class Login extends React.Component{
             });
 
 
-
-
-
     }
 
-    render(){
-        let sss={
-            display:"none"
+    render() {
+        let sss = {
+            display: "none"
         };
-        let ss={
-            display:"block"
+        let ss = {
+            display: "block"
         };
-        return(
-            <div className={style.llogin}  style={this.state.styless}>
-                <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow?ss:sss}></div>
+        return (
+            <div className={style.llogin} style={this.state.styless}>
+                <div className={style.mmb} onClick={this.isshow.bind(this)} style={this.state.isShow ? ss : sss}></div>
                 <div className={style.llogincontent}>
                     <div className={style.llctitle}>
                         欢迎来到海豚汇、请登录
@@ -145,81 +148,87 @@ class Login extends React.Component{
                             tip={"请输入正确的密码"}
                             firstEdit={this.state.loginMsg.loginPassword.firstEdit}
                         />
-                        <a href="javascript:void (0);"  onClick={()=>{this.props.toFind(false)}}>忘记密码？</a>
+                        <a href="javascript:void (0);" onClick={() => {
+                            this.props.toFind(false)
+                        }}>忘记密码？</a>
                     </div>
                     <div className={style.llcsubmit}>
                         <input onClick={this.submitFn.bind(this)} type="button" value='马上登录'/>
                     </div>
                     <div className={style.gollogin}>
                         <span>
-                            没有账户、<a href="javascript:void (0);" onClick={()=>{this.props.toReg(false)}} >注册账号</a>
+                            没有账户、<a href="javascript:void (0);" onClick={() => {
+                            this.props.toReg(false)
+                        }}>注册账号</a>
                         </span>
                     </div>
                 </div>
             </div>
         )
     }
-    off(){
+
+    off() {
         this.setState({
-            styless:{
-                display:"none"
+            styless: {
+                display: "none"
             }
         })
     }
 
-    prePhone(e){
+    prePhone(e) {
         this.setState({
-            isShow:true,
-        },()=>{
-            if(this.state.isShow){
+            isShow: true,
+        }, () => {
+            if (this.state.isShow) {
                 this.setState({
-                    isShow:true,
-                    border:{
-                        border:"1px solid #5262ff",
-                        boxShadow:"0 0 5px 5px rgba(82,98,255,0.1)"
+                    isShow: true,
+                    border: {
+                        border: "1px solid #5262ff",
+                        boxShadow: "0 0 5px 5px rgba(82,98,255,0.1)"
                     }
                 });
             } else {
                 this.setState({
-                    isShow:false,
-                    border:{
-                        border:"1px solid #dfdce4",
-                        boxShadow:"0 0 5px 5px transparent"
+                    isShow: false,
+                    border: {
+                        border: "1px solid #dfdce4",
+                        boxShadow: "0 0 5px 5px transparent"
                     }
                 });
             }
         })
     }
 
-    getNum(e){
+    getNum(e) {
         this.setState({
             sednum: {
                 num: e
             },
-            isShow:false,
-            border:{
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
+            isShow: false,
+            border: {
+                border: "1px solid #dfdce4",
+                boxShadow: "0 0 5px 5px transparent"
             }
         });
-        this.flag=false;
+        this.flag = false;
     }
-    isshow(){
+
+    isshow() {
         this.setState({
-            isShow:false,
-            border:{
-                border:"1px solid #dfdce4",
-                boxShadow:"0 0 5px 5px transparent"
+            isShow: false,
+            border: {
+                border: "1px solid #dfdce4",
+                boxShadow: "0 0 5px 5px transparent"
             }
         })
     }
+
     change(vaildMsg, name) {
 
         this.state.loginMsg[name] = vaildMsg;
         this.setState({state: this.state});
 
     }
-
 
 
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import style from "./index.css"
 import ModifyPasswordView from './modifyPasswordView'
+import axios from 'axios'
+
 
 class modifyPassword extends React.Component {
     constructor(props) {
@@ -39,7 +41,19 @@ class modifyPassword extends React.Component {
             return
         }
         if(flag){
-            alert('修改成功')
+            let _this = this
+            axios.patch('http://47.91.236.245:8000/user/customer/'+ localStorage.id +'/password', {
+                old_password : this.state.initialPassword.value,
+                 new_password : this.state.setPassword.value
+            })
+                .then(function (response) {
+                    if(response.data.code === 0){
+                       alert(11)
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
 
     }

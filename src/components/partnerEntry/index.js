@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./index.css";
+import {Link} from 'react-router-dom';
+import {hashHistory} from 'react-router';
 
 class PartnerEntry extends React.Component{
     render(){
@@ -9,18 +11,29 @@ class PartnerEntry extends React.Component{
                 </div>
                 <div className={style.parencon}>
                     <div className={style.lbut}>
-                        <button>
-                            已有账户，立即注册
-                        </button>
+                        <Link to="/partnerLogin">
+                            <button className={(() => {
+                            return this.checkedForPath('/partnerLogin')
+                            })()}>已有账户，立即登录
+                            </button>
+                        </Link>
                     </div>
                     <div className={style.rbut}>
-                        <button>
-                            注册成为合伙人
-                        </button>
+                        <Link to="/partnerReg">
+                            <button className={(() => {
+                            return this.checkedForPath('/partnerReg')
+                            })()}>注册成为合伙人
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
         )
+    }
+    checkedForPath(sidePath) {
+        if (sidePath === hashHistory.getCurrentLocation().pathname) {//alert(22)
+            return style.checked
+        }
     }
 }
 

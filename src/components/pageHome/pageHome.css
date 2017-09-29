@@ -4,8 +4,13 @@
 }
 
 .bannerWrap {
+    width: 100%;
+    height: 900px;
     position: relative;
     overflow: hidden;
+    background-image: url("./banner.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .PageTableDiv {

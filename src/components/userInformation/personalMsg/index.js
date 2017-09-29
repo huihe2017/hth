@@ -80,7 +80,7 @@ class Personal extends React.Component {
                         lebal="sfz"
                         pattern={/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/}
                         change={this.change.bind(this)}
-                        tip={"请填写15位一代身份证号或18位二代身份证号，同一个身份证号只能绑定一个海豚汇账号【必填】"}
+                        tip={"请填写15位一代身份证号或18位二代身份证号【必填】"}
                         firstEdit={this.props.data.sfz.firstEdit}
                     />
                     <Input

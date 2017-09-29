@@ -1,11 +1,15 @@
+
 .header {
     height: 68px;
     padding-left: 36px;
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px solid rgba(59,61,64,0.5);
     position: absolute;
     width: 100%;
     z-index: 26;
     font-size: 18px;
+    color: #fff;
+    margin-bottom: 50px;
+   
 }
 
 .header.fixed {
@@ -27,15 +31,31 @@
 }
 .logo {
     float: left;
-    padding-top: 9px;
+    padding-top: 12px;
 }
+.line{
+    float: left;
+    margin-left: 50px;
+    margin-top: 19px;
+    border-left: 1px solid #3b3d40;
+    width: 1px;
+    height: 30px;
+}
+.nav{
 
+    margin-left: 25px;
+    margin-top: 14px;
+    float: left;
+
+}
+.personCenter{
+    float: left;
+}
 .headerRight {
     float: right;
     line-height: 67px;
 }
 .headerRight > a {
-    margin-right: 90px;
     font-size: 18px;
 }
 .headerRight > a:first-child {
@@ -55,8 +75,7 @@
     color: #fff;
 }
 .login {
-    padding-left: 20px;
-    border-left: 2px solid #808080;
+    padding: 0 30px;
 }
 
 .checked {
@@ -68,10 +87,12 @@
 .headerRight .isPand {
     height: 67px;
     display: inline-block;
-    width: 80px;
+    width: 175px;
     text-align: center;
-    margin-right: 0px;
+    margin-right: 0;
     background: #5262ff;
     color: #fff;
-
+    margin-left: 20px;
+    position: relative;
+    z-index: 28;
 }

@@ -1,9 +1,9 @@
 .wrap {
-    border-left: 1px solid #3b3d40;
+    border-left: 1px solid rgba(59,61,64,0.5);
     height: 1000px;
 }
 .table {
-    width: 432px;
+    width: 420px;
     border-collapse: collapse;
     padding-left: 10px;
 
@@ -17,7 +17,7 @@
     padding-left: 7px;
     padding-top: 17px;
     padding-bottom: 17px;
-    border-bottom: 1px solid #3b3d40;
+    border-bottom: 1px solid rgba(59,61,64,0.5);
 }
 
 .table td {
@@ -36,12 +36,32 @@
      opacity: 0.5;
      height: 100px;
      line-height: 100px;
-     border-bottom: 1px solid #3b3d40;
+     border-bottom: 1px solid rgba(59,61,64,0.5);
      padding-left: 18px;
 }
 
 .table tr td:first-child ,.table tr th:first-child {
     padding-left: 18px;
+}
+.table>tr:nth-child(2){
+    padding-top: 20px;
+}
+.var{
+    width: 90px;
+}
+.spread{
+    width: 65px;
+    height: 34px;
+    overflow: hidden;
+}
+.total{
+    width: 120px;
+}
+.ru{
+    width: 70px;
+}
+.chu{
+    width: 75px;
 }
 
 

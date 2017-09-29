@@ -27,6 +27,7 @@ class Mtdownload extends React.Component{
     render(){
         return(
             <div className={style.mt4}>
+                <a name="download"></a>
                 <div className={style.mt4title}>
                     MT4交易终端下载
                 </div>

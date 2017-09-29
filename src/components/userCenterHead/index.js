@@ -9,10 +9,10 @@ class UserCenterHead extends React.Component {
         super(props);
         this.state = {
             portrait: 'http://img1.tgbusdata.cn/v2/thumb/jpg/NkRCMiw2NDAsMTAwLDQsMywxLC0xLDAscms1MA==/u/wow.tgbus.com/UploadFiles_2396/201605/20160530094443812.jpg',
-            userName: '嘎11嘎',
+            userName: '水色丹青',
             phone: localStorage.userName.split(' '),
             //phone: ['86', '13725565878'],
-            openingTime: 1504586278838,
+            MT4user: 6666666,
             floating: 44,
             status:0,
             worth: 33,
@@ -34,14 +34,40 @@ class UserCenterHead extends React.Component {
                     state:'news',
                     content:'新闻动态新闻动态新闻动态新闻动态'
                 }
-            ]
+            ],
+            userdata:{
+                state:'default',
+                value:"大大大大飞机"
+            }
         }
     }
 
     binding() {
         alert(10)
     }
-
+    change(vaildMsg, name) {
+        this.state[name] = vaildMsg
+        this.setState({state: this.state})
+        console.log(this.state.userdata);
+    }
+    submitFn() {
+        let userdata = this.state.userdata
+        let flag = true
+        for (let s in userdata) {
+            if(userdata.state === 'error'){
+                flag = false
+            }
+        }
+        this.setState({userdata})
+        if(!flag){
+            return
+        }
+        if(flag){
+            alert('提交成功')
+        }else {
+            return
+        }
+    }
     componentDidMount(){
         let _this = this
         axios.get('http://47.91.236.245:8000/user/customer/'+localStorage.id).then(function (response) {
@@ -57,7 +83,7 @@ class UserCenterHead extends React.Component {
 
     render() {
         return (
-            <UserCenterHeadView handle={this.binding} {...this.state} />
+            <UserCenterHeadView handle={this.binding} {...this.state} submitFn={this.submitFn.bind(this)} change={this.change.bind(this)}/>
         )
 
     }

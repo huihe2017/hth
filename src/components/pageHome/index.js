@@ -21,14 +21,14 @@ class PageHome extends Component {
         return (
             <div>
                 <div className={style.bannerWrap}>
-                    <div><img className={style.bannerImg} src={require('./banner.jpg')}/></div>
+                    {/*<div><img className={style.bannerImg} src={require('./banner.jpg')}/></div>*/}
                     <div className={style.PageTableDiv}>
                         <PageTable/>
                     </div>
                     <div className={style.bottom}>
                         <Button onClick={() => {
                             this.setState({showTwoDimension: true})
-                        }} itcon={<i className="fa fa-windows"></i>} value="立即开户" large/>
+                        }} itcon={<i className="fa fa-windows"></i>} value="极速开户" large/>
                         {
                             this.state.showTwoDimension? <Layer closeFn={()=>{this.setState({showTwoDimension: false})}} ><QRcode /></Layer>:''
                         }

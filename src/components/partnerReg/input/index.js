@@ -16,7 +16,6 @@ class FormItem extends React.Component{
                 state='error';
             }
         }else if(this.props.iid=="repass"){
-            console.log(v)
             if(document.querySelector("#pass").value){
                 if(v!==document.querySelector("#pass").value){
                     state='error'
@@ -25,9 +24,7 @@ class FormItem extends React.Component{
                 }
             }
         }else if(this.props.iid=="repass1"){
-            console.log(v)
             if(document.querySelector("#pass1").value){
-                console.log(document.querySelector("#pass1").value)
                 if(v!==document.querySelector("#pass1").value){
                     state='error'
                 }else {

@@ -7,13 +7,14 @@ class userCenterHeadView extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isShow:false
+            isShow:false,
+
         }
 	}
-	getTime(e){
-        let now=new Date(e);
-        return   [now.getFullYear(),now.getMonth()+1,now.getDate()].join("-")+" "+[now.getHours(),now.getMinutes()].join(":");
-    }
+    // getTime(e){
+    //     let now=new Date(e);
+    //     return   [now.getFullYear(),now.getMonth()+1,now.getDate()].join("-")+" "+[now.getHours(),now.getMinutes()].join(":");
+    // }
     showdata(e){
         if(e.length==0){
             return (
@@ -26,7 +27,11 @@ class userCenterHeadView extends React.Component{
 
     }
     change(vaildMsg, name) {
-       console.log(vaildMsg, name)
+        console.log(vaildMsg)
+        this.props.change(vaildMsg,name)
+    }
+    submitFn() {
+        this.props.submitFn()
     }
     redact(){
         this.setState({
@@ -35,10 +40,7 @@ class userCenterHeadView extends React.Component{
     }
 	render(){
             let imgurl= "";
-            let data={
-                state:true,
-                value:"大大大大飞机"
-            }
+
 			return(
 				<div className={style.userCenterHeadView}>
                     <div className={style.userCHl}>
@@ -48,7 +50,7 @@ class userCenterHeadView extends React.Component{
                         <div className={style.userchvheader}>
                             <a href="javascript:void (0);" onClick={this.redact.bind(this)} className={style.redact}>
                                 <span hidden={!this.state.isShow}>编辑信息</span>
-                                <span hidden={this.state.isShow}>保存信息</span>
+                                <span hidden={this.state.isShow} onClick={this.submitFn.bind(this)}>保存信息</span>
                             </a>
                             <div className={style.avatar}>
                                 <img src={this.props.portrait?this.props.portrait:require('../../partnerReg/images/avatar-default.png')} alt=""/>
@@ -79,22 +81,20 @@ class userCenterHeadView extends React.Component{
                                         <a href="javascript:void (0);">去绑定</a>
                                     </div>
                                     <div>
-                                        出户时间：{
-                                        this.getTime(this.props.openingTime)
-                                    }
+                                        MT4平台账号：{this.props.MT4user}
                                     </div>
                                 </div>
                                 <div className={style.userr} hidden={this.state.isShow}>
                                     <Input
                                         st={'100%'}
-                                        pla={"结算户名"}
-                                        tip={"ID昵称，限制8个中文字符，其他字符限制12个"}
-                                        lebal="username"
-                                        cla={data.state}
+                                        cla={this.props.userdata.state}
                                         align={"top"}
-                                        pattern={/\S/}
+                                        pla={"昵称"}
+                                        val={this.props.userdata.value}
+                                        tip={"ID昵称，限制8个中文字符，其他字符限制12个"}
+                                        pattern={/^[\u4e00-\u9fa5a-zA-Z0-9]{2,20}$/}
+                                        lebal="userdata"
                                         change={this.change.bind(this)}
-                                        val={data.value}
                                     />
                                 </div>
                             </div>

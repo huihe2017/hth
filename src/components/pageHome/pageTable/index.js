@@ -15,7 +15,7 @@ class PageTable extends Component {
         let _this = this
         axios.get('http://feed.betanovo.com:9081/v1/lp/ticks_standard')
             .then(function (response) {
-                console.log(response)
+                //console.log(response)
                 _this.setState({data: response.data})
             })
             .catch(function (error) {
@@ -42,11 +42,11 @@ class PageTable extends Component {
                 all = all.toFixed(5)
                 dom.push(
                     <tr>
-                        <td>{s}</td>
-                        <td>{Math.abs(data[s][2] - data[s][1]).toFixed(8)}</td>
-                        <td>{all}</td>
-                        <td>{data[s][2]}</td>
-                        <td>{data[s][1]}</td>
+                        <td className={style.var}>{s}</td>
+                        <td className={style.spread}>{Math.abs(data[s][2] - data[s][1]).toFixed(3)}</td>
+                        <td className={style.total}>{all}</td>
+                        <td className={style.ru}>{data[s][2]}</td>
+                        <td className={style.chu}>{data[s][1]}</td>
                     </tr>
                 )
             }
@@ -60,11 +60,11 @@ class PageTable extends Component {
                 <div className={style.tit}>外汇即时报价</div>
                 <table className={style.table}>
                     <tr>
-                        <th>品种</th>
-                        <th>点差</th>
-                        <th>总量</th>
-                        <th>入金率</th>
-                        <th>出金率</th>
+                        <th className={style.var}>品种</th>
+                        <th className={style.spread}>点差</th>
+                        <th className={style.total}>市场深度(M)</th>
+                        <th className={style.ru}>买入价</th>
+                        <th className={style.chu}>卖出价</th>
                     </tr>
                     {
                         this.getDom(this.state.data)

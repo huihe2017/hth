@@ -3,7 +3,7 @@
     font-size: 14px;
     width: 1200px;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 1px;
     padding-bottom: 60px;
     background: #fff;
 }
@@ -23,7 +23,7 @@
     opacity: 0;
 }
 .part{
-    margin-top: 48px;
+    margin-top: 40px;
     clear: both;
     position: relative;
 }

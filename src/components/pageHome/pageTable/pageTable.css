@@ -63,5 +63,10 @@
 .chu{
     width: 75px;
 }
+@media screen and (max-width: 750px){
+    .wrap {
+        display: none;
+    }
+}
 
 

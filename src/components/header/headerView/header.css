@@ -96,3 +96,12 @@
     position: relative;
     z-index: 28;
 }
+
+@media screen and (max-width: 750px){
+    .nav{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+}

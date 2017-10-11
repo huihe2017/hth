@@ -32,12 +32,25 @@
             line-height: 42px;
             color:#fff;
         }
+        @media screen and (max-width: 750px){
+            .suptop{
+                display: none;
+            }
+        }
     </style>
     <script>
         function openwin() {
             window.open ("http://cloud.xiaoi.com/web/index.jsp?uid=2159430", "newwindow", "height=755, width=648, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no,left=500,top=800")
 //写成一行
         }
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?137b5dcdd4bf36c5365a18178ec660b2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
     </script>
 </head>
 
@@ -53,5 +66,4 @@
     <!-- <script src="build/bundle.js"></script> -->
 </body>
 </html>
-adb reverse tcp:8081 tcp:8081
 

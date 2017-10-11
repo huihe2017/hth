@@ -27,6 +27,7 @@ export default class Header extends Component {
 
         return (
             <div className={style.head}>
+
                 {/*<div className={this.state.isFixed ? (style.header + ' ' + style.fixed) : style.header}>*/}
                 <div
                     className={this.props.otherStyle ? ( style.header + ' ' + style[this.props.position] + ' ' + style.otherStyle) : ( style.header + ' ' + style[this.props.position])}>

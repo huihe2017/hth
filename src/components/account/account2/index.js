@@ -25,7 +25,6 @@ class Account extends React.Component{
                 </header>
                 <section className={style.mcontent}>
                     <Putcard word="点击上传银行卡正面" ill={this.ill1.bind(this)} namm="yzheng"/>
-                    <Putcard word="点击上传银行卡反面" ill={this.ill2.bind(this)} namm="yfan"/>
                 </section>
                 <section className={style.subbutton}>
                     <button onTouchStart={this.panduan.bind(this)}>

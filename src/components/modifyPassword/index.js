@@ -2,6 +2,8 @@ import React from 'react';
 import style from "./index.css"
 import ModifyPasswordView from './modifyPasswordView'
 import axios from 'axios'
+import Toast from '../toast'
+
 
 
 class modifyPassword extends React.Component {
@@ -48,7 +50,11 @@ class modifyPassword extends React.Component {
             })
                 .then(function (response) {
                     if(response.data.code === 0){
-                       alert(11)
+                        Toast({
+                            type: "msg",
+                            msg: '已成功修改密码',
+                            duration: 2000
+                        })
                     }
                 })
                 .catch(function (error) {

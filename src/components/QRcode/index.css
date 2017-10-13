@@ -30,7 +30,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("./images/qrcode.jpg");
+    background-image: url("./images/qrcode.png");
     background-size: contain;
 
 }

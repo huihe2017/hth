@@ -13,7 +13,8 @@ class PageTable extends Component {
 
     getData() {
         let _this = this
-        axios.get('http://feed.betanovo.com:9081/v1/lp/ticks_standard')
+        //axios.get('http://feed.betanovo.com:9081/v1/lp/ticks_standard')
+        axios.get('http://hth5.dolphinforex.com/lp/ticks_standard')
             .then(function (response) {
                 //console.log(response)
                 _this.setState({data: response.data})
@@ -62,7 +63,7 @@ class PageTable extends Component {
                     <tr>
                         <th className={style.var}>品种</th>
                         <th className={style.spread}>点差</th>
-                        <th className={style.total}>市场深度(M)</th>
+                        {/*<th className={style.total}>市场深度(M)</th>*/}
                         <th className={style.ru}>买入价</th>
                         <th className={style.chu}>卖出价</th>
                     </tr>

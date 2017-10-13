@@ -9,6 +9,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: false,
             prephone: [
                 {
                     "area": "中国大陆",
@@ -26,6 +27,10 @@ class Login extends React.Component {
             sednum: {
                 num: "+86"
             },
+            img: <img onClick={(e) => {
+                e.target.src = 'http://47.91.236.245:4030/user/image-captcha?tm=' + Math.random()
+            }} style={{height: 40, width: 150}}
+                      src={"http://47.91.236.245:4030/user/image-captcha?tm=" + Math.random()}/>,
             isShow: false,
             loginMsg: {
                 loginUser: {
@@ -64,12 +69,13 @@ class Login extends React.Component {
             return
         }
         console.log(this.state.loginMsg.loginUser.phone.value)
+        this.setState({loading: true})
         let _this = this
-        axios.post('http://47.91.236.245:8000/user/customer/sign-in', {
-            account: this.state.loginMsg.loginUser.qh.value + ' ' + this.state.loginMsg.loginUser.phone.value,
+        axios.post('http://47.91.236.245:4030/user/customer/sign-in', {
+            phone: this.state.loginMsg.loginUser.qh.value + ' ' + this.state.loginMsg.loginUser.phone.value,
             //account: '13725503790',
             password: this.state.loginMsg.loginPassword.value,
-            type: 'phone'
+            image_captcha: this.state.loginMsg.loginGraphics.value
 
         })
             .then(function (response) {
@@ -78,6 +84,7 @@ class Login extends React.Component {
                     localStorage.token = response.data.data.token
                     localStorage.id = response.data.data.id
                     _this.props.login()
+                    _this.setState({loading: false})
                 } else {
                     Toast({
                         type: "msg",
@@ -132,7 +139,9 @@ class Login extends React.Component {
                             pattern={/\S/}
                             firstEdit={this.state.loginMsg.loginGraphics.firstEdit}
                         />
-                        <div className={style.captcha}></div>
+                        <div className={style.captcha}>
+                            {this.state.img}
+                        </div>
                     </div>
 
                     <div className={style.llcfirstmm}>
